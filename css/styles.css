@@ -1,0 +1,479 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/*---------------RESET--------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+*, *:before, *:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+ }
+img, embed, object, video {
+	max-width: 100%;
+}
+a {
+	text-decoration: none;
+}
+
+/* Typography */
+
+p {
+	color: #444;
+	font-family: Lato;
+	font-weight: 300;
+	font-size: 1.3em;
+	line-height: 28px;
+	padding: 1em 0;
+}
+h1 {
+	font-family: Lato, Helvetica, Gill Sans, sans-serif;
+	font-size: 2rem;
+	font-weight: 400;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+}
+h2 {
+	font-family: Lato, Helvetica, Gill Sans, sans-serif;
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: #444;
+	text-transform: uppercase;
+}
+h3 {
+	font-family: Lato, Helvetica, Gill Sans, sans-serif;
+	font-size: 2.5rem;
+	font-weight: 400;
+	color: #444;
+	text-transform: uppercase;
+}
+h4 {
+	font-family: Lato, Helvetica, Gill Sans, sans-serif;
+	font-size: 1rem;
+	font-weight: 300;
+	color: #fff;
+	text-transform: uppercase;
+}
+h5 {
+	font-family: Lato, Helvetica, Gill Sans, sans-serif;
+	font-size: 1.5rem;
+	font-weight: 400;
+	color: #444;
+	text-transform: uppercase;
+	text-align: center;
+	padding: .5em 0;
+}
+/*Navigation*/
+nav h1 {
+	position: absolute;
+	top: 10px;
+	left: 15px;
+	float: right;
+	text-align: right;
+	width: 60px;
+}
+@media screen and (max-width:888px) {
+	nav h1 {
+		display: none;
+	}
+}
+nav {
+	padding: 0;
+	margin: 0;
+	position: fixed;
+	width: 100%;
+	display: block;
+	background: rgb(230, 76, 76);
+	font-family: Lato, Helvetica, Gill Sans, sans-serif;
+	font-size: 1rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	/*top: 50%;
+	margin-top: -105px;*/
+	box-shadow: 1px 1px 7px #333;
+	max-height: 44px;
+	overflow: hidden;
+	outline: none;
+	-webkit-transition: all 0.3s ease; 
+	-moz-transition: all 0.3s ease; 
+	-o-transition: all 0.3s ease; 
+	-ms-transition: all 0.3s ease; 
+	transition: all 0.3s ease; 
+	z-index: 1000000000;
+}
+nav.open {
+	max-height: 248px;
+}
+nav.open .burger {
+	background: none !important;
+}
+nav.open .burger:before {
+	top: 0 !important;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+nav.open .burger:after {
+	top: 0 !important;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+nav > ul  a, nav > a {
+	display: block;
+	text-align: left;
+	background: rgb(230, 76, 76);
+	padding: 11px 11px;
+	color: #fff;
+	-webkit-transition: all 0.3s ease; 
+	-moz-transition: all 0.3s ease; 
+	-o-transition: all 0.3s ease; 
+	-ms-transition: all 0.3s ease; 
+	transition: all 0.3s ease; 
+}
+nav ul li a:hover {
+	background: #444;
+}
+nav a#toggle {
+	outline: none;
+}
+.burger {
+	display: block;
+	position: relative;
+	width: 30px;
+	height: 2px;
+	margin: 10px 0;
+	background: #fff;
+	-webkit-transition: all 0.3s ease; 
+	-moz-transition: all 0.3s ease; 
+	-o-transition: all 0.3s ease; 
+	-ms-transition: all 0.3s ease; 
+	transition: all 0.3s ease; 
+}
+.burger:before, .burger:after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 30px;
+	height: 2px;
+	background: #fff;
+	-webkit-transition: all 0.3s ease; 
+	-moz-transition: all 0.3s ease; 
+	-o-transition: all 0.3s ease; 
+	-ms-transition: all 0.3s ease; 
+	transition: all 0.3s ease; 
+	z-index: 20;
+}
+.burger:before {
+	top: -8px;
+}
+.burger:after {
+	top: 8px;
+}
+nav ul li {
+	display: none;
+}
+nav.open ul li {
+	display: block;
+}
+/* Layout */
+.home {
+	width: 100%;
+	height: 100%;
+}
+.store {
+	width: 100%;
+	height: 100%;
+}
+/* Header */
+.header {
+	width: 100%;
+	height: 100%;
+	padding: 3em;
+	background: url(../images/04.jpg) center center fixed no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	-ms-behavior: url(http://www.abeantogo.com/js/backgroundsize.min.htc);
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+	.header {
+		background-attachment: scroll;
+	}
+}
+.masthead {
+	text-align: center;
+	position: relative;
+	top: 40%;
+	margin-top: -78.5px;
+}
+.logo {
+	width: 100px;
+	margin: 0 auto;
+}
+.logo img {
+	width: 100px;
+}
+/* Globals */
+.heading {
+	width: 100%;
+	background: rgb(230, 76, 76);
+	text-align: center;
+	padding: 1em;
+}
+.cont {
+	width: 100%;
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 2em 1em;
+}
+.cont:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+/* Coffee */
+.tag {
+	background: #444;
+	color: #fff;
+}
+.tag h2 {
+	color: #fff;
+}
+.tag p {
+	color: #fff;
+}
+/* Process */
+.process {
+	text-align: center;
+}
+.process img {
+	max-width: 200px;
+	margin-bottom: 25px;
+}
+/* About */
+.about {
+	background: #f9f9f9;
+	color: #555;
+}
+#map-canvas {
+	width: 100%;
+	height: 400px;
+	margin: 1em 0 2em 0;
+}
+.location {
+	width: 100%;
+	padding: 3em 0 3em;
+}
+.location h5 {
+	padding-bottom: 1.5em;
+}
+.location:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+.location ul {
+	width: 50%;
+	float: left;
+}
+.location ul {
+	text-align: center;
+	margin: 0 auto;
+}
+.location li {
+	list-style: none;
+}
+.location li:first-of-type {
+	font-weight: 400;
+}
+.location a,
+.location ul {
+	color: #444;
+	font-family: Lato;
+	font-weight: 300;
+	font-size: 1.3rem;
+	line-height: 28px;
+}
+.location a:hover {
+	color: rgb(230, 76, 76);
+}
+/* Footer */
+footer {
+	width: 100%;
+	padding: 1em;
+	background: #fff;
+}
+.social {
+	width: 100%;
+	text-align: center;
+}
+.social li {
+	display: inline-block;
+	margin: 0 4%;
+}
+.social a {
+	display: block;
+	color: rgb(230, 76, 76);
+	font-size: 2rem;
+	-webkit-transition: all 0.3s ease; 
+	-moz-transition: all 0.3s ease; 
+	-o-transition: all 0.3s ease; 
+	-ms-transition: all 0.3s ease; 
+	transition: all 0.3s ease; 
+}
+.social a:hover {
+	color: #ccc;
+}
+/*Store Gargabge*/
+/*.paystand-cont {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	padding-top: 60px;
+}
+.paystand-cont iframe {
+	width: 100%;
+	height: 100%;
+}*/
+.header-store {
+	width: 100%;
+	/*height: 100%;*/
+	padding: 4em 1em;
+	background: url(../images/04.jpg) center center fixed no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	-ms-behavior: url(http://www.abeantogo.com/js/backgroundsize.min.htc);
+}
+@media screen and (max-width: 520px) {
+	.header-store {
+		width: 100%;
+		padding: 1em;
+		background: lightgray; 
+	}
+	.location ul {
+		float: none;
+	}
+	.location ul:first-of-type {
+		margin-bottom: 20px;
+	}
+}
+.paystand-cont {
+position: relative;
+display: block;
+max-width: 900px;
+height: 100%;
+margin: 0 auto;
+padding-top: 40px;
+}
+.paystand-cont iframe {
+width: 100%;
+height: 980px;
+background: #FFF;
+padding: 20px;
+}
+@media screen and (min-width: 768px) {
+	#toggle {
+		display: none;
+	}
+	nav {
+		width: 100%;
+		height: auto;
+		padding: 1em;
+		max-height: 73px;
+	}
+	nav ul {
+		text-align: center;
+	}
+	nav ul li {
+		display: inline-block;
+		padding: 0 2%;
+	}
+	nav ul li a:hover {
+		background: rgb(230, 76, 76);
+		color: #333;
+	}
+	h1 {
+		font-size: 3rem;
+	}
+	.masthead {
+		text-align: center;
+		position: relative;
+		top: 50%;
+		margin-top: -78.5px;
+	}
+	.theprocess {
+		width: 33.33333%;
+		float: left;
+		padding: 20px;
+	}
+	.divider-1 {
+	width: 100%;
+	height: 100%;
+	background: url(../images/02.jpg) center center fixed no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	-ms-behavior: url(http://www.abeantogo.com/js/backgroundsize.min.htc);
+	}
+	.divider-2 {
+		width: 100%;
+		height: 100%;
+		background: url(../images/03.jpg) center center fixed no-repeat;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		-ms-background-size: cover;
+		background-size: cover;
+		-ms-behavior: url(http://www.abeantogo.com/js/backgroundsize.min.htc);
+	}
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+	.header-store, .divider-1, .divider-2 {
+		background-attachment: scroll;
+	}
+}
