@@ -3,7 +3,7 @@
 
 
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -18,8 +18,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -30,13 +30,13 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 *, *:before, *:after {
-  -moz-box-sizing: border-box; 
-  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
  }
 img, embed, object, video {
@@ -52,7 +52,7 @@ p {
 	color: #444;
 	font-family: Lato;
 	font-weight: 300;
-	font-size: 1.3em;
+	font-size: 1.3rem;
 	line-height: 28px;
 	padding: 1em 0;
 }
@@ -92,7 +92,7 @@ h5 {
 	color: #444;
 	text-transform: uppercase;
 	text-align: center;
-	padding: .5em 0;
+	padding: .5rem 0;
 }
 /*Navigation*/
 nav h1 {
@@ -119,17 +119,15 @@ nav {
 	font-size: 1rem;
 	font-weight: 300;
 	text-transform: uppercase;
-	/*top: 50%;
-	margin-top: -105px;*/
 	box-shadow: 1px 1px 7px #333;
 	max-height: 44px;
 	overflow: hidden;
 	outline: none;
-	-webkit-transition: all 0.3s ease; 
-	-moz-transition: all 0.3s ease; 
-	-o-transition: all 0.3s ease; 
-	-ms-transition: all 0.3s ease; 
-	transition: all 0.3s ease; 
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	transition: all 0.4s ease;
 	z-index: 1000000000;
 }
 nav.open {
@@ -160,11 +158,11 @@ nav > ul  a, nav > a {
 	background: rgb(230, 76, 76);
 	padding: 11px 11px;
 	color: #fff;
-	-webkit-transition: all 0.3s ease; 
-	-moz-transition: all 0.3s ease; 
-	-o-transition: all 0.3s ease; 
-	-ms-transition: all 0.3s ease; 
-	transition: all 0.3s ease; 
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	transition: all 0.4s ease;
 }
 nav ul li a:hover {
 	background: #444;
@@ -179,11 +177,11 @@ nav a#toggle {
 	height: 2px;
 	margin: 10px 0;
 	background: #fff;
-	-webkit-transition: all 0.3s ease; 
-	-moz-transition: all 0.3s ease; 
-	-o-transition: all 0.3s ease; 
-	-ms-transition: all 0.3s ease; 
-	transition: all 0.3s ease; 
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	transition: all 0.4s ease;
 }
 .burger:before, .burger:after {
 	content: '';
@@ -192,11 +190,11 @@ nav a#toggle {
 	width: 30px;
 	height: 2px;
 	background: #fff;
-	-webkit-transition: all 0.3s ease; 
-	-moz-transition: all 0.3s ease; 
-	-o-transition: all 0.3s ease; 
-	-ms-transition: all 0.3s ease; 
-	transition: all 0.3s ease; 
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	transition: all 0.4s ease;
 	z-index: 20;
 }
 .burger:before {
@@ -225,13 +223,12 @@ nav.open ul li {
 	width: 100%;
 	height: 100%;
 	padding: 3em;
-	background: url(../images/04.jpg) center center fixed no-repeat;
+	background: url("../images/04.jpg") center center fixed no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	-ms-background-size: cover;
 	background-size: cover;
-	-ms-behavior: url(http://www.abeantogo.com/js/backgroundsize.min.htc);
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
 	.header {
@@ -338,7 +335,7 @@ nav.open ul li {
 /* Footer */
 footer {
 	width: 100%;
-	padding: 1em;
+	padding: 1rem;
 	background: #fff;
 }
 .social {
@@ -353,45 +350,30 @@ footer {
 	display: block;
 	color: rgb(230, 76, 76);
 	font-size: 2rem;
-	-webkit-transition: all 0.3s ease; 
-	-moz-transition: all 0.3s ease; 
-	-o-transition: all 0.3s ease; 
-	-ms-transition: all 0.3s ease; 
-	transition: all 0.3s ease; 
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	transition: all 0.4s ease;
 }
 .social a:hover {
 	color: #ccc;
 }
-/*Store Gargabge*/
-/*.paystand-cont {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 100%;
-	margin: 0 auto;
-	padding-top: 60px;
-}
-.paystand-cont iframe {
-	width: 100%;
-	height: 100%;
-}*/
 .header-store {
 	width: 100%;
-	/*height: 100%;*/
-	padding: 4em 1em;
-	background: url(../images/04.jpg) center center fixed no-repeat;
+	padding: 4rem 1rem;
+	background: url("../images/04.jpg") center center fixed no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	-ms-background-size: cover;
 	background-size: cover;
-	-ms-behavior: url(http://www.abeantogo.com/js/backgroundsize.min.htc);
 }
 @media screen and (max-width: 520px) {
 	.header-store {
 		width: 100%;
-		padding: 1em;
-		background: lightgray; 
+		padding: 1rem;
+		background: lightgray;
 	}
 	.location ul {
 		float: none;
@@ -421,7 +403,7 @@ padding: 20px;
 	nav {
 		width: 100%;
 		height: auto;
-		padding: 1em;
+		padding: 1rem;
 		max-height: 73px;
 	}
 	nav ul {
@@ -452,28 +434,29 @@ padding: 20px;
 	.divider-1 {
 	width: 100%;
 	height: 100%;
-	background: url(../images/02.jpg) center center fixed no-repeat;
+	background: url("../images/02.jpg") center center fixed no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	-ms-background-size: cover;
 	background-size: cover;
-	-ms-behavior: url(http://www.abeantogo.com/js/backgroundsize.min.htc);
 	}
 	.divider-2 {
 		width: 100%;
 		height: 100%;
-		background: url(../images/03.jpg) center center fixed no-repeat;
+		background: url("../images/03.jpg") center center fixed no-repeat;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		-ms-background-size: cover;
 		background-size: cover;
-		-ms-behavior: url(http://www.abeantogo.com/js/backgroundsize.min.htc);
 	}
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
 	.header-store, .divider-1, .divider-2 {
 		background-attachment: scroll;
 	}
+}
+.order-online {
+	padding-top: 60px;
 }

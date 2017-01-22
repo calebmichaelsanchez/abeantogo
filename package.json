@@ -1,0 +1,49 @@
+{
+  "name": "abeantogo",
+  "version": "1.0.0",
+  "description": "Squarespace Ecommerce site for Abeantogo Coffee",
+  "main": "index.js",
+  "config": {
+    "css_file": "./sqs_template/styles/screen.css",
+    "scss_file": "./scss/screen.scss"
+  },
+  "scripts": {
+    "build:js-dev": "webpack -d",
+    "build:js-prod": "webpack -p",
+    "build:css": "sass --sourcemap=none --scss $npm_package_config_scss_file $npm_package_config_css_file",
+    "build:dev": "npm run build:js-dev && npm run build:css",
+    "build:prod": "npm-run-all build:js-prod build:css postbuild:css",
+    "postbuild:css": "postcss --use autoprefixer --autoprefixer.browsers 'last 2 versions' --output $npm_package_config_css_file $npm_package_config_css_file",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:js": "chokidar ./js/* --initial -d 10 -c 'npm run build:js-dev'",
+    "watch:scss": "chokidar ./scss/* --initial -d 10 -c 'npm run build:css'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calebmichaelsanchez/abeantogo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calebmichaelsanchez/abeantogo/issues"
+  },
+  "homepage": "https://github.com/calebmichaelsanchez/abeantogo#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "chokidar-cli": "^1.2.0",
+    "eslint": "^3.2.2",
+    "eslint-loader": "^1.5.0",
+    "npm-run-all": "^2.3.0",
+    "postcss-cli": "^2.5.2",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "axios": "^0.13.1",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0"
+  }
+}
