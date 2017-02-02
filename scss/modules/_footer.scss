@@ -1,0 +1,36 @@
+.footer {
+  &__banner {
+    width: 100%;
+    height: 250px;
+    background: url("/assets/footer-chalk-board-angle.jpg") no-repeat center center;
+    background-size: cover;
+  }
+  &__info {
+    text-align: center;
+    font-size: 0;
+    max-width: 920px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    @include center;
+  }
+  &__item {
+    display: inline-block;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: $h4-size;
+    @include respond-to(ipad-landscape) {
+      width: 50%
+    }
+    p, a {
+      font-size: $h4-size;
+    }
+  }
+  &__title {
+    @include font-sans();
+    color: $red;
+    letter-spacing: .3rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+}

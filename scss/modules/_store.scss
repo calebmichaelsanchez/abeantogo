@@ -1,0 +1,119 @@
+#store {
+  background: url("/assets/coffee-background.jpg") no-repeat center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.categories {
+  width: 100%;
+  text-align: center;
+  font-size: 0;
+  padding-top: 45px;
+  &__item {
+    display: inline-block;
+    position: relative;
+    font-size: $h5-size;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+    color: $white;
+    cursor: pointer;
+    padding-left: 15px;
+    padding-right: 15px;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translate(-50%, -50%);
+      width: 5px;
+      height: 5px;
+      background-color: $red;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    &:last-of-type:after {
+      display: none;
+    }
+  }
+}
+.products {
+  width: 100%;
+  max-width: 940px;
+  @include center;
+  font-size: 0;
+  text-align: left;
+  padding-top: 125px;
+  padding-bottom: 125px;
+  &__item {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 33.33%;
+    font-size: 16px;
+    color: $white;
+    text-decoration: none;
+    margin-bottom: 50px;
+    transition: 600ms ease;
+    @include respond-to(ipad-landscape) {
+      margin-bottom: 100px;
+    }
+    &--loading {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    &--loaded {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  &__image {
+    max-width: 178px;
+  }
+  &__title, &__price {
+    @include font-sans();
+    font-size: $small-size;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .25rem;
+    color: $white;
+  }
+  .products__title {
+    margin-top: 40px;
+    margin-bottom: 15px;
+  }
+  &__overlay {
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background-color: rgba($gray, .8);
+    opacity: 0;
+    transition: 600ms ease;
+    text-align: left;
+    z-index: 1;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 55%;
+      left: 55%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      background-color: rgba($gray, .8);
+      z-index: -1;
+    }
+    .products__item:hover & {
+      opacity: 1;
+    }
+    &-title { @include h3(); }
+    &-excerpt {
+      font-size: $p-xs-size;
+      letter-spacing: 0.15rem;
+      color: $black;
+      line-height: 2;
+    }
+  }
+}

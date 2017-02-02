@@ -1,1 +1,3 @@
-console.log("It Works!");
+import './Nav';
+import './home';
+import './store';

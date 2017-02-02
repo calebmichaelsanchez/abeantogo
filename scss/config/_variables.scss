@@ -1,0 +1,29 @@
+// Typography
+
+$sans: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans;
+$serif: 'Crimson Text', Times, Times New Roman, Georgia, sans-serif;
+
+$h1-size: 35px; // home page titles
+$h2-size: 27px; // store page titles
+$h3-size: 20px; // product title big
+$h4-size: 14px; // footer
+$h5-size: 17px; // store nav
+$p-size:  25px; // paragraph
+$p-xs-size: 13.5px; // product info
+$small-size: 12.5px; // small nav + small product titles + buttons
+
+// S P A C E
+$spacer-xs:  6px;
+$spacer-sm:  12px;
+$spacer-md:  16px;
+$spacer-lg:  32px;
+$spacer-xl:  64px;
+$spacer-xxl: 128px;
+
+
+// Colors
+$white: #fff;
+$black: #000;
+$red: #cf4c49;
+$red-accent: #f04b47;
+$gray: #cdc3c3;

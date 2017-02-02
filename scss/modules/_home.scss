@@ -1,0 +1,102 @@
+.hero {
+  width: 100%;
+  height: 100vh;
+  padding-left: 32px;
+  padding-right: 32px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
+  &__inner {
+    display: inline-block;
+    margin-top: 30vh;
+    width: 100%;
+    max-width: 500px;
+  }
+}
+.learn-more {
+  @include center;
+  @include clearfix;
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  background-color: $gray;
+  padding: percentage(115 / 975) percentage(115 / 1440);
+  //padding: percentage(115 / 975) percentage(115 / 1440);
+  &__item {
+    display: block;
+    width: 100%;
+    max-width: 615px;
+    @include respond-to(ipad-portrait) {
+      float: right;
+      clear: both;
+    }
+    &:first-of-type {
+      margin-bottom: 50px;
+      @include respond-to(ipad-portrait) {
+        float: left;
+        margin-bottom: 180px;
+      }
+    }
+  }
+  &__cup {
+    display: none;
+    position: absolute;
+    top: -100px;
+    left: 765px;
+    width: 696px;
+    @include respond-to(ipad-portrait) {
+      display: block;
+    }
+  }
+  &__beans {
+    display: block;
+    position: absolute;
+    top: 510px;
+    right: 836px;
+    width: 630px;
+    @include respond-to(ipad-portrait) {
+      display: block;
+    }
+  }
+}
+.hero-divider {
+  width: 100%;
+  height: 575px;
+  background: url("/assets/home-men-in-window.jpg") no-repeat center center;
+  background-size: cover;
+}
+.featured-blogs {
+  width: 100%;
+  position: relative;
+  text-align: right;
+  font-size: 0;
+  &:before {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: percentage(580 / 1440);
+    height: 100%;
+    background: url("/assets/home-guitar-chalk-board.jpg") no-repeat center center;
+    background-size: cover;
+    @include respond-to(ipad-portrait) {
+      display: block;
+    }
+  }
+  &__inner {
+    display: inline-block;
+    width: 100%;
+    padding: percentage(115 / 975) percentage(115 / 1440);
+    text-align: left;
+    vertical-align: top;
+    @include respond-to(ipad-portrait) {
+      width: percentage(860 / 1440);
+    }
+  }
+  &__item {
+    &:first-of-type { margin-bottom: 50px; }
+  }
+}

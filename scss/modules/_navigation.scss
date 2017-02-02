@@ -1,0 +1,54 @@
+.nav {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 10vh;
+  transition: 600ms ease;
+  z-index: 1000;
+  .nav-scrolled & {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: $red;
+  }
+  &__list {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 0;
+  }
+  &__item {
+    display: inline-block;
+  }
+  &__link {
+    position: relative;
+    display: block;
+    font-size: $small-size;
+    color: $white;
+    letter-spacing: .25rem;
+    text-transform: uppercase;
+    padding: 15px;
+    @include font-sans;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 2px;
+      background-color: $red-accent;
+      opacity: 0;
+      transition: opacity 400ms ease;
+    }
+    &:hover:after {
+      opacity: 1;
+    }
+  }
+}
