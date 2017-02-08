@@ -25,7 +25,10 @@ export default class ProductsItem extends Component {
         <img
           onLoad={this.imageLoaded}
           onError={this.imageErrored}
-          src={image}
+          data-src={image}
+          data-img={image}
+          data-type="image"
+          src={`${image}?format=300w`}
           className="products__image"
         />
         <div className="products__info">

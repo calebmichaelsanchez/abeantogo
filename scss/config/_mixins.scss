@@ -60,7 +60,7 @@ $breakpoints: (
   @include font-serif();
   @include respond-to(ipad-landscape) {
     font-size: $p-size;
-    font-size: 1.75vw;
+    font-size: 1.65vw;
   }
 }
 @mixin a() {
@@ -148,7 +148,13 @@ $breakpoints: (
   letter-spacing: .3rem;
   text-transform: uppercase;
   margin-top: 30px;
+  transition: 600ms ease;
+  cursor: pointer;
   @include font-sans();
+  &:hover {
+    background-color: $red;
+    color: $white;
+  }
 }
 
 // ======================================

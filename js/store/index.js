@@ -9,14 +9,19 @@ class Store extends Component {
     super();
     this.state = {
       items: [],
-      category: "regular"
+      categories: [],
+      category: "Regular"
     }
     this.setFilter = this.setFilter.bind(this);
   }
   componentDidMount() {
     axios("/store?format=json")
       .then((response) => {
-        this.setState({ items: response.data.items });
+        console.log(response);
+        this.setState({
+          items: response.data.items,
+          categories: response.data.collection.categories
+        });
       })
       .catch((response) => {
         console.log(response);
@@ -28,7 +33,7 @@ class Store extends Component {
   render() {
     return (
       <div>
-        {this.state.items.length > 0 ? <ProductsList category={this.state.category} setFilter={this.setFilter} items={this.state.items} /> : null}
+        {this.state.items.length > 0 ? <ProductsList categories={this.state.categories} category={this.state.category} setFilter={this.setFilter} items={this.state.items} /> : null}
       </div>
     )
   }
@@ -44,7 +49,6 @@ class Product extends Component {
   componentDidMount() {
     axios(`${this.props.url}?format=json`)
       .then((response) => {
-        console.log(response);
         this.setState({ item: response.data.item });
       })
       .catch((response) => {
@@ -53,7 +57,9 @@ class Product extends Component {
   }
   render() {
     return (
-      <ProductItem item={this.state.item} />
+      <div>
+        {Object.keys(this.state.item).length === 0 && this.state.item.constructor === Object ? null : <ProductItem item={this.state.item} />}
+      </div>
     )
   }
 }

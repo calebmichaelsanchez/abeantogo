@@ -1,0 +1,113 @@
+.events {
+  width: 100%;
+  &__item {
+    display: block;
+    width: 100%;
+    padding: 80px;
+    background-color: $light-gray;
+    &:nth-of-type(even) {
+      background-color: $gray;
+      .events__inner {
+        text-align: right;
+        direction: rtl;
+      }
+      .events__image {
+        margin-right: 0;
+        margin-left: percentag(50 / 1135);
+      }
+    }
+  }
+  &__inner {
+    width: 100%;
+    max-width: 1135px;
+    @include center;
+    text-align: left;
+    font-size: 0;
+  }
+  &__info, &__image {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__info {
+    width: percentage(505 / 1135);
+  }
+  &__title {
+    text-align: left;
+    color: $black;
+    margin-bottom: 25px;
+    letter-spacing: .15rem;
+    &:after {
+      left: 0;
+      transform: none;
+    }
+  }
+  &__image {
+    position: relative;
+    width: percentage(480 / 1135);
+    margin-right: percentage(50 / 1135);
+    &-inner {
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+  }
+  &__date {
+    @include font-serif();
+    font-size: 20px;
+    letter-spacing: .1rem;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  &__button {
+    @include button();
+  }
+}
+
+.event {
+  width: 100%;
+  background: url("/assets/wood-background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  padding: 50px 32px 100px;
+  &__inner {
+    width: 100%;
+    max-width: 1135px;
+    padding: 40px;
+    background-color: $gray;
+    @include center;
+  }
+  &__image {
+    position: relative;
+    width: 100%;
+    &-inner {
+      width: 100%;
+      height: 0;
+      padding-bottom: 40%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+  }
+  &__info {
+    padding: 30px 16px 0;
+  }
+  &__title {
+    text-align: left;
+    color: $black;
+    margin-bottom: 25px;
+    letter-spacing: .15rem;
+    &:after {
+      left: 0;
+      transform: none;
+    }
+  }
+  &__date {
+    @include font-serif();
+    font-size: 20px;
+    letter-spacing: .1rem;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+}

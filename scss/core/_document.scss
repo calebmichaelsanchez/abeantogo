@@ -16,13 +16,13 @@ html {
   overflow-y: auto;
 }
 body {
+  @include font-sans();
   background-color: $gray;
   color: $black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: rgba( 0, 0, 0, 0 );
   -webkit-touch-callout: none;
-  @include font-sans();
 }
 html,
 body {
@@ -43,6 +43,11 @@ main:not(#welcome) {
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+.site-container {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .site-title-heading {

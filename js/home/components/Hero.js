@@ -11,7 +11,7 @@ export default class Hero extends Component {
     }
     return (
       <div className="hero" style={style}>
-        <img className="hero__inner" src="/assets/header.svg" />
+        <img className="hero__inner" src="/assets/header-new.svg" />
       </div>
     )
   }

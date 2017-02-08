@@ -14,10 +14,12 @@ export default class BlogBlurb extends Component {
   componentDidMount() {
     axios(`/${this.props.url}?format=json`)
       .then((response) => {
+        console.log(response);
         this.setState({
           title: response.data.items[0].title,
           description: response.data.items[0].excerpt,
-          fullUrl: response.data.items[0].fullUrl
+          fullUrl: response.data.items[0].fullUrl,
+          pageUrl: response.data.collection.fullUrl
         });
       })
       .catch((response) => {
@@ -26,12 +28,12 @@ export default class BlogBlurb extends Component {
   }
   render() {
     let { button } = this.props;
-    let { title, description, fullUrl } = this.state;
+    let { title, description, fullUrl, pageUrl } = this.state;
     return (
       <div className="blurb">
-        <p className="blurb__title blurb__title--i"><em>{title}</em></p>
+        <a href={fullUrl} className="blurb__title blurb__title--i"><em>{title}</em></a>
         <p className="blurb__description">{strip(description)}</p>
-        <a href={fullUrl} className="btn">{button}</a>
+        <a href={pageUrl} className="btn">{button}</a>
       </div>
     )
   }

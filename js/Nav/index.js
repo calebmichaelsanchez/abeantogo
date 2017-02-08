@@ -1,8 +1,14 @@
 !(function() {
   let html = document.documentElement;
   let welcome = document.getElementById("welcome");
+  let toggle = document.querySelectorAll(".nav__toggle")[0];
   let latestKnownScroll = 0;
   let ticking = false;
+
+  function onClick(event) {
+    event.preventDefault();
+    html.classList.toggle("nav-active");
+  }
 
   function onScroll() {
     latestKnownScroll = window.scrollY;
@@ -31,5 +37,7 @@
   } else {
     window.addEventListener('scroll', onScroll, false);
   }
+
+  toggle.addEventListener("click", onClick, false);
 
 })();

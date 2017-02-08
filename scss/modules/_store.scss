@@ -38,24 +38,31 @@
 }
 .products {
   width: 100%;
-  max-width: 940px;
   @include center;
   font-size: 0;
   text-align: left;
   padding-top: 125px;
   padding-bottom: 125px;
+  max-width: 350px;
+  @include respond-to(mobile-plus) {
+    max-width: 940px;
+  }
   &__item {
     position: relative;
     display: inline-block;
+    width: 100%;
     text-align: center;
-    width: 33.33%;
     font-size: 16px;
     color: $white;
     text-decoration: none;
     margin-bottom: 50px;
-    transition: 600ms ease;
+    transition: opacity 600ms ease, transform 600ms ease, width 300ms ease;
+    @include respond-to(mobile-plus) {
+      width: 50%;
+    }
     @include respond-to(ipad-landscape) {
       margin-bottom: 100px;
+      width: 33.33%;
     }
     &--loading {
       opacity: 0;
@@ -84,9 +91,10 @@
   &__overlay {
     position: absolute;
     width: 90%;
-    top: 50%;
+    max-width: 350px;
+    top: 42%;
     left: 50%;
-    padding: 40px;
+    padding: 30px 40px;
     transform: translate(-50%, -50%);
     background-color: rgba($gray, .8);
     opacity: 0;
@@ -111,9 +119,134 @@
     &-title { @include h3(); }
     &-excerpt {
       font-size: $p-xs-size;
-      letter-spacing: 0.15rem;
+      letter-spacing: 0.1rem;
       color: $black;
       line-height: 2;
     }
   }
+}
+
+// ==================================
+// Individual Product Page
+// ==================================
+.product {
+  @include center;
+  width: 100%;
+  max-width: 530px;
+  padding: 50px 16px;
+  font-size: 0;
+  text-align: center;
+  @include respond-to(ipad-portrait) {
+    max-width: 875px;
+    padding: 100px 32px;
+    text-align: left;
+  }
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+  }
+  &__image {
+    max-width: 200px;
+    margin-bottom: 25px;
+    @include respond-to(ipad-portrait) {
+      width: percentage(300 / 875);
+      margin-bottom: 0;
+      max-width: none;
+      margin-right: percentage(45 / 875);
+    }
+  }
+  &__info {
+    text-align: left;
+    @include respond-to(ipad-portrait) {
+      width: percentage(530 / 875);
+    }
+    @include respond-to(ipad-landscape) {
+      transform: translateY(-10%);
+    }
+  }
+  &__title {
+    @include h1();
+    color: $white;
+    letter-spacing: 0.25rem;
+    margin-bottom: 25px;
+    &:after { display: none; }
+  }
+  &__excerpt {
+    @include p();
+    font-style: italic;
+    color: $white;
+    margin-bottom: 15px;
+  }
+  &__price {
+    @include font-serif();
+    font-size: 30px;
+    font-weight: 600;
+    color: $white;
+    letter-spacing: .1rem;
+    margin-bottom: 25px;
+  }
+  &-cart-info {
+    display: none;
+    .product-price { color: $white; }
+  }
+  &__variants {
+    font-size: 0;
+    text-align: left;
+  }
+  &__button {
+    @include button();
+  }
+}
+.select {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 25px 10px 0;
+  &__title {
+    font-size: $small-size;
+    color: $white;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  &__list {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    min-width: 150px;
+    margin: 0;
+    padding: 0;
+    background-color: rgba($white, .95);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+    list-style: none;
+    transition: opacity 400ms ease, visibility 0s 400ms linear;
+    .select--open & {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 400ms ease, visibility 0s 0s linear;
+    }
+  }
+  &__item {
+    font-size: $small-size;
+    color: $red;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: 400ms ease;
+    cursor: pointer;
+    &:hover {
+      color: $white;
+      background-color: $red;
+    }
+  }
+}
+
+#sqs-shopping-cart-wrapper {
+  padding: 100px 32px;
 }

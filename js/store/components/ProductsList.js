@@ -4,11 +4,12 @@ import CategoryList from "./CategoryList";
 import { toDollars } from "../../util/helpers";
 
 const titles = {
-  "regular": "Regular Coffee",
-  "flavored": "Flavored Coffee",
-  "decaf": "Decaf Coffee",
-  "decaf-flavored": "Flavored Decaf Coffee",
-  "espresso": "Espresso"
+  "Regular": "Regular Coffee",
+  "Flavored": "Flavored Coffee",
+  "Decaf": "Decaf Coffee",
+  "Flavored Decaf": "Flavored Decaf Coffee",
+  "Espresso": "Espresso",
+  "coffee-club": "Coffee Club"
 };
 
 export default class ProductsList extends Component {
@@ -23,9 +24,9 @@ export default class ProductsList extends Component {
     let { category, setFilter, items } = this.props;
     return (
       <div>
-        <CategoryList setFilter={setFilter} />
+        <CategoryList categories={this.props.categories} setFilter={setFilter} />
         <div className="products">
-          <h2>{titles[category]}</h2>
+          <h2>{category}</h2>
           {items.filter(this.filterList(category)).map((item) => {
             return (
               <ProductsItem

@@ -1,29 +1,144 @@
+
 .nav {
   position: fixed;
   display: block;
   top: 0;
   left: 0;
   width: 100%;
-  padding-top: 10vh;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: $red;
   transition: 600ms ease;
   z-index: 1000;
-  .nav-scrolled & {
-    padding-top: 15px;
-    padding-bottom: 15px;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     background-color: $red;
+    z-index: 5;
+    @include respond-to(mobile-plus) {
+      display: none;
+    }
+  }
+  @include respond-to(mobile-plus) {
+    margin-top: 10vh;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: transparent;
+  }
+  .nav-scrolled & {
+    margin-top: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: $red;
+    @include respond-to(mobile-plus) {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+  &__logo {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 36px;
+    width: 50px;
+    transform: translateY(-50%);
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 600ms ease;
+    @include respond-to(ipad-portrait) {
+      opacity: 0;
+    }
+    .nav-scrolled & {
+      opacity: 1;
+    }
+  }
+  &__toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 100%;
+    z-index: 10;
+    @include respond-to(mobile-plus) {
+      display: none;
+    }
+  }
+  &__burger {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: $white;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    transition: 400ms ease;
+    .nav-active & {
+      background-color: transparent;
+    }
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      background-color: $white;
+      top: 50%;
+      left: 0;
+      transition: transform 400ms ease;
+      .nav-active & {
+        margin-top: 0;
+      }
+    }
+    &:after {
+      margin-top: 9px;
+      .nav-active & { transform: rotate(-45deg); }
+    }
+    &:before {
+      margin-top: -10px;
+      .nav-active & { transform: rotate(45deg); }
+    }
   }
   &__list {
     display: block;
-    position: relative;
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
     text-align: center;
     font-size: 0;
+    z-index: 1;
+    background-color: $red;
+    transform: translateY(-160%);
+    border-top: 1px solid $white;
+    transition: transform 600ms ease;
+    .nav-active & {
+      transform: translateY(0);
+    }
+    @include respond-to(mobile-plus) {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+      border: none;
+      background-color: transparent;
+      text-align: right;
+    }
+    @include respond-to(ipad-portrait) {
+      text-align: center;
+    }
   }
   &__item {
-    display: inline-block;
+    display: block;
+    @include respond-to(mobile-plus) {
+      display: inline-block;
+    }
   }
   &__link {
     position: relative;
@@ -33,7 +148,12 @@
     letter-spacing: .25rem;
     text-transform: uppercase;
     padding: 15px;
+    width: 100%;
+    border-bottom: 1px solid $white;
     @include font-sans;
+    @include respond-to(mobile-plus) {
+      border: none;
+    }
     &:after {
       content: '';
       display: block;
