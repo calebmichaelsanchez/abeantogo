@@ -60,7 +60,6 @@ $breakpoints: (
   @include font-serif();
   @include respond-to(ipad-landscape) {
     font-size: $p-size;
-    font-size: 1.65vw;
   }
 }
 @mixin a() {
@@ -82,15 +81,15 @@ $breakpoints: (
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: .1rem;
-  &:after {
-    content: '';
-    display: block;
-    width: 55px;
-    height: 4px;
-    background-color: $red;
-    margin-top: 25px;
-    margin-bottom: 30px;
-  }
+  // &:after {
+  //   content: '';
+  //   display: block;
+  //   width: 55px;
+  //   height: 4px;
+  //   background-color: $red;
+  //   margin-top: 25px;
+  //   margin-bottom: 30px;
+  // }
 }
 @mixin h2() {
   @include font-sans();
@@ -102,21 +101,17 @@ $breakpoints: (
   letter-spacing: 0.25rem;
   font-weight: 400;
   line-height: 1.2;
-  padding-bottom: 20px;
-  margin-bottom: 80px;
   text-align: center;
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    width: 100px;
-    height: 4px;
-    background-color: $red;
-    transform: translateX(-50%);
-    z-index: 1;
-  }
+  // &:after {
+  //   content: '';
+  //   display: block;
+  //   position: relative;
+  //   width: 100px;
+  //   height: 4px;
+  //   background-color: $red;
+  //   margin: 20px auto 80px;
+  //   z-index: 1;
+  // }
 }
 @mixin h3() {
   font-size: $h3-size;
@@ -125,18 +120,24 @@ $breakpoints: (
   text-transform: uppercase;
   color: $black;
   @include font-sans();
-  &:after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 4px;
-    background-color: $red;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+  // &:after {
+  //   content: '';
+  //   display: block;
+  //   width: 50px;
+  //   height: 4px;
+  //   background-color: $red;
+  //   margin-top: 20px;
+  //   margin-bottom: 20px;
+  // }
 }
 @mixin h4() {
   font-size: $h4-size;
+}
+@mixin h6() {
+  font-size: $h6-size;
+  text-transform: uppercase;
+  letter-spacing: 0.6rem;
+  text-align: center;
 }
 
 @mixin button() {
@@ -151,9 +152,21 @@ $breakpoints: (
   transition: 600ms ease;
   cursor: pointer;
   @include font-sans();
-  &:hover {
+  .no-touch &:hover {
     background-color: $red;
     color: $white;
+  }
+}
+
+@mixin divider($width, $margin) {
+  &:after {
+    content: '';
+    display: block;
+    width: $width;
+    height: 4px;
+    background-color: $red;
+    margin: $margin;
+    z-index: 1;
   }
 }
 

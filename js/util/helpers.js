@@ -19,3 +19,9 @@ export function procEvent(element, eventType) {
   var event = new Event(eventType);
   element.dispatchEvent(event);
 }
+
+export function getBody(string) {
+  let div = document.createElement("div");
+  div.innerHTML = string;
+  return div.firstChild;
+}

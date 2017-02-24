@@ -33,7 +33,24 @@ a {
   text-decoration: none;
 }
 main:not(#welcome) {
-  padding-top: 75px;
+  padding-top: 60px;
+  @include respond-to(mobile-plus) {
+    padding-top: 75px;
+  }
+}
+main#contact {
+  background: url("/assets/contact-background.jpg") no-repeat center center;
+  background-size: cover;
+}
+.contact {
+  width: 100%;
+  max-width: 600px;
+  @include center;
+  padding: 50px 16px;
+  color: $white;
+  @include respond-to(ipad-portrait) {
+    padding: 100px 0;
+  }
 }
 
 /******************************************************************************

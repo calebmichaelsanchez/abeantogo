@@ -5,3 +5,6 @@
     }
   }
 }
+h1.blurb__title {
+  @include divider(55px, 25px 0 30px);
+}

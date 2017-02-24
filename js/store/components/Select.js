@@ -11,6 +11,8 @@ export default class Select extends Component {
 
     this.handleClick = this.handleClick.bind(this);
     this.toggleSelect = this.toggleSelect.bind(this);
+    this.openSelect = this.openSelect.bind(this);
+    this.closeSelect = this.closeSelect.bind(this);
     this.setSquarespaceSelectValue = this.setSquarespaceSelectValue.bind(this);
     this.setQuantityInputValue = this.setQuantityInputValue.bind(this);
   }
@@ -23,10 +25,16 @@ export default class Select extends Component {
       this.setSquarespaceSelectValue(this.props.title, value);
     }
     this.toggleSelect();
-    this.props.updatePrice();
+    this.props.updatePrice("");
   }
   toggleSelect() {
     this.setState({ open: !this.state.open });
+  }
+  openSelect() {
+    this.setState({ open: true });
+  }
+  closeSelect() {
+    this.setState({ open: false });
   }
   componentDidMount() {
     this.setState({ title: this.props.title });
@@ -52,12 +60,13 @@ export default class Select extends Component {
     let { options } = this.props;
     let open = this.state.open ? "select--open" : "";
     return (
-      <div className={`select ${open}`}>
-        <div
-          className="select__title"
-          onClick={this.toggleSelect}>
-          {title}
-        </div>
+      <div
+        className={`select ${open}`}
+        onClick={this.toggleSelect}
+        onMouseEnter={() => { this.openSelect();  }}
+        onMouseLeave={() => { this.closeSelect(); }}
+      >
+        <div className="select__title">{title}</div>
         <ul className="select__list">
           {options.map((item, index) => (
             <li

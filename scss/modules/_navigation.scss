@@ -160,14 +160,20 @@
       position: absolute;
       top: 90%;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-53%);
       width: 50%;
       height: 2px;
       background-color: $red-accent;
       opacity: 0;
       transition: opacity 400ms ease;
+      .nav-scrolled & {
+        background-color: $white;
+      }
     }
-    &:hover:after {
+    .no-touch &:hover:after {
+      opacity: 1;
+    }
+    .nav__item--active &:after {
       opacity: 1;
     }
   }

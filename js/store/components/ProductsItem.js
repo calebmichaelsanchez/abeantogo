@@ -33,7 +33,7 @@ export default class ProductsItem extends Component {
         />
         <div className="products__info">
           <div className="products__title">{title}</div>
-          <div className="products__price">${pricePerPound}/lb</div>
+          <div className="products__price">from ${pricePerPound}</div>
         </div>
         <div className="products__overlay">
           <div className="products__overlay-title">{title}</div>

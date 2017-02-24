@@ -20,23 +20,28 @@
   display: block;
   position: relative;
   width: 100%;
-  max-width: 1440px;
+  max-width: 960px;
   background-color: $gray;
-  padding: percentage(115 / 975) percentage(115 / 1440);
-  //padding: percentage(115 / 975) percentage(115 / 1440);
+  padding: 100px 16px;
+  @include respond-to(ipad-portrait) {
+    padding: 100px 0;
+  }
   &__item {
+    position: relative;
     display: block;
     width: 100%;
     max-width: 615px;
-    @include respond-to(ipad-portrait) {
+    z-index: 5;
+    @include center();
+    @include respond-to(ipad-landscape) {
       float: right;
       clear: both;
     }
     &:first-of-type {
       margin-bottom: 50px;
-      @include respond-to(ipad-portrait) {
+      @include respond-to(ipad-landscape) {
         float: left;
-        margin-bottom: 180px;
+        margin-bottom: 100px;
       }
     }
   }
@@ -44,19 +49,21 @@
     display: none;
     position: absolute;
     top: -100px;
-    left: 765px;
+    left: 615px;
     width: 696px;
-    @include respond-to(ipad-portrait) {
+    z-index: 1;
+    @include respond-to(ipad-landscape) {
       display: block;
     }
   }
   &__beans {
-    display: block;
+    display: none;
     position: absolute;
-    top: 510px;
-    right: 836px;
+    bottom: -470px;
+    right: 655px;
     width: 630px;
-    @include respond-to(ipad-portrait) {
+    z-index: 1;
+    @include respond-to(ipad-landscape) {
       display: block;
     }
   }
@@ -72,6 +79,7 @@
   position: relative;
   text-align: right;
   font-size: 0;
+  h1 { @include divider(55px, 25px 0 30px); }
   &:before {
     content: '';
     display: none;

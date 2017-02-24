@@ -10,30 +10,66 @@ class Store extends Component {
     this.state = {
       items: [],
       categories: [],
-      category: "Regular"
+      tags: [],
+      category: "Coffee",
+      tag: "Regular"
     }
     this.setFilter = this.setFilter.bind(this);
+    this.updateTags = this.updateTags.bind(this);
   }
   componentDidMount() {
     axios("/store?format=json")
       .then((response) => {
-        console.log(response);
         this.setState({
           items: response.data.items,
-          categories: response.data.collection.categories
+          categories: response.data.collection.categories,
+          tags: response.data.collection.tags
         });
+      })
+      .then(() => {
+        this.updateTags(this.state.category);
       })
       .catch((response) => {
         console.log(response);
       });
   }
-  setFilter(category) {
-    this.setState({ category: category });
+  setFilter(type, filter) {
+    if (type === "category") {
+      // http://stackoverflow.com/questions/31400468/react-js-you-called-setstate-with-a-callback-that-isnt-callable
+      this.setState({ category: filter }, this.updateTags(filter));
+    } else {
+      this.setState({ tag: filter });
+    }
+  }
+  updateTags(category) {
+    let tags = [];
+    // loop through all of the products
+    this.state.items.forEach((item) => {
+      // check to see if filter is in categories array
+      // if it is then add the tag for that product
+      if (item.categories.indexOf(category) !== -1) {
+        // loop through the tags of each product
+        item.tags.forEach((tag) => {
+          // http://stackoverflow.com/questions/1988349/array-push-if-does-not-exist
+          // check to see if the tag is already in the tags array
+          if (tags.indexOf(tag) === -1) {
+            // push tags to the tags array
+            tags.push(tag);
+          }
+        });
+      }
+    });
+    this.setState({ tags: tags });
+    if (tags.length > 0) {
+      this.setFilter("tag", tags[0]);
+    } else {
+      this.setFilter("tag", "");
+    }
   }
   render() {
     return (
       <div>
-        {this.state.items.length > 0 ? <ProductsList categories={this.state.categories} category={this.state.category} setFilter={this.setFilter} items={this.state.items} /> : null}
+        {this.state.items.length > 0 ? <ProductsList categories={this.state.categories} category={this.state.category} tags={this.state.tags} tag={this.state.tag} setFilter={this.setFilter} items={this.state.items} /> : null}
       </div>
     )
   }

@@ -3,31 +3,30 @@ import ProductsItem from "./ProductsItem";
 import CategoryList from "./CategoryList";
 import { toDollars } from "../../util/helpers";
 
-const titles = {
-  "Regular": "Regular Coffee",
-  "Flavored": "Flavored Coffee",
-  "Decaf": "Decaf Coffee",
-  "Flavored Decaf": "Flavored Decaf Coffee",
-  "Espresso": "Espresso",
-  "coffee-club": "Coffee Club"
-};
-
 export default class ProductsList extends Component {
   constructor(props) {
     super(props);
     this.filterList = this.filterList.bind(this);
   }
-  filterList(category) {
-    return item => { if (item.categories.indexOf(category) !== -1) return item };
+  filterList(type, filter) {
+    if (type === "category") {
+      return item => { if (item.categories.indexOf(filter) !== -1) return item };
+    } else {
+      if (filter === "") {
+        return item => { return item };
+      } else {
+        return item => { if (item.tags.indexOf(filter) !== -1) return item };
+      }
+    }
   }
   render() {
-    let { category, setFilter, items } = this.props;
+    let { category, setFilter, items, tag } = this.props;
     return (
       <div>
-        <CategoryList categories={this.props.categories} setFilter={setFilter} />
+        <CategoryList category={this.props.category} categories={this.props.categories} tags={this.props.tags} setFilter={setFilter} />
         <div className="products">
-          <h2>{category}</h2>
-          {items.filter(this.filterList(category)).map((item) => {
+          <h2>{tag}</h2>
+          {items.filter(this.filterList("category", category)).filter(this.filterList("tag", tag)).map((item) => {
             return (
               <ProductsItem
                 key={item.id}
@@ -35,7 +34,7 @@ export default class ProductsList extends Component {
                 image={item.assetUrl}
                 excerpt={item.excerpt}
                 url={item.fullUrl}
-                pricePerPound={toDollars(item.variants[8].price)}
+                pricePerPound={toDollars(item.variants[0].price)}
               />
             )
           })}

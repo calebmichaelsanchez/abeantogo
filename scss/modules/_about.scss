@@ -1,0 +1,14 @@
+.about {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding: 50px 16px;
+  @include respond-to(ipad-portrait) {
+    padding: 100px 32px;
+  }
+  &__inner {
+    @include center();
+    width: 100%;
+    max-width: 640px;
+  }
+}

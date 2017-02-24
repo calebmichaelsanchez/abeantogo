@@ -5,28 +5,10 @@ import { strip } from "../util/helpers";
 export default class PageBlurb extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      title: "",
-      description: "",
-      fullUrl: ""
-    }
-  }
-  componentDidMount() {
-    axios.get(`/${this.props.url}?format=json`)
-      .then((response) => {
-        this.setState({
-          title: response.data.collection.title,
-          description: response.data.collection.description,
-          fullUrl: response.data.collection.fullUrl,
-        });
-      })
-      .catch((response) => {
-        console.log(response);
-      });
   }
   render() {
     let { button } = this.props;
-    let { title, description, fullUrl } = this.state;
+    let { title, description, fullUrl } = this.props.data.collection;
 
     return (
       <div className="blurb">
@@ -35,6 +17,5 @@ export default class PageBlurb extends Component {
         <a href={fullUrl} className="btn">{button}</a>
       </div>
     )
-
   }
 }

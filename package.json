@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "axios": "^0.13.1",
+    "immutability-helper": "^2.1.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   }

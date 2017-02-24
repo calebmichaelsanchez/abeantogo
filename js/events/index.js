@@ -10,23 +10,26 @@ class Events extends Component {
     this.state = {
       upcoming: []
     }
-    // this.setFilter = this.setFilter.bind(this);
   }
+
   componentDidMount() {
+    this.calendar = document.querySelectorAll(".event-calendar")[0];
     axios("/events?format=json")
       .then((response) => {
         console.log(response);
         this.setState({
           upcoming: response.data.upcoming
         });
+        if (response.data.upcoming.length % 2 === 0) {
+          this.calendar.classList.add("light");
+        } else {
+          this.calendar.classList.add("dark");
+        }
       })
       .catch((response) => {
         console.log(response);
       });
   }
-  // setFilter(category) {
-  //   this.setState({ category: category });
-  // }
   render() {
     return (
       <div>

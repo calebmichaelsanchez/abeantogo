@@ -1,19 +1,12 @@
 import React, { Component } from "react";
-import { procEvent } from "../../util/helpers";
+import { procEvent, getBody } from "../../util/helpers";
 
 export default class EventItem extends Component {
   constructor() {
     super();
-
-    this.getBody = this.getBody.bind(this);
-  }
-  getBody(string) {
-    let div = document.createElement("div");
-    div.innerHTML = string;
-    return div.firstChild;
   }
   componentDidMount() {
-    this.body.append(this.getBody(this.props.item.body));
+    this.body.append(getBody(this.props.item.body));
     // This allows the squarespace image loader to
     // grab images that have been added to the
     // wysiwyg by clients
