@@ -72,12 +72,32 @@
   }
   &__item {
     @include font-sans();
+    position: relative;
     display: inline-block;
     padding: 0 15px 20px;
     font-size: $small-size;
     letter-spacing: .15rem;
     color: $white;
     cursor: pointer;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translateX(-53%);
+      width: 50%;
+      height: 2px;
+      background-color: $red;
+      opacity: 0;
+      transition: opacity 400ms ease;
+    }
+    .no-touch &:hover:after {
+      opacity: 1;
+    }
+    &--active:after {
+      opacity: 1;
+    }
   }
 }
 .products {

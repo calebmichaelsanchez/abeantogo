@@ -24,7 +24,7 @@ class Home extends Component {
   render() {
     let { image } = this.state;
     return (
-      <div>
+      <div className="welcome">
         <Hero image={image} />
         <div className="learn-more">
           <div className="learn-more__item">

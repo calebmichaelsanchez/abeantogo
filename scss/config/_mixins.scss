@@ -198,3 +198,16 @@ $breakpoints: (
 @mixin right() {
   margin-left: auto;
 }
+
+
+@mixin hero($height) {
+  position: relative;
+  width: 100%;
+  height: $height;
+  padding-left: 32px;
+  padding-right: 32px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
+}

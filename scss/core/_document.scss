@@ -35,7 +35,7 @@ a {
 main:not(#welcome) {
   padding-top: 60px;
   @include respond-to(mobile-plus) {
-    padding-top: 75px;
+    padding-top: 78px;
   }
 }
 main#contact {

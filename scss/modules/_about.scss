@@ -2,13 +2,183 @@
   display: block;
   width: 100%;
   position: relative;
-  padding: 50px 16px;
-  @include respond-to(ipad-portrait) {
-    padding: 100px 32px;
+  .hero {
+    @include hero(35vh);
+    background-image: url("/assets/about-hero.jpg");
+    &__inner {
+      display: block;
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      @include font-serif();
+      font-size: 35px;
+      color: #fff;
+      letter-spacing: .4rem;
+      font-style: italic;
+      text-transform: uppercase;
+    }
   }
   &__inner {
     @include center();
     width: 100%;
-    max-width: 640px;
+    max-width: 960px;
+    padding: 50px 16px;
+    @include respond-to(ipad-portrait) {
+      padding: 100px 32px;
+    }
+  }
+  &__beans {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 50px 16px;
+    background-color: $light-gray;
+    @include respond-to(ipad-portrait) {
+      padding: 100px 72px;
+    }
+    &-inner {
+      position: relative;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &-image {
+      position: absolute;
+      display: block;
+      top: 66%;
+      left: 680px;
+      max-width: none;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+    .blurb {
+      position: relative;
+      max-width: 630px;
+      @include center();
+      @include respond-to(ipad-portrait) {
+        margin-left: 0;
+      }
+    }
+  }
+  &__roaster {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-color: $gray;
+    text-align: right;
+    font-size: 0;
+    &:before {
+      content: '';
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: percentage(560 / 1440);
+      height: 100%;
+      background: url("/assets/about-roaster.jpg") no-repeat center center;
+      background-size: cover;
+      @include respond-to(ipad-portrait) {
+        display: block;
+      }
+    }
+    &-inner {
+      display: inline-block;
+      text-align: left;
+      width: 100%;
+      vertical-align: top;
+      padding: 50px 16px;
+      @include respond-to(ipad-portrait) {
+        width: percentage(880 / 1440);
+        padding: 100px 72px;
+      }
+    }
+    .blurb {
+      position: relative;
+      max-width: 630px;
+      @include divider(55px, 25px 0 0);
+      @include center();
+      @include respond-to(ipad-portrait) {
+        margin-left: 0;
+      }
+    }
+  }
+  &__bags {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-color: $light-gray;
+    text-align: right;
+    font-size: 0;
+    &:before {
+      content: '';
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: percentage(740 / 1440);
+      height: 100%;
+      background: url("/assets/about-burlap.jpg") no-repeat center center;
+      background-size: cover;
+      @include respond-to(ipad-landscape) {
+        display: block;
+      }
+    }
+    &-inner {
+      display: inline-block;
+      text-align: left;
+      width: 100%;
+      vertical-align: top;
+      padding: 50px 16px;
+      @include respond-to(ipad-landscape) {
+        width: percentage(700 / 1440);
+        padding: 100px 72px;
+      }
+    }
+    .blurb {
+      position: relative;
+      max-width: 630px;
+      @include center();
+      @include respond-to(ipad-landscape) {
+        margin-left: 0;
+      }
+    }
+  }
+  &__logo {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 50px 16px;
+    background-color: $light-gray;
+    @include respond-to(ipad-portrait) {
+      padding: 100px 72px;
+    }
+    &-inner {
+      position: relative;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &-image {
+      position: absolute;
+      display: block;
+      top: -50px;
+      left: 680px;
+      max-width: none;
+      z-index: 1;
+      @include respond-to(ipad-portrait) {
+        top: -100px;
+      }
+    }
+    .blurb {
+      position: relative;
+      max-width: 630px;
+      @include center();
+      @include respond-to(ipad-portrait) {
+        margin-left: 0;
+      }
+    }
   }
 }

@@ -6,7 +6,8 @@ export default class CategoryList extends Component {
     this.state = {
       tagsActive: true,
       categoryClickTarget: "Coffee",
-      activeIndex: 0
+      activeCategoryIndex: 0,
+      activeTagIndex: 0
     }
     this.toggleTags = this.toggleTags.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -19,9 +20,13 @@ export default class CategoryList extends Component {
       this.setState({ categoryClickTarget: event.target.innerHTML });
     }
   }
-  handleClick(index) {
+  handleClick(index, type) {
     // http://stackoverflow.com/questions/40792164/change-active-element-in-a-list-using-react
-    this.setState({ activeIndex: index });
+    if (type === "category") {
+      this.setState({ activeCategoryIndex: index });
+    } else {
+      this.setState({ activeTagIndex: index });
+    }
   }
   render() {
     let tagsActive;
@@ -30,7 +35,7 @@ export default class CategoryList extends Component {
       <div className="filters">
         <ul className="categories">
           {this.props.categories.map((item, index) => {
-            const className = this.state.activeIndex === index ? "categories__item categories__item--active" : "categories__item";
+            let className = this.state.activeCategoryIndex === index ? "categories__item categories__item--active" : "categories__item";
             return (
               <li
                 key={index}
@@ -38,9 +43,9 @@ export default class CategoryList extends Component {
                 onClick={(event) => {
                   this.props.setFilter("category", item);
                   this.toggleTags(event);
-                  this.handleClick(index);
-                }}
-              >
+                  this.handleClick(index, "category");
+                  this.handleClick(0, "tag");
+                }}>
                 {item}
               </li>
             )
@@ -48,8 +53,19 @@ export default class CategoryList extends Component {
         </ul>
         <div className={`tags ${tagsActive}`}>
           <ul className="tags__list">
-            {this.props.tags.map((item) => {
-              return (<li key={item} className="tags__item" onClick={() => this.props.setFilter("tag", item)}>{item}</li> )
+            {this.props.tags.map((item, index) => {
+              let className = this.state.activeTagIndex === index ? "tags__item tags__item--active" : "tags__item";
+              return (
+                <li
+                  key={item}
+                  className={className}
+                  onClick={() => {
+                    this.props.setFilter("tag", item);
+                    this.handleClick(index, "tag");
+                  }}>
+                  {item}
+                </li>
+              )
             })}
           </ul>
         </div>

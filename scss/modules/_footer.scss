@@ -2,13 +2,25 @@
 #about + .footer .footer__banner {
   width: 100%;
   height: 250px;
-  background: url("/assets/footer-chalk-board-angle.jpg") no-repeat center center;
+  background: url("/assets/home-mugs.jpg") no-repeat center center;
   background-size: cover;
 }
 .footer {
   position: relative;
   z-index: 10;
   background-color: $gray;
+  &__social {
+    width: 100%;
+    &-inner {
+      width: 100%;
+      max-width: 920px;
+      @include center;
+      padding-top: 40px;
+      .sqs-layout:not(.sqs-editing)>.sqs-row:first-child>[class*=sqs-col]:first-child>.sqs-block:last-child, .sqs-layout:not(.sqs-editing) .sqs-block+.sqs-row .sqs-block:not(.float):last-child {
+        padding: 0;
+      }
+    }
+  }
   &__info {
     text-align: center;
     font-size: 0;

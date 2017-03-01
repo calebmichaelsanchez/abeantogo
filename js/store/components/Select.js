@@ -63,8 +63,8 @@ export default class Select extends Component {
       <div
         className={`select ${open}`}
         onClick={this.toggleSelect}
-        onMouseEnter={() => { this.openSelect();  }}
-        onMouseLeave={() => { this.closeSelect(); }}
+        // onMouseEnter={() => { this.openSelect();  }}
+        // onMouseLeave={() => { this.closeSelect(); }}
       >
         <div className="select__title">{title}</div>
         <ul className="select__list">
