@@ -83,10 +83,10 @@
       content: '';
       display: block;
       position: absolute;
-      top: 70%;
+      top: 65%;
       left: 50%;
-      transform: translateX(-53%);
-      width: 50%;
+      transform: translateX(-50%);
+      width: 40%;
       height: 2px;
       background-color: $red;
       opacity: 0;
@@ -111,7 +111,12 @@
   @include respond-to(mobile-plus) {
     max-width: 940px;
   }
-  h2 { @include divider(100px, 20px auto 80px); }
+  & > h2 { margin-bottom: 80px; }
+  & > p {
+    text-align: center;
+    color: $white;
+    font-style: italic;
+  }
   &__item {
     position: relative;
     display: inline-block;
@@ -198,6 +203,7 @@
 // Individual Product Page
 // ==================================
 .product {
+  position: relative;
   @include center;
   width: 100%;
   max-width: 530px;
@@ -206,7 +212,7 @@
   text-align: center;
   @include respond-to(ipad-portrait) {
     max-width: 875px;
-    padding: 100px 32px;
+    padding: 160px 32px;
     text-align: left;
   }
   &__item {
@@ -266,6 +272,28 @@
   &__button {
     @include button();
     .product--coffee-club & { display: none; }
+  }
+  &__link {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    z-index: 1;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $white;
+    letter-spacing: .25rem;
+    @include font-sans();
+    @include respond-to(ipad-landscape) {
+      display: inline-block;
+    }
+    img {
+      display: block;
+      @include center();
+      margin-bottom: 25px;
+    }
   }
 }
 .select {

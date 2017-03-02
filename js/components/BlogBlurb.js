@@ -7,7 +7,6 @@ export default class BlogBlurb extends Component {
     super();
   }
   render() {
-    console.log(this.props);
     let { button } = this.props;
     let { title, excerpt, fullUrl } = this.props.data.items[0];
     return (

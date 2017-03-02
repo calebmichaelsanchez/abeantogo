@@ -103,3 +103,75 @@
     &:first-of-type { margin-bottom: 50px; }
   }
 }
+
+.monthly {
+  width: 100%;
+  background: url("/assets/home-monthly-origin.jpg") no-repeat center center;
+  background-size: cover;
+  padding: 50px 16px;
+  overflow: hidden;
+  @include respond-to(ipad-portrait) {
+    padding: 100px 16px;
+  }
+  &__inner {
+    width: 100%;
+    max-width: 875px;
+    @include center;
+    font-size: 0;
+    text-align: center;
+  }
+  &__item {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    z-index: 2;
+  }
+  &__image {
+    display: none;
+    @include respond-to(ipad-portrait) {
+      display: inline-block;
+      width: percentage(300 / 875);
+      margin-bottom: 0;
+      max-width: none;
+      //box-shadow: 13px 22px 50px 0px rgba(5, 5, 5, 0.68);
+    }
+  }
+  &__info {
+    text-align: left;
+    width: 100%;
+    max-width: 615px;
+    @include center;
+    @include respond-to(ipad-portrait) {
+      width: percentage(530 / 875);
+      margin-right: percentage(45 / 875);
+      margin-left: 0;
+    }
+  }
+  &__title, &__description {
+    color: $white;
+  }
+  &__title {
+    letter-spacing: 0.25rem;
+    margin-bottom: 75px;
+  }
+  &__description {
+    position: relative;
+    z-index: 2;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 300vw;
+      height: 150%;
+      top: 53%;
+      left: -50%;
+      transform: translate(-50%, -50%);
+      background: $red;
+      z-index: -1;
+    }
+  }
+  &__button {
+    margin-top: 75px;
+  }
+}

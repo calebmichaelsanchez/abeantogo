@@ -25,7 +25,7 @@ export default class ProductsList extends Component {
       <div>
         <CategoryList category={this.props.category} categories={this.props.categories} tags={this.props.tags} setFilter={setFilter} />
         <div className="products">
-          <h2>{tag}</h2>
+          {tag ? <h2>{tag}</h2> : <p>Check back for more products!</p>}
           {items.filter(this.filterList("category", category)).filter(this.filterList("tag", tag)).map((item) => {
             return (
               <ProductsItem

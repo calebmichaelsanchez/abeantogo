@@ -59,6 +59,10 @@ export default class ProductItem extends Component {
     let { title, assetUrl, excerpt, variantOptionOrdering, variants, categories } = this.props.item;
     return (
       <div className={`product ${imageStatus}`}>
+        <a href="/store" className="product__link">
+          <img src="/assets/store-back-button.png" />
+          Back
+        </a>
         <img
           onLoad={this.imageLoaded}
           onError={this.imageErrored}

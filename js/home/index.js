@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import Hero from "./components/Hero";
 import Blurb from "../components/Blurb";
+import MonthlyOrigin from "./components/MonthlyOrigin";
 
 class Home extends Component {
   constructor() {
@@ -37,6 +38,7 @@ class Home extends Component {
           <img src="/assets/home-beans.png" className="learn-more__beans"/>
         </div>
         <div className="hero-divider"></div>
+        <MonthlyOrigin />
         <div className="featured-blogs">
           <div className="featured-blogs__inner">
             <h1>Featured Events & News</h1>

@@ -88,9 +88,19 @@ html body input[type="submit"] {
   @include center();
   max-width: 960px;
   h2 {
-    margin-bottom: 50px;
+    color: $black;
+    @include divider(100px, 20px auto 40px);
   }
 }
 .sqs-fullpage-shopping-cart-content.empty .empty-message {
   text-align: center;
+  display: block;
+  width: 100%;
+  @include p();
+  a {
+    @include button();
+    display: block;
+    max-width: 300px;
+    @include center();
+  }
 }
