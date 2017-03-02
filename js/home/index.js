@@ -4,6 +4,7 @@ import axios from "axios";
 import Hero from "./components/Hero";
 import Blurb from "../components/Blurb";
 import MonthlyOrigin from "./components/MonthlyOrigin";
+import WellWith from "./components/WellWith";
 
 class Home extends Component {
   constructor() {
@@ -50,6 +51,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
+        <WellWith />
       </div>
     );
   }

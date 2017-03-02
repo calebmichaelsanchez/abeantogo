@@ -140,12 +140,12 @@ $breakpoints: (
   text-align: center;
 }
 
-@mixin button() {
+@mixin button($color: $red, $background-color: $white) {
   display: inline-block;
   font-size: $small-size;
-  color: $red;
+  color: $color;
   padding: 20px 35px;
-  background-color: $white;
+  background-color: $background-color;
   letter-spacing: .3rem;
   text-transform: uppercase;
   margin-top: 30px;
@@ -153,8 +153,8 @@ $breakpoints: (
   cursor: pointer;
   @include font-sans();
   .no-touch &:hover {
-    background-color: $red;
-    color: $white;
+    background-color: $color;
+    color: $background-color;
   }
 }
 

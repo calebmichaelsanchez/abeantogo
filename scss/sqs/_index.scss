@@ -104,3 +104,11 @@ html body input[type="submit"] {
     @include center();
   }
 }
+#confirmed-page {
+  max-width: 960px;
+  @include center;
+  padding: 50px 16px;
+  @include respond-to(ipad-portrait) {
+    padding: 100px 16px;
+  }
+}

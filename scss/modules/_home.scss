@@ -175,3 +175,72 @@
     margin-top: 75px;
   }
 }
+.wellwith {
+  position: relative;
+  background: $white;
+  width: 100%;
+  padding: 50px 16px;
+  overflow: hidden;
+  @include respond-to(ipad-portrait) {
+    padding: 100px 16px;
+  }
+  &__inner {
+    width: 100%;
+    max-width: 960px;
+    @include center;
+    font-size: 0;
+    text-align: center;
+    @include respond-to(ipad-portrait) {
+      text-align: right;
+    }
+  }
+  &__item {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    z-index: 2;
+  }
+  &__image {
+    display: none;
+    @include respond-to(ipad-portrait) {
+      display: block;
+      position: absolute;
+      right: 665px;
+      bottom: -150px;
+      width: 416px;
+      z-index: 1;
+    }
+    @include respond-to(ipad-landscape) {
+      right: 715px;
+    }
+  }
+  &__info {
+    text-align: left;
+    width: 100%;
+    max-width: 615px;
+    @include center;
+    @include respond-to(ipad-portrait) {
+      width: percentage(615 / 875);
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+  &__description {
+    color: #118d8d;
+  }
+  &__title {
+    margin-bottom: 60px;
+    @include respond-to(ipad-portrait) {
+      transform: translateX(-40px);
+    }
+  }
+  &__description {
+    position: relative;
+    z-index: 2;
+  }
+  &__button {
+    margin-top: 75px;
+    @include button($white, #118d8d);
+  }
+}

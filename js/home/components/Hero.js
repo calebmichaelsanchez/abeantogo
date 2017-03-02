@@ -7,7 +7,7 @@ export default class Hero extends Component {
   render() {
     let { image } = this.props;
     let style = {
-      backgroundImage: `url(${image})`
+      backgroundImage: `url(${image}?format=original)`
     }
     return (
       <div className="hero" style={style}>
