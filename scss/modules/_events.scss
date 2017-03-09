@@ -89,7 +89,10 @@
   width: 100%;
   background: url("/assets/wood-background.jpg") no-repeat center center fixed;
   background-size: cover;
-  padding: 50px 32px 100px;
+  padding: 0;
+  @include respond-to(ipad-portrait) {
+    padding: 50px 32px 100px;
+  }
   &__inner {
     width: 100%;
     max-width: 1024px;

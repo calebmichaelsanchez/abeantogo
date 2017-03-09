@@ -20,6 +20,7 @@ export function procEvent(element, eventType) {
   element.dispatchEvent(event);
 }
 
+// http://stackoverflow.com/questions/494143/creating-a-new-dom-element-from-an-html-string-using-built-in-dom-methods-or-pro
 export function getBody(string) {
   let div = document.createElement("div");
   div.innerHTML = string;
