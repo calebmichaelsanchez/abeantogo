@@ -1,0 +1,65 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2001;
+  &--hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 400ms ease, visbility 0s linear 400ms;
+  }
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 400ms ease, visibility 0s linear 0s;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .9);
+    z-index: 1999;
+  }
+  &__container {
+    position: absolute;
+    padding: 1rem;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: rem-calc(850);
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+  }
+  &__inner {
+    width: 100%;
+  }
+  &__image {
+    position: relative;
+    height: 0;
+    padding-bottom: percentage(1210 / 2010);
+    background: url("/assets/anniversary.jpg") no-repeat center center;
+    background-size: cover;
+  }
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: rem-calc(22);
+    color: $black;
+    background-color: rgba(255, 255, 255, .9);
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+    text-align: center;
+    cursor: pointer;
+    transform: translate(50%, -50%);
+  }
+}

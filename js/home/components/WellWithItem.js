@@ -1,12 +1,15 @@
 import React, { Component } from "react";
+import { procEvent } from "../../util/helpers";
 
 export default class WellWithItem extends Component {
   constructor() {
     super();
   }
+  componentDidMount() {
+    procEvent(window.document, "DOMContentLoaded");
+  }
   render() {
     let { body, assetUrl } = this.props.item;
-    console.log(body);
     return (
       <div className="wellwith">
         <div className="wellwith__inner">

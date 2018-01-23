@@ -2,33 +2,33 @@
   "name": "abeantogo",
   "version": "1.0.0",
   "description": "Squarespace Ecommerce site for Abeantogo Coffee",
-  "main": "index.js",
-  "config": {
-    "css_file": "./sqs_template/styles/screen.css",
-    "scss_file": "./scss/screen.scss"
-  },
-  "scripts": {
-    "build:js-dev": "webpack -d",
-    "build:js-prod": "webpack -p",
-    "build:css": "node-sass --include-path scss $npm_package_config_scss_file $npm_package_config_css_file",
-    "build:dev": "npm run build:js-dev && npm run build:css",
-    "build:prod": "npm-run-all build:js-prod build:css postbuild:css",
-    "postbuild:css": "postcss --use autoprefixer --autoprefixer.browsers 'last 2 versions' --output $npm_package_config_css_file $npm_package_config_css_file",
-    "watch": "npm-run-all --parallel watch:*",
-    "watch:js": "onchange \"./js\" -- npm run build:js-dev",
-    "watch:scss": "onchange \"./scss\" -- npm run build:css"
-  },
+  "author": "Caleb Sanchez",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/calebmichaelsanchez/abeantogo.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/calebmichaelsanchez/abeantogo/issues"
+  "config": {
+    "css_file": "./sqs_template/styles/screen.css",
+    "scss_file": "./scss/screen.scss",
+    "sqs_url": "https://caleb-sanchez-wbs9.squarespace.com"
   },
-  "homepage": "https://github.com/calebmichaelsanchez/abeantogo#readme",
+  "scripts": {
+    "js:dev": "webpack --config webpack.development.js",
+    "js:prod": "webpack --config webpack.production.js",
+    "sassy": "node-sass --include-path scss $npm_package_config_scss_file $npm_package_config_css_file",
+    "postcss": "postcss --use autoprefixer --autoprefixer.browsers 'last 5 versions' --output $npm_package_config_css_file $npm_package_config_css_file",
+    "css:dev": "npm-run-all sassy",
+    "css:prod": "npm-run-all sassy postcss",
+    "sqs:server": "squarespace-server $npm_package_config_sqs_url --directory=./sqs_template --auth",
+    "watch": "npm-run-all --parallel watch:scss watch:js sqs:server",
+    "watch:js": "onchange \"./js\" -- npm run js:dev",
+    "watch:scss": "onchange \"./scss\" -- npm run css:dev",
+    "start": "npm run watch",
+    "build": "npm-run-all js:prod css:prod",
+    "assemble": "squarespace assemble --directory=./sqs_template"
+  },
   "devDependencies": {
+    "@squarespace/toolbelt": "^0.8.4",
     "autoprefixer": "^6.7.1",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
@@ -38,7 +38,9 @@
     "npm-run-all": "^2.3.0",
     "onchange": "^3.2.1",
     "postcss-cli": "^2.6.0",
-    "webpack": "^1.13.1"
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.8.1",
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "axios": "^0.13.1",

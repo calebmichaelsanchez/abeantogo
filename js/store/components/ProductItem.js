@@ -85,9 +85,8 @@ export default class ProductItem extends Component {
             {variantOptionOrdering.map((select, index) => {
               if (Object.keys(this.state.options).length === 0 && this.state.options.constructor === Object) {
                 return null
-              } else {
-                return <Select key={index} title={select} options={options[select]} updatePrice={this.updatePrice} />
               }
+              return <Select key={index} title={select} options={options[select]} updatePrice={this.updatePrice} />
             })}
           </div>
           <div className="product__button" onClick={this.addToCart}>Add To Cart</div>

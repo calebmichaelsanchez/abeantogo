@@ -38,20 +38,7 @@ main:not(#welcome) {
     padding-top: 78px;
   }
 }
-main#contact {
-  background: url("/assets/contact-background.jpg") no-repeat center center;
-  background-size: cover;
-}
-.contact {
-  width: 100%;
-  max-width: 600px;
-  @include center;
-  padding: 50px 16px;
-  color: $white;
-  @include respond-to(ipad-portrait) {
-    padding: 100px 0;
-  }
-}
+
 
 /******************************************************************************
  * Box Sizing
@@ -60,6 +47,42 @@ main#contact {
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+.sqs-announcement-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  + .site-container {
+    main#welcome {
+      padding-top: 111px;
+      @media screen and (min-width: 556px) { padding-top: 96px }
+      @include respond-to(mobile-plus) { padding-top: 36px }
+      @include respond-to(ipad-landscape) { padding-top: 33px }
+    }
+    main:not(#welcome) {
+      padding-top: 111px;
+      @media screen and (min-width: 556px) { padding-top: 96px }
+      @include respond-to(mobile-plus) { padding-top: 114px }
+      @include respond-to(ipad-landscape) { padding-top: 111px }
+    }
+    nav {
+      top: 51px;
+      @media screen and (min-width: 556px) { top: 36px }
+      @include respond-to(ipad-landscape) { top: 33px }
+    }
+  }
+  &-hidden + .site-container {
+    main#welcome { padding-top: 0; }
+    main:not(#welcome) {
+      padding-top: 60px;
+      @include respond-to(mobile-plus) {
+        padding-top: 78px;
+      }
+    }
+    nav { top: 0; }
+  }
 }
 
 .site-container {

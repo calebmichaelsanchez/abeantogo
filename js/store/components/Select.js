@@ -37,11 +37,17 @@ export default class Select extends Component {
     this.setState({ open: false });
   }
   componentDidMount() {
-    this.setState({ title: this.props.title });
+    this.setState({ title: this.props.options[0] });
     this.selectCollection        = document.querySelectorAll("[data-variant-option-name]");
     this.selectArray             = [...this.selectCollection];
     this.quantityInputCollection = document.querySelectorAll("input[type=number]");
     this.quantityInput           = [...this.quantityInputCollection][0];
+    if (this.props.title === "Quantity") {
+      this.setQuantityInputValue(1);
+    } else {
+      this.setSquarespaceSelectValue(this.props.title, this.props.options[0]);
+    }
+    this.props.updatePrice("");
   }
   setSquarespaceSelectValue(select, value) {
     for (var i = 0; i < this.selectArray.length; i++) {
@@ -59,21 +65,13 @@ export default class Select extends Component {
     let { title } = this.state;
     let { options } = this.props;
     let open = this.state.open ? "select--open" : "";
+    console.log(this.props);
     return (
-      <div
-        className={`select ${open}`}
-        onClick={this.toggleSelect}
-        // onMouseEnter={() => { this.openSelect();  }}
-        // onMouseLeave={() => { this.closeSelect(); }}
-      >
+      <div className={`select ${open}`} onClick={this.toggleSelect} >
         <div className="select__title">{title}</div>
         <ul className="select__list">
           {options.map((item, index) => (
-            <li
-              key={`${item}-${index}`}
-              className="select__item"
-              onClick={this.handleClick}
-            >
+            <li key={`${item}-${index}`} className="select__item" onClick={this.handleClick}>
               {item}
             </li>
           ))}

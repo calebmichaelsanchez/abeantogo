@@ -5,14 +5,17 @@ import Hero from "./components/Hero";
 import Blurb from "../components/Blurb";
 import MonthlyOrigin from "./components/MonthlyOrigin";
 import WellWithContainer from "./components/WellWithContainer";
+import Popup from "../components/Popup";
 
 class Home extends Component {
   constructor() {
     super();
     this.state = {
       data: {},
-      image: ""
+      image: "",
+      popup: false
     }
+    this.renderPopup = this.renderPopup.bind(this);
   }
   componentDidMount() {
     axios("/?format=json")
@@ -22,11 +25,25 @@ class Home extends Component {
       .catch((response) => {
         console.log(response);
       });
+
+    let popup = window.localStorage.getItem('popup');
+    if (popup == null || !popup) {
+      this.setState({ popup: true });
+    } else {
+      this.setState({ popup: false });
+    }
+  }
+  renderPopup() {
+    if (!this.state.popup) {
+      return null
+    }
+    return <Popup wait={1000} />
   }
   render() {
     let { image } = this.state;
     return (
       <div className="welcome">
+        {this.renderPopup()}
         <Hero image={image} />
         <div className="learn-more">
           <div className="learn-more__item">

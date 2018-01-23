@@ -2,6 +2,7 @@
   let html = document.documentElement;
   let welcome = document.getElementById("welcome");
   let toggle = document.querySelectorAll(".nav__toggle")[0];
+  let bar = document.querySelectorAll(".sqs-announcement-bar");
   let latestKnownScroll = 0;
   let ticking = false;
 

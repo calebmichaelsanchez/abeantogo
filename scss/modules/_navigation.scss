@@ -171,10 +171,16 @@
       }
     }
     .no-touch &:hover:after {
-      opacity: 1;
+      opacity: 0;
+      @include respond-to(mobile-plus) {
+        opacity: 1;
+      }
     }
     .nav__item--active &:after {
-      opacity: 1;
+      opacity: 0;
+      @include respond-to(mobile-plus) {
+        opacity: 1;
+      }
     }
   }
 }
