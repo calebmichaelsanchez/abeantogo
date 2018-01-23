@@ -1,0 +1,9 @@
+p, ul    { @include p();  }
+a    { @include a();  }
+h1   { @include h1(); }
+h2   { @include h2(); }
+h3   { @include h3(); }
+h4   { @include h4(); }
+h6   { @include h6(); }
+.btn { @include button(); }
+em   { font-style: italic; }

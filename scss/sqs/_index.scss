@@ -1,0 +1,117 @@
+#sqs-shopping-cart-wrapper {
+  padding: 100px 32px;
+}
+html body .button.sqs-system.button.sqs-editable-button,
+body:not(.button-style-default).button-corner-style-square .sqs-editable-button,
+html body .form-wrapper input[type="submit"],
+html body input[type="submit"] {
+  font-size: $small-size;
+  color: $red;
+  background-color: $white;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+  transition: 600ms ease;
+  cursor: pointer;
+  border-radius: 0;
+  @include font-sans();
+  opacity: 1;
+  &:hover {
+    background-color: $red;
+    color: $white;
+    opacity: 1;
+  }
+}
+.absolute-cart-box {
+  top: 50%;
+  right: 0;
+  left: initial;
+  bottom: initial;
+  transform: translate(50%, -50%);
+  transition: transform 400ms ease;
+  .no-touch & {
+    transform: translate(70%, -50%);
+  }
+  .no-touch &:hover {
+    transform: translate(50%, -50%);
+  }
+  .sqs-pill-shopping-cart {
+    position: relative;
+    border-radius: 50%;
+    width: 190px;
+    height: 190px;
+    background-color: rgba($red, .75);
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 114%;
+      height: 114%;
+      border-radius: 50%;
+      border: 5px solid rgba($red, .75);
+      transform: translate(-50%, -50%);
+    }
+  }
+  .sqs-pill-shopping-cart-content {
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    background-image: none;
+    border-radius: 0;
+    min-width: auto;
+  }
+  .sqs-pill-shopping-cart-content.dark {
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    background-image: none;
+  }
+  .icon {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .details {
+    position: relative;
+    top: 47%;
+    transform: translateY(-50%);
+    .suffix { display: none; }
+  }
+  .subtotal { display: none; }
+}
+
+#sqs-shopping-cart-wrapper {
+  @include center();
+  max-width: 960px;
+  h2 {
+    color: $black;
+    @include divider(100px, 20px auto 40px);
+  }
+}
+.sqs-fullpage-shopping-cart-content.empty .empty-message {
+  text-align: center;
+  display: block;
+  width: 100%;
+  @include p();
+  a {
+    @include button();
+    display: block;
+    max-width: 300px;
+    @include center();
+  }
+}
+#confirmed-page {
+  max-width: 960px;
+  @include center;
+  padding: 50px 16px;
+  @include respond-to(ipad-portrait) {
+    padding: 100px 16px;
+  }
+}
+.yui3-squarespacecalendar .flyoutitem-title a {
+  font-size: 16px !important;
+}

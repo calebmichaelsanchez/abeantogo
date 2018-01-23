@@ -1,0 +1,97 @@
+/******************************************************************************
+ * User Agent
+*******************************************************************************/
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+/******************************************************************************
+ * Document
+*******************************************************************************/
+html {
+  background-color: $gray;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+body {
+  @include font-sans();
+  background-color: $gray;
+  color: $black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba( 0, 0, 0, 0 );
+  -webkit-touch-callout: none;
+}
+html,
+body {
+  height: 100%;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+main:not(#welcome) {
+  padding-top: 60px;
+  @include respond-to(mobile-plus) {
+    padding-top: 78px;
+  }
+}
+
+
+/******************************************************************************
+ * Box Sizing
+*******************************************************************************/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.sqs-announcement-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  + .site-container {
+    main#welcome {
+      padding-top: 111px;
+      @media screen and (min-width: 556px) { padding-top: 96px }
+      @include respond-to(mobile-plus) { padding-top: 36px }
+      @include respond-to(ipad-landscape) { padding-top: 33px }
+    }
+    main:not(#welcome) {
+      padding-top: 111px;
+      @media screen and (min-width: 556px) { padding-top: 96px }
+      @include respond-to(mobile-plus) { padding-top: 114px }
+      @include respond-to(ipad-landscape) { padding-top: 111px }
+    }
+    nav {
+      top: 51px;
+      @media screen and (min-width: 556px) { top: 36px }
+      @include respond-to(ipad-landscape) { top: 33px }
+    }
+  }
+  &-hidden + .site-container {
+    main#welcome { padding-top: 0; }
+    main:not(#welcome) {
+      padding-top: 60px;
+      @include respond-to(mobile-plus) {
+        padding-top: 78px;
+      }
+    }
+    nav { top: 0; }
+  }
+}
+
+.site-container {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.site-title-heading {
+  &:after {
+    display: none;
+  }
+}

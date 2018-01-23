@@ -1,0 +1,213 @@
+// ======================================
+// Media Queries
+// ======================================
+
+$breakpoints: (
+  'mobile'         : ( min-width: 480px  ),
+  'mobile-plus'    : ( min-width: 640px  ),
+  'ipad-portrait'  : ( min-width: 768px  ),
+  'ipad-landscape' : ( min-width: 1024px ),
+  'mbp-thirteen'   : ( min-width: 1280px ),
+  'mbp-fifteen'    : ( min-width: 1440px ),
+  'retina'         : ( min-width: 2880px )
+);
+
+@mixin respond-to($name) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $name) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+  // If the key doesnt exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+// ======================================
+// Fonts
+// ======================================
+
+@mixin font-normal() {
+  font-stretch: normal;
+}
+@mixin font-sans() {
+  font-family: $sans;
+  @include font-normal();
+}
+@mixin font-serif() {
+  font-family: $serif;
+  @include font-normal();
+}
+
+// ======================================
+// Fonts
+// ======================================
+
+@mixin b-sans() {
+  font-weight: 700;
+}
+@mixin b-serif() {
+  font-weight: 600;
+}
+@mixin p() {
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.075rem;
+  @include font-serif();
+  @include respond-to(ipad-landscape) {
+    font-size: $p-size;
+  }
+}
+@mixin a() {
+  color: $black;
+  display: inline;
+  font-size: $p-size;
+  text-decoration: none;
+  @include font-serif();
+  @include respond-to(ipad-landscape) {
+    font-size: $p-size;
+    font-size: 1.75vw;
+  }
+}
+@mixin h1() {
+  @include font-sans();
+  display: inline-block;
+  font-size: $h1-size;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: .1rem;
+  // &:after {
+  //   content: '';
+  //   display: block;
+  //   width: 55px;
+  //   height: 4px;
+  //   background-color: $red;
+  //   margin-top: 25px;
+  //   margin-bottom: 30px;
+  // }
+}
+@mixin h2() {
+  @include font-sans();
+  display: block;
+  position: relative;
+  font-size: $h2-size;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.25rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  // &:after {
+  //   content: '';
+  //   display: block;
+  //   position: relative;
+  //   width: 100px;
+  //   height: 4px;
+  //   background-color: $red;
+  //   margin: 20px auto 80px;
+  //   z-index: 1;
+  // }
+}
+@mixin h3() {
+  font-size: $h3-size;
+  font-weight: 700;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: $black;
+  @include font-sans();
+  // &:after {
+  //   content: '';
+  //   display: block;
+  //   width: 50px;
+  //   height: 4px;
+  //   background-color: $red;
+  //   margin-top: 20px;
+  //   margin-bottom: 20px;
+  // }
+}
+@mixin h4() {
+  font-size: $h4-size;
+}
+@mixin h6() {
+  font-size: $h6-size;
+  text-transform: uppercase;
+  letter-spacing: 0.6rem;
+  text-align: center;
+}
+
+@mixin button($color: $red, $background-color: $white) {
+  display: inline-block;
+  font-size: $small-size;
+  color: $color;
+  padding: 20px 35px;
+  background-color: $background-color;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+  margin-top: 30px;
+  transition: 600ms ease;
+  cursor: pointer;
+  @include font-sans();
+  .no-touch &:hover {
+    background-color: $color;
+    color: $background-color;
+  }
+}
+
+@mixin divider($width, $margin) {
+  &:after {
+    content: '';
+    display: block;
+    width: $width;
+    height: 4px;
+    background-color: $red;
+    margin: $margin;
+    z-index: 1;
+  }
+}
+
+// ======================================
+// Floats
+// ======================================
+
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// ======================================
+// Alignment
+// ======================================
+
+@mixin center() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin left() {
+  margin-right: auto;
+}
+
+@mixin right() {
+  margin-left: auto;
+}
+
+
+@mixin hero($height) {
+  position: relative;
+  width: 100%;
+  height: $height;
+  padding-left: 32px;
+  padding-right: 32px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
+}

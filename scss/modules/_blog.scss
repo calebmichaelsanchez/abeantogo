@@ -1,0 +1,91 @@
+.blogs {
+  position: relative;
+  width: 100%;
+  background: url("/assets/wood-background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  padding: 50px 32px 100px;
+  &__inner {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    @include center;
+    font-size: 0;
+    text-align: left;
+    @include respond-to(mobile-plus) {
+      max-width: 850px;
+    }
+    @include respond-to(ipad-landscape) {
+      max-width: 1024px;
+    }
+  }
+  &__item {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    vertical-align: top;
+    transition: transform 600ms ease;
+    .no-touch &:hover { transform: translateY(-25px); }
+    @include respond-to(mobile-plus) {
+      width: 50%;
+    }
+    @include respond-to(ipad-landscape) {
+      width: 33.33%;
+    }
+    &-inner {
+      padding: 30px;
+      background-color: $light-gray;
+    }
+  }
+  &__image {
+    position: relative;
+    width: 100%;
+    &-inner {
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+  }
+  &__title {
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: $p-xs-size;
+  }
+  &__date {
+    @include font-serif();
+    font-size: 16px;
+    letter-spacing: .1rem;
+    font-style: italic;
+    @include divider(35px, 10px 0 15px);
+  }
+}
+.blog-list-pagination,
+.blog-item-pagination {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: center;
+  a {
+    color: $white;
+    font-style: italic;
+    margin-left: 10px;
+    margin-right: 10px;
+    .no-touch &:hover { color: $white; }
+    &.disabled { display: none; }
+  }
+}
+.blog-list-pagination {
+  padding-top: 30px;
+}
+.blog-item-pagination {
+  text-align: left;
+  a {
+    color: $black;
+    .no-touch &:hover { color: $black; }
+  }
+}

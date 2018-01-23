@@ -1,0 +1,20 @@
+main#contact {
+  background: url("/assets/contact-background.jpg") no-repeat center center;
+  background-size: cover;
+}
+.contact {
+  width: 100%;
+  max-width: 600px;
+  @include center;
+  padding: 50px 16px;
+  color: $white;
+  @include respond-to(ipad-portrait) {
+    padding: 100px 0;
+  }
+  &__title {
+    @include divider(75%, 30px auto 15px);
+  }
+}
+.form-wrapper .field-list .field .field-element {
+  color: $black;
+}

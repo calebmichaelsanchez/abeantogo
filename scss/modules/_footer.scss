@@ -1,0 +1,52 @@
+#welcome + .footer .footer__banner,
+#about + .footer .footer__banner {
+  width: 100%;
+  height: 250px;
+  background: url("/assets/home-mugs.jpg") no-repeat center center;
+  background-size: cover;
+}
+.footer {
+  position: relative;
+  z-index: 10;
+  background-color: $gray;
+  &__social {
+    width: 100%;
+    &-inner {
+      width: 100%;
+      max-width: 920px;
+      @include center;
+      padding-top: 40px;
+      .sqs-layout:not(.sqs-editing)>.sqs-row:first-child>[class*=sqs-col]:first-child>.sqs-block:last-child, .sqs-layout:not(.sqs-editing) .sqs-block+.sqs-row .sqs-block:not(.float):last-child {
+        padding: 0;
+      }
+    }
+  }
+  &__info {
+    text-align: center;
+    font-size: 0;
+    max-width: 920px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    @include center;
+  }
+  &__item {
+    display: inline-block;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: $h4-size;
+    @include respond-to(ipad-landscape) {
+      width: 50%
+    }
+    p, a {
+      font-size: $h4-size;
+    }
+  }
+  &__title {
+    @include font-sans();
+    color: $red;
+    letter-spacing: .3rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+}
