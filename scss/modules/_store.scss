@@ -363,6 +363,8 @@
   }
 }
 
-#sqs-shopping-cart-wrapper {
+#sqs-cart-container {
   padding: 100px 32px;
+  max-width: rem-calc(960);
+  @include center();
 }

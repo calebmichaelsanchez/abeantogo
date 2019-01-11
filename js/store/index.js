@@ -45,7 +45,7 @@ class Store extends Component {
     let tags = [];
     // loop through all of the products
     this.state.items.forEach((item) => {
-      // check to see if filter is in categories array
+      // check to see if active category is in categories array
       // if it is then add the tag for that product
       if (item.categories.indexOf(category) !== -1) {
         // loop through the tags of each product
