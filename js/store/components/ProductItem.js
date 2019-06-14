@@ -25,7 +25,7 @@ export default class ProductItem extends Component {
     this.setState({ imageStatus: "product--errored" });
   }
   updatePrice(prefix) {
-    this.setState({ price: `${prefix}$${document.querySelectorAll(".sqs-money-native")[0].innerHTML}` });
+    this.setState({ price: `${prefix}${document.querySelectorAll(".product-cart-info .product-price")[0].innerHTML}` });
   }
   addToCart() {
     document.querySelectorAll(".sqs-add-to-cart-button")[0].click();

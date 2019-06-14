@@ -65,7 +65,7 @@ export default class Select extends Component {
     let { title } = this.state;
     let { options } = this.props;
     let open = this.state.open ? "select--open" : "";
-    console.log(this.props);
+    //console.log(this.props);
     return (
       <div className={`select ${open}`} onClick={this.toggleSelect} >
         <div className="select__title">{title}</div>
