@@ -253,7 +253,7 @@
   padding: 50px 16px;
   overflow: hidden;
   @include respond-to(ipad-portrait) {
-    padding: 100px 16px;
+    padding: 75px 16px;
   }
   &__inner {
     width: 100%;
