@@ -4,7 +4,7 @@ import axios from "axios";
 import Hero from "./components/Hero";
 import Blurb from "../components/Blurb";
 import MonthlyOrigin from "./components/MonthlyOrigin";
-import WellWithContainer from "./components/WellWithContainer";
+import Sponsorships from "./components/Sponsorships";
 import Popup from "../components/Popup";
 
 class Home extends Component {
@@ -61,13 +61,14 @@ class Home extends Component {
           <div className="featured-blogs__inner">
             <h1>Featured Events & News</h1>
             <div className="featured-blogs__item">
-              <Blurb type="EventBlurb" url="events" button="See Events" />
+              <Blurb url="events" button="See Events" type="EventBlurb"/>
             </div>
             <div className="featured-blogs__item">
               <Blurb url="blog" button="See Blog" type="BlogBlurb"/>
             </div>
           </div>
         </div>
+        <Sponsorships />
       </div>
     );
   }

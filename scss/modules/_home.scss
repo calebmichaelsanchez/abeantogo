@@ -245,3 +245,52 @@
     @include button($white, #118d8d);
   }
 }
+.sponsorships {
+  position: relative;
+  background-color: $gray;
+  border-top: 4px $white solid;
+  width: 100%;
+  padding: 50px 16px;
+  overflow: hidden;
+  @include respond-to(ipad-portrait) {
+    padding: 100px 16px;
+  }
+  &__inner {
+    width: 100%;
+    max-width: 960px;
+    @include center;
+    font-size: 0;
+    text-align: center;
+  }
+  h1 {
+    margin-bottom: 60px;
+  }
+}
+.sponsorship {
+  &__item {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    z-index: 2;
+    padding: 0 15px 20px;
+    @include respond-to(ipad-portrait) {
+      width: 50%;
+    }
+    @include respond-to(ipad-landscape) {
+      width: 25%;
+    }
+  }
+  &__image {
+    display: inline-block;
+    max-height: 140px;
+    margin-bottom: 15px;
+  }
+  &__link {
+    display: inline-block;
+  }
+  &__title {
+    text-align: center;
+
+  }
+}
