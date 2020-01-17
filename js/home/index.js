@@ -56,7 +56,7 @@ class Home extends Component {
           <img src="/assets/home-beans.png" className="learn-more__beans"/>
         </div>
         <div className="hero-divider"></div>
-        <MonthlyOrigin />
+        {/*<MonthlyOrigin />*/}
         <div className="featured-blogs">
           <div className="featured-blogs__inner">
             <h1>Featured Events & News</h1>

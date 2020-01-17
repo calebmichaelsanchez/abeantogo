@@ -14,7 +14,7 @@ export default class WellWithItem extends Component {
       <div className="sponsorship__item">
         <a target="_blank" href={clickthroughUrl} className="sponsorship__link">
           <img className="sponsorship__image" src={assetUrl} />
-          <h3 className="sponsorship__title">{title}</h3>
+          {/* <h3 className="sponsorship__title">{title}</h3> */}
         </a>
       </div>
     )

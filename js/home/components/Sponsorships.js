@@ -20,12 +20,17 @@ export default class Sponsorships extends Component {
       });
   }
   render() {
+    let { items } = this.state;
     return (
       <div className="sponsorships">
         <div className="sponsorships__inner">
           <h1>Friends We Sponsor</h1>
           <div className="sponsorship">
-            {this.state.items.length > 0 ? <SponsorItem item={this.state.items[0]} /> : null}
+            {items.map((item, index) => {
+              return (
+                <SponsorItem item={item} />
+              )
+            })}
           </div>
         </div>
       </div>
