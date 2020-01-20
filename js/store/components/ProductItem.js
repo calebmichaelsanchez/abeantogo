@@ -17,6 +17,7 @@ export default class ProductItem extends Component {
     this.imageLoaded = this.imageLoaded.bind(this);
     this.imageErrored = this.imageErrored.bind(this);
     this.updatePrice = this.updatePrice.bind(this);
+    this.isItAGiftCard = this.isItAGiftCard.bind(this);
   }
   imageLoaded() {
     this.setState({ imageStatus: "product--loaded" });
@@ -26,6 +27,16 @@ export default class ProductItem extends Component {
   }
   updatePrice(prefix) {
     this.setState({ price: `${prefix}${document.querySelectorAll(".product-cart-info .product-price")[0].innerHTML}` });
+  }
+  isItAGiftCard(urlId) {
+    if (urlId != "gift-card"){
+    return(
+      <Select
+        title="Quantity"
+        options={this.state.quantity}
+        updatePrice={this.updatePrice}
+      />
+    )}
   }
   addToCart() {
     document.querySelectorAll(".sqs-add-to-cart-button")[0].click();
@@ -56,7 +67,8 @@ export default class ProductItem extends Component {
   }
   render() {
     let { imageStatus, options, price } = this.state;
-    let { title, assetUrl, excerpt, variantOptionOrdering, variants, categories } = this.props.item;
+    let { title, assetUrl, excerpt, variantOptionOrdering, variants, categories, urlId } = this.props.item;
+    console.log(this.props.item);
     return (
       <div className={`product ${imageStatus}`}>
         <a href="/store" className="product__link">
@@ -77,11 +89,7 @@ export default class ProductItem extends Component {
           <div className="product__excerpt">{strip(excerpt)}</div>
           <div className="product__price">{price}</div>
           <div className="product__variants">
-            <Select
-              title="Quantity"
-              options={this.state.quantity}
-              updatePrice={this.updatePrice}
-            />
+            {this.isItAGiftCard(urlId)}
             {variantOptionOrdering.map((select, index) => {
               if (Object.keys(this.state.options).length === 0 && this.state.options.constructor === Object) {
                 return null
