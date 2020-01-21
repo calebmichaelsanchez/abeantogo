@@ -26,12 +26,12 @@ class Home extends Component {
         console.log(response);
       });
 
-    let popup = window.localStorage.getItem('popup');
-    if (popup == null || !popup) {
-      this.setState({ popup: true });
-    } else {
-      this.setState({ popup: false });
-    }
+    // let popup = window.localStorage.getItem('popup');
+    // if (popup == null || !popup) {
+    //   this.setState({ popup: true });
+    // } else {
+    //   this.setState({ popup: false });
+    // }
   }
   renderPopup() {
     if (!this.state.popup) {
@@ -43,7 +43,7 @@ class Home extends Component {
     let { image } = this.state;
     return (
       <div className="welcome">
-        {this.renderPopup()}
+        {/*this.renderPopup()*/}
         <Hero image={image} />
         <div className="learn-more">
           <div className="learn-more__item">

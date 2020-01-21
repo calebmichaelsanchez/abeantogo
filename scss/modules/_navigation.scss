@@ -20,11 +20,11 @@
     left: 0;
     background-color: $red;
     z-index: 5;
-    @include respond-to(mobile-plus) {
+    @include respond-to(ipad-landscape) {
       display: none;
     }
   }
-  @include respond-to(mobile-plus) {
+  @include respond-to(ipad-landscape) {
     margin-top: 10vh;
     padding-top: 0;
     padding-bottom: 0;
@@ -35,7 +35,7 @@
     padding-top: 30px;
     padding-bottom: 30px;
     background-color: $red;
-    @include respond-to(mobile-plus) {
+    @include respond-to(ipad-landscape) {
       padding-top: 15px;
       padding-bottom: 15px;
     }
@@ -64,7 +64,7 @@
     width: 60px;
     height: 100%;
     z-index: 10;
-    @include respond-to(mobile-plus) {
+    @include respond-to(ipad-landscape) {
       display: none;
     }
   }
@@ -121,22 +121,19 @@
     .nav-active & {
       transform: translateY(0);
     }
-    @include respond-to(mobile-plus) {
+    @include respond-to(ipad-landscape) {
       position: relative;
       top: 0;
       left: 0;
       transform: none;
       border: none;
       background-color: transparent;
-      text-align: right;
-    }
-    @include respond-to(ipad-portrait) {
       text-align: center;
     }
   }
   &__item {
     display: block;
-    @include respond-to(mobile-plus) {
+    @include respond-to(ipad-landscape) {
       display: inline-block;
     }
   }
@@ -151,7 +148,7 @@
     width: 100%;
     border-bottom: 1px solid $white;
     @include font-sans;
-    @include respond-to(mobile-plus) {
+    @include respond-to(ipad-landscape) {
       border: none;
     }
     &:after {
@@ -172,13 +169,13 @@
     }
     .no-touch &:hover:after {
       opacity: 0;
-      @include respond-to(mobile-plus) {
+      @include respond-to(ipad-landscape) {
         opacity: 1;
       }
     }
     .nav__item--active &:after {
       opacity: 0;
-      @include respond-to(mobile-plus) {
+      @include respond-to(ipad-landscape) {
         opacity: 1;
       }
     }
