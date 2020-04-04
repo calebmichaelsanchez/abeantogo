@@ -1,5 +1,11 @@
 p, ul    { @include p();  }
-a    { @include a();  }
+a    {
+  @include a();
+  #sqs-cart-root & {
+    font-family: $sans;
+    color: $red;
+  }
+}
 h1   { @include h1(); }
 h2   { @include h2(); }
 h3   { @include h3(); }

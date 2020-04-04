@@ -42,10 +42,15 @@ export default class Select extends Component {
     this.selectArray             = [...this.selectCollection];
     this.quantityInputCollection = document.querySelectorAll("input[type=number]");
     this.quantityInput           = [...this.quantityInputCollection][0];
+    console.log(this.props.title);
     if (this.props.title === "Quantity") {
       this.setQuantityInputValue(1);
     } else {
       this.setSquarespaceSelectValue(this.props.title, this.props.options[0]);
+    }
+    if (this.props.title === "Size") {
+      this.setSquarespaceSelectValue("Size", this.props.options[1]);
+      this.setState({ title: this.props.options[1]});
     }
     this.props.updatePrice("");
   }

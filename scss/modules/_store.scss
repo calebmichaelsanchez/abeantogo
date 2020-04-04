@@ -244,7 +244,7 @@
   }
   &__excerpt {
     @include p();
-    font-style: italic;
+    //font-style: italic;
     color: $white;
     margin-bottom: 15px;
   }

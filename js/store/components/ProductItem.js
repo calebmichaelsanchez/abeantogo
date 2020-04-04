@@ -28,8 +28,8 @@ export default class ProductItem extends Component {
   updatePrice(prefix) {
     this.setState({ price: `${prefix}${document.querySelectorAll(".product-cart-info .product-price")[0].innerHTML}` });
   }
-  isItAGiftCard(urlId) {
-    if (urlId != "gift-card"){
+  isItAGiftCard(urlId, isSubscribable) {
+    if (urlId != "gift-card" && isSubscribable == false ){
     return(
       <Select
         title="Quantity"
@@ -67,8 +67,9 @@ export default class ProductItem extends Component {
   }
   render() {
     let { imageStatus, options, price } = this.state;
-    let { title, assetUrl, excerpt, variantOptionOrdering, variants, categories, urlId } = this.props.item;
-    console.log(this.props.item);
+    let { title, assetUrl, excerpt, variantOptionOrdering, variants, categories, urlId, isSubscribable, body } = this.props.item;
+    let cartText = isSubscribable ? "Subscribe" : "Add To Cart";
+    //console.log(this.props.item);
     return (
       <div className={`product ${imageStatus}`}>
         <a href="/store" className="product__link">
@@ -86,10 +87,10 @@ export default class ProductItem extends Component {
         />
         <div className="product__item product__info">
           <div className="product__title">{title}</div>
-          <div className="product__excerpt">{strip(excerpt)}</div>
+          <div className="product__excerpt" dangerouslySetInnerHTML={{ __html: body }}/>
           <div className="product__price">{price}</div>
           <div className="product__variants">
-            {this.isItAGiftCard(urlId)}
+            {this.isItAGiftCard(urlId, isSubscribable)}
             {variantOptionOrdering.map((select, index) => {
               if (Object.keys(this.state.options).length === 0 && this.state.options.constructor === Object) {
                 return null
@@ -97,7 +98,7 @@ export default class ProductItem extends Component {
               return <Select key={index} title={select} options={options[select]} updatePrice={this.updatePrice} />
             })}
           </div>
-          <div className="product__button" onClick={this.addToCart}>Add To Cart</div>
+          <div className="product__button" onClick={this.addToCart}>{cartText}</div>
         </div>
       </div>
     )
