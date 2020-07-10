@@ -40,17 +40,22 @@ export default class Select extends Component {
     this.setState({ title: this.props.options[0] });
     this.selectCollection        = document.querySelectorAll("[data-variant-option-name]");
     this.selectArray             = [...this.selectCollection];
+    this.sizeSelectList          = [...document.querySelectorAll(".select--Size .select__list .select__item")]
     this.quantityInputCollection = document.querySelectorAll("input[type=number]");
     this.quantityInput           = [...this.quantityInputCollection][0];
-    console.log(this.props.title);
     if (this.props.title === "Quantity") {
       this.setQuantityInputValue(1);
     } else {
       this.setSquarespaceSelectValue(this.props.title, this.props.options[0]);
     }
     if (this.props.title === "Size") {
-      this.setSquarespaceSelectValue("Size", this.props.options[1]);
-      this.setState({ title: this.props.options[1]});
+      if (this.sizeSelectList.length <= 1) {
+        this.setSquarespaceSelectValue("Size", this.props.options[0]);
+        this.setState({ title: this.props.options[0]});
+      } else {
+        this.setSquarespaceSelectValue("Size", this.props.options[1]);
+        this.setState({ title: this.props.options[1]});
+      }
     }
     this.props.updatePrice("");
   }
@@ -70,9 +75,8 @@ export default class Select extends Component {
     let { title } = this.state;
     let { options } = this.props;
     let open = this.state.open ? "select--open" : "";
-    //console.log(this.props);
     return (
-      <div className={`select ${open}`} onClick={this.toggleSelect} >
+      <div className={`select ${open} select--${this.props.title}`} onClick={this.toggleSelect} >
         <div className="select__title">{title}</div>
         <ul className="select__list">
           {options.map((item, index) => (

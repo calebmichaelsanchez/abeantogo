@@ -26,7 +26,7 @@ export default class ProductItem extends Component {
     this.setState({ imageStatus: "product--errored" });
   }
   updatePrice(prefix) {
-    this.setState({ price: `${prefix}${document.querySelectorAll(".product-cart-info .product-price")[0].innerHTML}` });
+    this.setState({ price: `${document.querySelectorAll(".product-cart-info .product-price")[0].innerHTML}` });
   }
   isItAGiftCard(urlId, isSubscribable) {
     if (urlId != "gift-card" && isSubscribable == false ){
@@ -69,7 +69,6 @@ export default class ProductItem extends Component {
     let { imageStatus, options, price } = this.state;
     let { title, assetUrl, excerpt, variantOptionOrdering, variants, categories, urlId, isSubscribable, body } = this.props.item;
     let cartText = isSubscribable ? "Subscribe" : "Add To Cart";
-    //console.log(this.props.item);
     return (
       <div className={`product ${imageStatus}`}>
         <a href="/store" className="product__link">
@@ -88,7 +87,7 @@ export default class ProductItem extends Component {
         <div className="product__item product__info">
           <div className="product__title">{title}</div>
           <div className="product__excerpt" dangerouslySetInnerHTML={{ __html: body }}/>
-          <div className="product__price">{price}</div>
+          <div className="product__price" dangerouslySetInnerHTML={{ __html: price}} />
           <div className="product__variants">
             {this.isItAGiftCard(urlId, isSubscribable)}
             {variantOptionOrdering.map((select, index) => {
