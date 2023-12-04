@@ -8,15 +8,15 @@
     "url": "git+https://github.com/calebmichaelsanchez/abeantogo.git"
   },
   "config": {
-    "css_file": "./sqs_template/styles/screen.css",
-    "scss_file": "./scss/screen.scss",
-    "sqs_url": "https://caleb-sanchez-wbs9.squarespace.com"
+    "css": "./sqs_template/styles/screen.css",
+    "scss": "./scss/screen.scss",
+    "url": "https://caleb-sanchez-wbs9.squarespace.com"
   },
   "scripts": {
+    "sassy": "sass -wc --verbose $npm_package_config_scss:$npm_package_config_css",
+    "postcss": "postcss --use autoprefixer -o $npm_package_config_css $npm_package_config_css",
     "js:dev": "webpack --config webpack.development.js",
     "js:prod": "webpack --config webpack.production.js",
-    "sassy": "node-sass --include-path scss $npm_package_config_scss_file $npm_package_config_css_file",
-    "postcss": "postcss --use autoprefixer --autoprefixer.browsers 'last 5 versions' --output $npm_package_config_css_file $npm_package_config_css_file",
     "css:dev": "npm-run-all sassy",
     "css:prod": "npm-run-all sassy postcss",
     "sqs:server": "squarespace-server $npm_package_config_sqs_url --directory=./sqs_template --auth",
@@ -25,7 +25,7 @@
     "watch:scss": "onchange \"./scss\" -- npm run css:dev",
     "start": "npm run watch",
     "build": "npm-run-all js:prod css:prod",
-    "assemble": "squarespace assemble --directory=./sqs_template"
+    "assemble": "squarespace assemble --directory=./template"
   },
   "devDependencies": {
     "@squarespace/toolbelt": "^0.12.5",
