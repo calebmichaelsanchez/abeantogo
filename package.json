@@ -13,23 +13,22 @@
     "url": "https://caleb-sanchez-wbs9.squarespace.com"
   },
   "scripts": {
-    "sassy": "sass -wc --verbose $npm_package_config_scss:$npm_package_config_css",
-    "postcss": "postcss --use autoprefixer -o $npm_package_config_css $npm_package_config_css",
-    "js:dev": "webpack --config webpack.development.js",
+    "build": "squarespace assemble & npm run js:prod & npm run css:prod",
+    "watch": "squarespace assemble -wT & conc \"npm run css:dev\" \"npm run js:dev\"",
+    "server": "squarespace runserver -T",
+    "start": "squarespace setup && (npm run watch & npm run server)",
+    "deploy": "squarespace setup && squarespace deploy",
+    "js:dev": "webpack --config --watch webpack.development.js",
     "js:prod": "webpack --config webpack.production.js",
-    "css:dev": "npm-run-all sassy",
-    "css:prod": "npm-run-all sassy postcss",
-    "sqs:server": "squarespace-server $npm_package_config_sqs_url --directory=./sqs_template --auth",
-    "watch": "npm-run-all --parallel watch:scss watch:js sqs:server",
-    "watch:js": "onchange \"./js\" -- npm run js:dev",
-    "watch:scss": "onchange \"./scss\" -- npm run css:dev",
-    "start": "npm run watch",
-    "build": "npm-run-all js:prod css:prod",
-    "assemble": "squarespace assemble --directory=./template"
+    "postcss": "postcss --use autoprefixer -o $npm_package_config_css $npm_package_config_css",
+    "css:dev": "sass -wc --verbose $npm_package_config_scss:$npm_package_config_css",
+    "css:prod": "npm run sassy & postcss"
   },
   "devDependencies": {
     "@squarespace/toolbelt": "^0.12.5",
+    "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.2",
+    "postcss": "^8.4.32",
     "postcss-cli": "^10.1.0",
     "webpack": "^5.89.0"
   }
