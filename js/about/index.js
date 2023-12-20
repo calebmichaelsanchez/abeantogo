@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import axios from "axios";
 import { getBody } from "../util/helpers";
 import AboutContent from "./components/AboutContent";
@@ -32,7 +32,7 @@ class AboutContainer extends Component {
 }
 
 let About = document.getElementById("about");
-
 if (About) {
-  ReactDOM.render(<AboutContainer />, About);
+  const aboutPage = createRoot(About);
+  aboutPage.render(<AboutContainer />);
 }

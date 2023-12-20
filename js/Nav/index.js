@@ -32,12 +32,12 @@
       html.classList.remove('nav-scrolled');
     }
   }
-
-  if (!welcome) {
-    html.classList.add("nav-scrolled");
-  } else {
-    window.addEventListener('scroll', onScroll, false);
-  }
+  html.classList.add("nav-scrolled");
+  // if (!welcome) {
+  //   html.classList.add("nav-scrolled");
+  // } else {
+  //   window.addEventListener('scroll', onScroll, false);
+  // }
 
   toggle.addEventListener("click", onClick, false);
 

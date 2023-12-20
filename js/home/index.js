@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import axios from "axios";
-import Hero from "./components/Hero";
 import Blurb from "../components/Blurb";
-import MonthlyOrigin from "./components/MonthlyOrigin";
-import Sponsorships from "./components/Sponsorships";
+// import MonthlyOrigin from "./components/MonthlyOrigin";
+// import Sponsorships from "./components/Sponsorships";
 import Popup from "../components/Popup";
+import Hero from "./components/Hero";
 
 class Home extends Component {
   constructor() {
     super();
     this.state = {
       data: {},
-      image: "",
+      image: null,
       popup: false
     }
     this.renderPopup = this.renderPopup.bind(this);
@@ -25,7 +25,6 @@ class Home extends Component {
       .catch((response) => {
         console.log(response);
       });
-
     // let popup = window.localStorage.getItem('popup');
     // if (popup == null || !popup) {
     //   this.setState({ popup: true });
@@ -57,7 +56,7 @@ class Home extends Component {
         </div>
         <div className="hero-divider"></div>
         {/*<MonthlyOrigin />*/}
-        <div className="featured-blogs">
+        {/*<div className="featured-blogs">
           <div className="featured-blogs__inner">
             <h1>Featured Events & News</h1>
             <div className="featured-blogs__item">
@@ -67,15 +66,15 @@ class Home extends Component {
               <Blurb url="blog" button="See Blog" type="BlogBlurb"/>
             </div>
           </div>
-        </div>
-        <Sponsorships />
+        </div>*/}
       </div>
     );
   }
 }
 
 let Welcome = document.getElementById("welcome");
-
 if (Welcome) {
-  ReactDOM.render(<Home />, Welcome);
+  const homePage = createRoot(Welcome);
+  homePage.render(<Home />);
 }
+

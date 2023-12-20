@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import axios from "axios";
 import ProductsList from "./components/ProductsList";
 import ProductItem from "./components/ProductItem";
@@ -24,10 +24,7 @@ class Store extends Component {
           items: response.data.items,
           categories: response.data.collection.categories,
           tags: response.data.collection.tags
-        });
-      })
-      .then(() => {
-        this.updateTags(this.state.category);
+        }, () => {this.updateTags(this.state.category);});
       })
       .catch((response) => {
         console.log(response);
@@ -36,13 +33,13 @@ class Store extends Component {
   setFilter(type, filter) {
     if (type === "category") {
       // http://stackoverflow.com/questions/31400468/react-js-you-called-setstate-with-a-callback-that-isnt-callable
-      this.setState({ category: filter }, this.updateTags(filter));
+      this.setState({ category: filter }, () => {this.updateTags(filter)});
     } else {
       this.setState({ tag: filter });
     }
   }
   updateTags(category) {
-    let tags = [];
+    let tagsArray = [];
     // loop through all of the products
     this.state.items.forEach((item) => {
       // check to see if active category is in categories array
@@ -52,16 +49,16 @@ class Store extends Component {
         item.tags.forEach((tag) => {
           // http://stackoverflow.com/questions/1988349/array-push-if-does-not-exist
           // check to see if the tag is already in the tags array
-          if (tags.indexOf(tag) === -1) {
+          if (tagsArray.indexOf(tag) === -1) {
             // push tags to the tags array
-            tags.push(tag);
+            tagsArray.push(tag);
           }
         });
       }
     });
-    this.setState({ tags: tags });
-    if (tags.length > 0) {
-      this.setFilter("tag", tags[0]);
+    this.setState({ tags: tagsArray });
+    if (tagsArray.length > 0) {
+      this.setFilter("tag", tagsArray[0]);
     } else {
       this.setFilter("tag", "");
     }
@@ -105,9 +102,11 @@ let ProductItemContainer = document.getElementById("product-item");
 let ProductItemUrl;
 
 if (ProductListContainer) {
-  ReactDOM.render(<Store />, ProductListContainer);
+  const storePage = createRoot(ProductListContainer);
+  storePage.render(<Store />);
 }
 if (ProductItemContainer) {
+  const productPage = createRoot(ProductItemContainer);
   ProductItemUrl = ProductItemContainer.dataset.url;
-  ReactDOM.render(<Product url={ProductItemUrl} />, ProductItemContainer);
+  productPage.render(<Product url={ProductItemUrl} />);
 }

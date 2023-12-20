@@ -1,3 +1,5 @@
+@use "sass:math";
+
 #store {
   position: relative;
   &:after {
@@ -57,7 +59,7 @@
   }
 }
 .tags {
-  display: none;
+  display: block;
   width: 100%;
   &--active {
     display: block;
@@ -224,16 +226,16 @@
     max-width: 200px;
     margin-bottom: 25px;
     @include respond-to(ipad-portrait) {
-      width: percentage(300 / 875);
+      width: percentage(math.div(300, 875));
       margin-bottom: 0;
       max-width: none;
-      margin-right: percentage(45 / 875);
+      margin-right: percentage(math.div(45, 875));
     }
   }
   &__info {
     text-align: left;
     @include respond-to(ipad-portrait) {
-      width: percentage(530 / 875);
+      width: percentage(math.div(530, 875));
     }
   }
   &__title {

@@ -25,6 +25,7 @@
     }
   }
   @include respond-to(ipad-landscape) {
+    position: relative;
     margin-top: 10vh;
     padding-top: 0;
     padding-bottom: 0;

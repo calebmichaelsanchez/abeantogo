@@ -20,7 +20,7 @@ export default class ProductsList extends Component {
     }
   }
   render() {
-    let { category, setFilter, items, tag } = this.props;
+    let { category, setFilter, items, tag, tags } = this.props;
     return (
       <div>
         <CategoryList category={this.props.category} categories={this.props.categories} tags={this.props.tags} setFilter={setFilter} />

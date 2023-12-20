@@ -8,28 +8,41 @@
     "url": "git+https://github.com/calebmichaelsanchez/abeantogo.git"
   },
   "config": {
-    "css": "./sqs_template/styles/screen.css",
+    "css": "./template/styles/screen.css",
     "scss": "./scss/screen.scss",
     "url": "https://caleb-sanchez-wbs9.squarespace.com"
   },
   "scripts": {
-    "build": "squarespace assemble & npm run js:prod & npm run css:prod",
-    "watch": "squarespace assemble -wT & conc \"npm run css:dev\" \"npm run js:dev\"",
-    "server": "squarespace runserver -T",
+    "build": "squarespace assemble -l & npm run js:prod & npm run css:prod",
+    "watch": "npm run css:dev & npm run js:dev & squarespace assemble -wT -l -d \"./template\"",
+    "server": "squarespace runserver -T --directory=\"./template\" --auth",
     "start": "squarespace setup && (npm run watch & npm run server)",
     "deploy": "squarespace setup && squarespace deploy",
-    "js:dev": "webpack --config --watch webpack.development.js",
-    "js:prod": "webpack --config webpack.production.js",
+    "js:dev": "webpack --config webpack.development.js --mode=development --watch",
+    "js:prod": "webpack --config webpack.production.js --mode=production",
     "postcss": "postcss --use autoprefixer -o $npm_package_config_css $npm_package_config_css",
     "css:dev": "sass -wc --verbose $npm_package_config_scss:$npm_package_config_css",
-    "css:prod": "npm run sassy & postcss"
+    "css:prod": "npm run css:dev & postcss"
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.5",
+    "@babel/preset-env": "^7.23.5",
+    "@babel/preset-react": "^7.23.3",
     "@squarespace/toolbelt": "^0.12.5",
     "autoprefixer": "^10.4.16",
+    "babel-loader": "^9.1.3",
     "concurrently": "^8.2.2",
     "postcss": "^8.4.32",
     "postcss-cli": "^10.1.0",
-    "webpack": "^5.89.0"
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^5.10.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "immutability-helper": "^3.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

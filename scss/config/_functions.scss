@@ -1,3 +1,4 @@
+@use "sass:math";
 @function rem-calc($pixelValue, $baseValue: 16) {
-  @return ($pixelValue / $baseValue) * 1rem;
+  @return (math.div($pixelValue, $baseValue)) * 1rem;
 }

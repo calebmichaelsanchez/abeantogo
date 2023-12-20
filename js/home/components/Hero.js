@@ -23,6 +23,9 @@ export default class Hero extends Component {
     let style = {
       backgroundImage: `url(${image}?format=${queryString})`
     }
+    if (!image) {
+      return <div />
+    }
     return (
       <div className="hero" style={style}>
         <img className="hero__inner" src="/assets/header-new.svg" />
@@ -31,6 +34,3 @@ export default class Hero extends Component {
   }
 }
 
-Hero.propTypes = {
-  "image": PropTypes.string
-}

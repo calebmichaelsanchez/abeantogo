@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .events {
   width: 100%;
   &__item {
@@ -17,7 +19,7 @@
         }
         .events__image {
           margin-right: 0;
-          margin-left: percentage(50 / 1135);
+          margin-left: percentage(math.div(50, 1135));
         }
         .events__info { text-align: right; }
         .events__title { text-align: right; }
@@ -45,7 +47,7 @@
     direction: ltr;
     text-align: left;
     @include respond-to(ipad-landscape) {
-      width: percentage(505 / 1135);
+      width: percentage(math.div(505, 1135));
       max-width: none;
     }
   }
@@ -60,8 +62,8 @@
     display: none;
     @include respond-to(ipad-landscape) {
       display: inline-block;
-      width: percentage(480 / 1135);
-      margin-right: percentage(50 / 1135);
+      width: percentage(math.div(480, 1135));
+      margin-right: percentage(math.div(50, 1135));
     }
     &-inner {
       width: 100%;

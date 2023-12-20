@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .welcome {
   .hero {
     @include hero(100vh);
@@ -81,7 +83,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: percentage(580 / 1440);
+    width: percentage(math.div(580, 1440));
     height: 100%;
     background: url("/assets/home-guitar-chalk-board.jpg") no-repeat center center;
     background-size: cover;
@@ -92,11 +94,11 @@
   &__inner {
     display: inline-block;
     width: 100%;
-    padding: percentage(115 / 975) percentage(115 / 1440);
+    padding: percentage(math.div(115, 975)) percentage(math.div(115, 1440));
     text-align: left;
     vertical-align: top;
     @include respond-to(ipad-portrait) {
-      width: percentage(860 / 1440);
+      width: percentage(math.div(860, 1440));
     }
   }
   &__item {
@@ -131,7 +133,7 @@
     display: none;
     @include respond-to(ipad-portrait) {
       display: inline-block;
-      width: percentage(300 / 875);
+      width: percentage(math.div(300, 875));
       margin-bottom: 0;
       max-width: none;
       //box-shadow: 13px 22px 50px 0px rgba(5, 5, 5, 0.68);
@@ -143,8 +145,8 @@
     max-width: 615px;
     @include center;
     @include respond-to(ipad-portrait) {
-      width: percentage(530 / 875);
-      margin-right: percentage(45 / 875);
+      width: percentage(math.div(530, 875));
+      margin-right: percentage(math.div(45, 875));
       margin-left: 0;
     }
   }
@@ -221,7 +223,7 @@
     max-width: 615px;
     @include center;
     @include respond-to(ipad-portrait) {
-      width: percentage(615 / 875);
+      width: percentage(math.div(615, 875));
       margin-right: 0;
       margin-left: auto;
     }

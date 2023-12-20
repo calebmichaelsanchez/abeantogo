@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .popup {
   position: fixed;
   top: 0;
@@ -41,7 +43,7 @@
   &__image {
     position: relative;
     height: 0;
-    padding-bottom: percentage(1210 / 2010);
+    padding-bottom: percentage(math.div(1210, 2010));
     background: url("/assets/anniversary.jpg") no-repeat center center;
     background-size: cover;
   }
