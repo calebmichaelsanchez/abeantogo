@@ -14,7 +14,7 @@
   },
   "scripts": {
     "build": "squarespace assemble -l & npm run js:prod & npm run css:prod",
-    "watch": "npm run css:dev & npm run js:dev & squarespace assemble -wT -l -d \"./template\"",
+    "watch": "npm run css:dev & npm run js:dev & squarespace assemble -wT -l -d \"./template\" -o \"./build\"",
     "server": "squarespace runserver -T --directory=\"./template\" --auth",
     "start": "squarespace setup && (npm run watch & npm run server)",
     "deploy": "squarespace setup && squarespace deploy",

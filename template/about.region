@@ -1,0 +1,39 @@
+<main id="{collection.urlId}" class="content-container" role="main" data-content-field="main-content">
+  <section class="about">
+    <div class="hero">
+      <div class="hero__inner">Master Roasted. Never Burnt.</div>
+    </div>
+    <div class="about__beans">
+      <div class="about__beans-inner">
+        <div class="blurb">
+          <h1 class="blurb__title">Humble Beginnings</h1>
+          <div class="blurb__description"><squarespace:block-field id="about1" columns="12"/></div>
+          <img class="about__beans-image" src="/assets/about-beans.png" alt="Beans">
+        </div>
+      </div>
+    </div>
+    <div class="about__roaster">
+      <div class="about__roaster-inner">
+        <div class="blurb">
+          <div class="blurb__description"><squarespace:block-field id="about2" columns="12"/></div>
+        </div>
+      </div>
+    </div>
+    <div class="about__bags">
+      <div class="about__bags-inner">
+        <div class="blurb">
+          <div class="blurb__description"><squarespace:block-field id="about3" columns="12"/></div>
+        </div>
+      </div>
+    </div>
+    <div class="about__logo">
+      <div class="about__logo-inner">
+        <div class="blurb">
+          <div class="blurb__description"><squarespace:block-field id="about4" columns="12"/></div>
+          <img class="about__logo-image" src="/assets/about-logo.png" alt="Logo">
+        </div>
+      </div>
+    </div>
+    <div class="about__inner">{squarespace.main-content}</div>
+  </section>
+</main>

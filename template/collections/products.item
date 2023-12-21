@@ -1,0 +1,8 @@
+<div id="product-item" data-url="{item.fullUrl}"></div>
+<div class="product-cart-info">
+  {.section item}
+    {@|product-price}
+    {@|product-status}
+    {@|product-checkout}
+  {.end}
+</div>

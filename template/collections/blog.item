@@ -1,0 +1,39 @@
+<!--WRAPPER-->
+<div class="blog">
+  <div class="blog__inner">
+  {.section item}
+    {.main-image?}
+    <div class="blog__image">
+      <div class="blog__image-inner" style="background-image: url('{assetUrl}')"></div>
+    </div>
+    {.end}
+    <!--POST TILE-->
+    <div class="blog__info">
+      <h2 class="blog__title">{title}</h2>
+      <div class="blog__date">{publishOn|date %B %d, %G}</div>
+      <!--MAIN CONTENT-->
+      <div class="blog__body">{body}</div>
+    </div>
+  {.end}
+  <!--PAGINATION-->
+  {.section pagination}
+    <nav class="blog-item-pagination">
+
+      <!--NEWER PAGE-->
+      {.section prevItem}
+        <a href="{fullUrl}">< Newer</a>
+      {.or}
+        <a class="disabled">< Newer</a>
+      {.end}
+
+      <!--OLDER PAGE-->
+      {.section nextItem}
+        <a href="{fullUrl}">Older ></a>
+      {.or}
+        <a class="disabled">Older ></a>
+      {.end}
+
+    </nav>
+  {.end}
+  </div>
+</div>

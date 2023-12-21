@@ -1,0 +1,4 @@
+<!-- cms content injection point -->
+<main id="{collection.urlId}" class="content-container" role="main" data-content-field="main-content">
+ <div class="{collection.urlId}">{squarespace.main-content}</div>
+</main>

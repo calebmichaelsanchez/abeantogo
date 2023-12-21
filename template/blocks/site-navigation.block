@@ -1,0 +1,29 @@
+<nav class="nav">
+  <a href="/" class="nav__logo">
+    <img src="/assets/logo-small.svg" alt="Small ABeanToGo Logo">
+  </a>
+  <a href="#" class="nav__toggle">
+    <div class="nav__burger"></div>
+  </a>
+  <ul class="nav__list">
+    {.repeated section items}
+
+      <li class="nav__item {.section active} nav__item--active{.end}">
+
+        <!-- collection link -->
+        {.section collection}
+          <a class="nav__link" href="{fullUrl}">{navigationTitle}</a>
+        {.end}
+
+        <!-- external link -->
+        {.section externalLink}
+          <a class="nav__link" href="{url}"{.section newWindow} target="_blank"{.end}>
+            {title}
+          </a>
+        {.end}
+
+      </li>
+
+    {.end}
+  </ul>
+</nav>

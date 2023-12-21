@@ -1,0 +1,10 @@
+<div class="wellwith">
+  <div class="wellwith__inner">
+    <div class="wellwith__item wellwith__info">
+      {item.body}
+      <a target="_blank" href="http://wellwith.com" class="wellwith__button">Learn More</a>
+      <img class="wellwith__image" src="/assets/wellwith-thermos.png" />
+    </div>
+  </div>
+</div>
+<script>console.log({@|json-pretty})</script>

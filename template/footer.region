@@ -1,0 +1,32 @@
+      <!--Footer with open block field -->
+      <footer class="footer">
+        <div class="footer__banner"></div>
+        <div class="footer__social">
+          <div class="footer__social-inner">
+            <squarespace:block-field id="footerSocial" columns="12"/>
+          </div>
+        </div>
+        <div class="footer__info">
+          <div class="footer__item">
+            <div class="footer__title">Goodrich</div>
+            <squarespace:block-field id="blockField1" columns="12"/>
+          </div>
+          <div class="footer__item">
+            <div class="footer__title">Lake Orion</div>
+            <squarespace:block-field id="blockField2" columns="12"/>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- combo and minify scripts when not logged in -->
+    <!-- React does not like being combo-ed!!!!!!!!! -->
+    <squarespace:script src="app.js" />
+    <squarespace:script src="site.js" />
+
+    <!-- other scripts, and footer code injection -->
+    {squarespace-footers}
+
+  </body>
+</html>
