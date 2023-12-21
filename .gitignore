@@ -1,5 +1,5 @@
 .DS_Store
-#sqs_template
+template
 .sass-cache
 npm-debug.*.*
 node_modules
