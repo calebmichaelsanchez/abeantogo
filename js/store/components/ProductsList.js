@@ -9,6 +9,8 @@ export default class ProductsList extends Component {
     this.filterList = this.filterList.bind(this);
   }
   filterList(type, filter) {
+    console.log("type", type);
+    console.log("filter", filter);
     if (type === "category") {
       return item => { if (item.categories.indexOf(filter) !== -1) return item };
     } else {
@@ -25,19 +27,21 @@ export default class ProductsList extends Component {
       <div>
         <CategoryList category={this.props.category} categories={this.props.categories} tags={this.props.tags} setFilter={setFilter} />
         <div className="products">
-          {tag ? <h2>{tag}</h2> : <p>Check back for more products!</p>}
-          {items.filter(this.filterList("category", category)).filter(this.filterList("tag", tag)).map((item) => {
-            return (
-              <ProductsItem
-                key={item.id}
-                title={item.title}
-                image={item.assetUrl}
-                excerpt={item.excerpt}
-                url={item.fullUrl}
-                pricePerPound={toDollars(item.variants[0].price)}
-              />
-            )
-          })}
+          <div className="products__inner">
+            {tag ? <div></div> : <p>Check back for more products!</p>}
+            {items.filter(this.filterList("category", category)).filter(this.filterList("tag", tag)).map((item) => {
+              return (
+                <ProductsItem
+                  key={item.id}
+                  title={item.title}
+                  image={item.assetUrl}
+                  excerpt={item.excerpt}
+                  url={item.fullUrl}
+                  pricePerPound={toDollars(item.variants[0].price)}
+                />
+              )
+            })}
+          </div>
         </div>
       </div>
     );

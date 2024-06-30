@@ -13,3 +13,4 @@ h4   { @include h4(); }
 h6   { @include h6(); }
 .btn { @include button(); }
 em   { font-style: italic; }
+span.original-price { text-decoration: line-through; }

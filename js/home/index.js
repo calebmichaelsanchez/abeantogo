@@ -6,6 +6,8 @@ import Blurb from "../components/Blurb";
 // import Sponsorships from "./components/Sponsorships";
 import Popup from "../components/Popup";
 import Hero from "./components/Hero";
+import FeaturedProducts from "../components/FeaturedProducts";
+import MerchProducts from "../components/MerchProducts";
 
 class Home extends Component {
   constructor() {
@@ -43,30 +45,43 @@ class Home extends Component {
     return (
       <div className="welcome">
         {/*this.renderPopup()*/}
-        <Hero image={image} />
-        <div className="learn-more">
-          <div className="learn-more__item">
-            <Blurb url="store" button="Shop Now" type="PageBlurb"/>
+        {/*<Hero image={image} />*/}
+        <div className="video-header">
+          <div className="video-header__inner">
+            <video className="video-header__video" src="/assets/hero-video-new.mp4" playsInline muted loop autoPlay crossOrigin="anonymous">
+              <img src="/assets/contact-background.jpg" alt="" />
+            </video>
           </div>
-          <div className="learn-more__item">
-            <Blurb url="about" button="Learn More" type="PageBlurb"/>
-          </div>
-          <img src="/assets/home-coffee-mug.png" className="learn-more__cup"/>
-          <img src="/assets/home-beans.png" className="learn-more__beans"/>
+          <img className="video-header__logo" src="/assets/header-new.svg" />
+          <div className="video-header__arrow">^</div>
         </div>
-        <div className="hero-divider"></div>
-        {/*<MonthlyOrigin />*/}
-        {/*<div className="featured-blogs">
-          <div className="featured-blogs__inner">
-            <h1>Featured Events & News</h1>
-            <div className="featured-blogs__item">
-              <Blurb url="events" button="See Events" type="EventBlurb"/>
-            </div>
-            <div className="featured-blogs__item">
-              <Blurb url="blog" button="See Blog" type="BlogBlurb"/>
-            </div>
+        <div className="big-quote">
+          <div className="big-quote__inner">
+            <h2 className="h2-home">Master Roasted.</h2>
+            <h2 className="h2-home">Never Burnt.</h2>
           </div>
-        </div>*/}
+        </div>
+        <div className="hero-divider hero-divider--one">
+          <div className="hero-divider__inner">
+            <h2 className="h2-home h2-home--small">Get fresh roasted coffee delivered straight to your door.</h2>
+            <a href="/store" className="btn">Shop Now</a>
+          </div>
+        </div>
+        <div className="hero-divider hero-divider--two">
+          <div className="hero-divider__inner">
+            <h2 className="h2-home h2-home--small">Fresh Coffee. Forever.</h2>
+            <p>Join the coffee club and get your favorite coffee delivered, automagically.</p>
+            <a href="/coffee-club" className="btn">Coffee Club</a>
+          </div>
+        </div>
+        <FeaturedProducts />
+        <div className="hero-divider hero-divider--two">
+          <div className="hero-divider__inner">
+            <h2 className="h2-home h2-home--small">Order from our menu and pick up in store!</h2>
+            <a className="btn">coming soon</a>
+          </div>
+        </div>
+        <MerchProducts />
       </div>
     );
   }

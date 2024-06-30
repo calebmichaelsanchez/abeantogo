@@ -8,9 +8,6 @@
     {squarespace-headers}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-
-    <div class="site-container">
-
     <header class="header">
       <!-- site navigation -->
       <squarespace:navigation navigationId="siteNav" template="site-navigation" />
@@ -22,3 +19,4 @@
         </h1>
       {.end}
     </header>
+    <div class="site-container">

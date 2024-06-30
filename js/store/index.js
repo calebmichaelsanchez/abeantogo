@@ -24,7 +24,10 @@ class Store extends Component {
           items: response.data.items,
           categories: response.data.collection.categories,
           tags: response.data.collection.tags
-        }, () => {this.updateTags(this.state.category);});
+        }, () => {
+          this.updateTags(this.state.category);
+          console.log(response);
+        });
       })
       .catch((response) => {
         console.log(response);
@@ -82,7 +85,9 @@ class Product extends Component {
   componentDidMount() {
     axios(`${this.props.url}?format=json`)
       .then((response) => {
-        this.setState({ item: response.data.item });
+        this.setState({ item: response.data.item }, () => {
+          console.log(this.state.item);
+        });
       })
       .catch((response) => {
         console.log(response);

@@ -1,8 +1,9 @@
 main#wholesale {
   background: url("/assets/contact-background.jpg") no-repeat center center;
   background-size: cover;
+  border: 3px solid $white;
   .no-touch & { background-attachment: fixed; }
-  .touch & { background: none; }
+  .touch & { background-attachment: none; }
 }
 .wholesale {
   width: 100%;

@@ -36,8 +36,8 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding: 50px 16px;
-    background-color: $light-gray;
+    padding: 50px 16px 0;
+    background-color: $gray;
     @include respond-to(ipad-portrait) {
       padding: 100px 72px;
     }
@@ -91,7 +91,7 @@
       text-align: left;
       width: 100%;
       vertical-align: top;
-      padding: 50px 16px;
+      padding: 0px 16px 50px;
       @include respond-to(ipad-portrait) {
         width: percentage(math.div(880, 1440));
         padding: 100px 72px;
@@ -111,7 +111,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    background-color: $light-gray;
+    background-color: $gray;
     text-align: right;
     font-size: 0;
     &:before {
@@ -153,7 +153,7 @@
     overflow: hidden;
     width: 100%;
     padding: 50px 16px;
-    background-color: $light-gray;
+    background-color: $gray;
     @include respond-to(ipad-portrait) {
       padding: 100px 72px;
     }

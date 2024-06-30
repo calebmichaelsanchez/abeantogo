@@ -1,13 +1,14 @@
 
 .nav {
-  position: fixed;
+  position: relative;
   display: block;
   top: 0;
   left: 0;
   width: 100%;
   padding-top: 30px;
   padding-bottom: 30px;
-  background-color: $red;
+  // margin-bottom: 1rem;
+  background-color: $gray;
   transition: 600ms ease;
   z-index: 1000;
   &:after {
@@ -18,27 +19,27 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: $red;
+    background-color: $gray;
     z-index: 5;
-    @include respond-to(ipad-landscape) {
+    @include respond-to(mobile-plus) {
       display: none;
     }
   }
-  @include respond-to(ipad-landscape) {
+  @include respond-to(mobile-plus) {
     position: relative;
-    margin-top: 10vh;
-    padding-top: 0;
-    padding-bottom: 0;
+    margin-bottom: 0;
+    // margin-top: 10vh;
+    padding: .5rem 0;
     background-color: transparent;
   }
   .nav-scrolled & {
     margin-top: 0;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-color: $red;
-    @include respond-to(ipad-landscape) {
-      padding-top: 15px;
-      padding-bottom: 15px;
+    // padding-top: 30px;
+    // padding-bottom: 30px;
+    //background-color: $gray;
+    @include respond-to(mobile-plus) {
+      // padding-top: 5px;
+      // padding-bottom: 5px;
     }
   }
   &__logo {
@@ -47,11 +48,14 @@
     top: 50%;
     left: 36px;
     width: 50px;
-    transform: translateY(-50%);
+    transform: translateY(-42%);
     z-index: 10;
     opacity: 1;
     transition: opacity 600ms ease;
-    @include respond-to(ipad-landscape) {
+    path, polygon {
+      fill: $white;
+    }
+    @include respond-to(mobile-plus) {
       opacity: 0;
     }
     .nav-scrolled & {
@@ -65,7 +69,7 @@
     width: 60px;
     height: 100%;
     z-index: 10;
-    @include respond-to(ipad-landscape) {
+    @include respond-to(mobile-plus) {
       display: none;
     }
   }
@@ -115,52 +119,54 @@
     text-align: center;
     font-size: 0;
     z-index: 1;
-    background-color: $red;
+    background-color: $gray;
     transform: translateY(-160%);
     border-top: 1px solid $white;
     transition: transform 600ms ease;
     .nav-active & {
       transform: translateY(0);
     }
-    @include respond-to(ipad-landscape) {
+    @include respond-to(mobile-plus) {
       position: relative;
       top: 0;
       left: 0;
       transform: none;
       border: none;
       background-color: transparent;
-      text-align: center;
+      text-align: right;
+      padding-right: 20px;
     }
   }
   &__item {
     display: block;
-    @include respond-to(ipad-landscape) {
+    @include respond-to(mobile-plus) {
       display: inline-block;
     }
   }
   &__link {
     position: relative;
     display: block;
-    font-size: $small-size;
+    font-size: 16px;
     color: $white;
-    letter-spacing: .25rem;
-    text-transform: uppercase;
-    padding: 15px;
+    letter-spacing: 0;
+    font-weight:400;
+    //text-transform: uppercase;
+    padding: 15px 7px;
     width: 100%;
     border-bottom: 1px solid $white;
     @include font-sans;
-    @include respond-to(ipad-landscape) {
+    @include respond-to(mobile-plus) {
       border: none;
     }
     &:after {
       content: '';
       display: block;
       position: absolute;
-      top: 90%;
+      top: 75%;
       left: 50%;
       transform: translateX(-53%);
       width: 50%;
-      height: 2px;
+      height: 1px;
       background-color: $red-accent;
       opacity: 0;
       transition: opacity 400ms ease;
@@ -170,13 +176,13 @@
     }
     .no-touch &:hover:after {
       opacity: 0;
-      @include respond-to(ipad-landscape) {
+      @include respond-to(mobile-plus) {
         opacity: 1;
       }
     }
     .nav__item--active &:after {
       opacity: 0;
-      @include respond-to(ipad-landscape) {
+      @include respond-to(mobile-plus) {
         opacity: 1;
       }
     }

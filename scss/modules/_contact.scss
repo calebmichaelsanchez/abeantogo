@@ -1,6 +1,9 @@
 main#contact {
   background: url("/assets/contact-background.jpg") no-repeat center center;
   background-size: cover;
+  border: 3px solid $white;
+  .no-touch & { background-attachment: fixed; }
+  .touch & { background-attachment: none; }
 }
 .contact {
   width: 100%;

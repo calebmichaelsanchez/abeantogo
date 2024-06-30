@@ -61,6 +61,13 @@ $breakpoints: (
   @include respond-to(ipad-landscape) {
     font-size: $p-size;
   }
+  .hero-divider & {
+    display: block;
+    max-width: 80%;
+    @include center;
+    color: $white;
+    font-size: 1.5rem;
+  }
 }
 @mixin a() {
   color: $black;
@@ -92,16 +99,32 @@ $breakpoints: (
   // }
 }
 @mixin h2() {
-  @include font-sans();
+  @include font-serif();
   display: block;
   position: relative;
-  font-size: $h2-size;
-  text-transform: uppercase;
+  font-size: 2rem;
+  text-transform: none;
   color: white;
   letter-spacing: 0.25rem;
   font-weight: 400;
   line-height: 1.2;
   text-align: center;
+  @include respond-to(ipad-portrait) {
+    font-size: 3rem;
+  }
+  &.h2-home {
+    text-transform: uppercase;
+    @include respond-to(ipad-portrait) {
+      font-size: 4rem;
+    }
+    &--small {
+      font-size: 2rem;
+      text-transform: none;
+      @include respond-to(ipad-portrait) {
+        font-size: 3rem;
+      }
+    }
+  }
   // &:after {
   //   content: '';
   //   display: block;
@@ -119,6 +142,9 @@ $breakpoints: (
   letter-spacing: 0.25rem;
   text-transform: uppercase;
   color: $black;
+  .about & {
+    color: $white;
+  }
   @include font-sans();
   // &:after {
   //   content: '';
