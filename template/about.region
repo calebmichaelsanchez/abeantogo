@@ -1,12 +1,14 @@
 <main id="{collection.urlId}" class="content-container" role="main" data-content-field="main-content">
   <section class="about">
     <div class="hero">
-      <div class="hero__inner">Master Roasted. Never Burnt.</div>
+      <div class="hero__inner">
+        <h1>Master Roasted.<br />Never Burnt.</h1>
+      </div>
     </div>
     <div class="about__beans">
       <div class="about__beans-inner">
         <div class="blurb">
-          <h1 class="blurb__title">Humble Beginnings</h1>
+          <h2 class="blurb__title">Humble Beginnings</h2>
           <div class="blurb__description"><squarespace:block-field id="about1" columns="12"/></div>
           <img class="about__beans-image" src="/assets/about-beans.png" alt="Beans">
         </div>

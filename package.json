@@ -9,20 +9,22 @@
   },
   "config": {
     "css": "./template/styles/screen.css",
+    "cssBuild": "./build/styles/screen.css",
     "scss": "./scss/screen.scss",
     "url": "https://caleb-sanchez-wbs9.squarespace.com"
   },
   "scripts": {
-    "build": "squarespace assemble -l & npm run js:prod & npm run css:prod",
+    "build": "npm run js:prod && npm run css:prod && squarespace setup",
     "watch": "npm run css:dev & npm run js:dev & squarespace assemble -wT -l -d \"./template\" -o \"./build\"",
     "server": "squarespace runserver -T --directory=\"./template\" --auth",
     "start": "squarespace setup && (npm run watch & npm run server)",
     "deploy": "squarespace setup && squarespace deploy",
     "js:dev": "webpack --config webpack.development.js --mode=development --watch",
     "js:prod": "webpack --config webpack.production.js --mode=production",
-    "postcss": "postcss --use autoprefixer -o $npm_package_config_css $npm_package_config_css",
+    "postcss": "postcss $npm_package_config_css --use autoprefixer -o $npm_package_config_cssBuild --verbose",
+    "css:prePro": "sass -c --verbose $npm_package_config_scss:$npm_package_config_css",
     "css:dev": "sass -wc --verbose $npm_package_config_scss:$npm_package_config_css",
-    "css:prod": "npm run css:dev & postcss"
+    "css:prod": "npm run css:prePro && npm run postcss"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.4",
@@ -35,7 +37,7 @@
     "concurrently": "^8.2.2",
     "postcss": "^8.4.32",
     "postcss-cli": "^10.1.0",
-    "webpack": "^5.89.0",
+    "terser-webpack-plugin": "^5.3.10",
     "webpack-cli": "^5.1.4",
     "webpack-merge": "^5.10.0"
   },

@@ -4,3 +4,4 @@ import './home';
 //import './about';
 import './store';
 import './events';
+import './coffee-club';

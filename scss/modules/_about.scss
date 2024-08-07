@@ -5,7 +5,7 @@
   width: 100%;
   position: relative;
   .hero {
-    @include hero(35vh);
+    @include hero(50vh);
     background-image: url("/assets/about-hero.jpg");
     &__inner {
       display: block;
@@ -60,6 +60,9 @@
       position: relative;
       max-width: 630px;
       @include center();
+      &__title {
+        margin-bottom: 20px;
+      }
       @include respond-to(ipad-portrait) {
         margin-left: 0;
       }

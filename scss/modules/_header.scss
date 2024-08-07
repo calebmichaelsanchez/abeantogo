@@ -4,3 +4,9 @@
   left: 0;
   text-indent: -9999px;
 }
+.sqs-announcement-bar + header {
+  margin-top: 34px;
+}
+.sqs-announcement-bar-hidden + header {
+  margin-top: 0 !important;
+}

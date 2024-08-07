@@ -118,9 +118,11 @@
     width: 100%;
     max-width: 350px;
     @include center;
+    #welcome & { text-align: center; }
     & > h2 {
       margin-bottom: 80px;
       #welcome & {margin-bottom: 40px;}
+      #coffee-club & { margin-bottom: 0; }
     }
     & > p {
       text-align: center;
@@ -130,6 +132,20 @@
     @include respond-to(mobile-plus) {
       max-width: 940px;
       #welcome & { max-width: 940px;}
+    }
+  }
+  #coffee-club & {
+    padding-top: 0;
+    padding-bottom: 0;
+    h2 {
+      @include font-sans();
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      padding-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: .125rem;
+      @include divider(30%, 20px auto);
     }
   }
   #welcome & {
@@ -150,6 +166,12 @@
     text-decoration: none;
     margin-bottom: 50px;
     transition: opacity 600ms ease, transform 600ms ease, width 300ms ease;
+    #coffee-club & {
+      margin-bottom: 50px;
+      @include respond-to(mobile-plus) {
+        margin-bottom: 0;
+      }
+    }
     #welcome & { 
       width: 100%;
       padding: 1rem;
@@ -159,13 +181,13 @@
     @include respond-to(mobile-plus) {
       width: 50%;
       #welcome & { width: 50%; }
-      #welcome &:last-of-type { display: none; }
+      #welcome &:nth-of-type(3) { display: none; }
     }
     @include respond-to(ipad-landscape) {
       margin-bottom: 100px;
       width: 33.33%;
       #welcome & { width: 33.33%; margin-bottom: 0; }
-      #welcome &:last-of-type { display: inline-block; }
+      #welcome &:nth-of-type(3) { display: inline-block; }
     }
     &--loading {
       opacity: 0;
@@ -205,7 +227,7 @@
     transition: 600ms ease;
     text-align: left;
     z-index: 1;
-    #welcome & {
+    #welcome &, #coffee-club & {
       display: none;
     }
     &:after {
@@ -274,10 +296,9 @@
     }
   }
   &__title {
-    @include h1();
+    @include h2();
     color: $white;
     letter-spacing: 0.25rem;
-    margin-bottom: 25px;
   }
   &__excerpt {
     @include p();

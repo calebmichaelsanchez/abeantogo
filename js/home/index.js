@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 import { createRoot } from "react-dom/client";
 import axios from "axios";
-import Blurb from "../components/Blurb";
-// import MonthlyOrigin from "./components/MonthlyOrigin";
-// import Sponsorships from "./components/Sponsorships";
 import Popup from "../components/Popup";
 import Hero from "./components/Hero";
-import FeaturedProducts from "../components/FeaturedProducts";
-import MerchProducts from "../components/MerchProducts";
+import GetProducts from "../components/GetProducts";
 
 class Home extends Component {
   constructor() {
@@ -26,13 +22,7 @@ class Home extends Component {
       })
       .catch((response) => {
         console.log(response);
-      });
-    // let popup = window.localStorage.getItem('popup');
-    // if (popup == null || !popup) {
-    //   this.setState({ popup: true });
-    // } else {
-    //   this.setState({ popup: false });
-    // }
+    });
   }
   renderPopup() {
     if (!this.state.popup) {
@@ -44,11 +34,9 @@ class Home extends Component {
     let { image } = this.state;
     return (
       <div className="welcome">
-        {/*this.renderPopup()*/}
-        {/*<Hero image={image} />*/}
         <div className="video-header">
           <div className="video-header__inner">
-            <video className="video-header__video" src="/assets/hero-video-new.mp4" playsInline muted loop autoPlay crossOrigin="anonymous">
+            <video className="video-header__video" src="/assets/hero-video-small.mp4" playsInline muted loop autoPlay crossOrigin="anonymous">
               <img src="/assets/contact-background.jpg" alt="" />
             </video>
           </div>
@@ -57,8 +45,7 @@ class Home extends Component {
         </div>
         <div className="big-quote">
           <div className="big-quote__inner">
-            <h2 className="h2-home">Master Roasted.</h2>
-            <h2 className="h2-home">Never Burnt.</h2>
+            <h1>Master Roasted.<br />Never Burnt.</h1>
           </div>
         </div>
         <div className="hero-divider hero-divider--one">
@@ -74,14 +61,14 @@ class Home extends Component {
             <a href="/coffee-club" className="btn">Coffee Club</a>
           </div>
         </div>
-        <FeaturedProducts />
+        <GetProducts title="Coffee of the month" starred={true} />
         <div className="hero-divider hero-divider--two">
           <div className="hero-divider__inner">
             <h2 className="h2-home h2-home--small">Order from our menu and pick up in store!</h2>
             <a className="btn">coming soon</a>
           </div>
         </div>
-        <MerchProducts />
+        <GetProducts title="Take Abeantogo with you" starred={false} category="Merchandise" />
       </div>
     );
   }
