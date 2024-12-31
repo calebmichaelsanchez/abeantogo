@@ -48,15 +48,17 @@ export default class Select extends Component {
     } else {
       this.setSquarespaceSelectValue(this.props.title, this.props.options[0]);
     }
-    if (this.props.title === "Size") {
-      if (this.sizeSelectList.length <= 1) {
-        this.setSquarespaceSelectValue("Size", this.props.options[0]);
-        this.setState({ title: this.props.options[0]});
-      } else {
-        this.setSquarespaceSelectValue("Size", this.props.options[1]);
-        this.setState({ title: this.props.options[1]});
-      }
-    }
+    // if (this.props.title === "Size") {
+    //   console.log(this.sizeSelectList);
+    //   console.log(this.props.options);
+    //   if (this.sizeSelectList.length <= 1) {
+    //     this.setSquarespaceSelectValue("Size", this.props.options[0]);
+    //     this.setState({ title: this.props.options[0]});
+    //   } else {
+    //     this.setSquarespaceSelectValue("Size", this.props.options[1]);
+    //     this.setState({ title: this.props.options[1]});
+    //   }
+    // }
     this.props.updatePrice("");
   }
   setSquarespaceSelectValue(select, value) {
