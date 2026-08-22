@@ -24,14 +24,14 @@ export default class GetProducts extends Component {
   render () {
     let { title, category, tag, starred } = this.props;
     let { items } = this.state;
-    console.log("items", items);
-    console.log("props", this.props);
+    // console.log("items", items);
+    // console.log("props", this.props);
     return (
       <div className="products">
         <div className="products__inner">
           <h2>{title}</h2>
           {items.filter((item) => starred ? item.starred : tag ? item.categories[0] === category & item.tags[0] === tag : item.categories[0] === category).slice(0, 3).map((item) => {
-            // console.log(item);
+            console.log(item);
             return (
               <ProductsItem
                 key={item.id}

@@ -22,15 +22,23 @@ export default class ProductsItem extends Component {
     let { pricePerPound, image, title, url, excerpt } = this.props;
     return (
       <a href={url} className={`products__item products__item--${imageStatus}`}>
-        <img
-          onLoad={this.imageLoaded}
-          onError={this.imageErrored}
-          data-src={image}
-          data-img={image}
-          data-type="image"
-          src={`${image}?format=300w`}
-          className="products__image"
-        />
+          <div className="intrinsic-wrapper fourBYthree">
+            {/*<div
+              style={{
+                backgroundImage: `url(${image}?formate=300w)`
+              }}
+            >
+            </div>*/}
+            <img
+              onLoad={this.imageLoaded}
+              onError={this.imageErrored}
+              data-src={image}
+              data-img={image}
+              data-type="image"
+              src={`${image}?format=300w`}
+              className="products__image"
+            />
+          </div>
         <div className="products__info">
           <div className="products__title">{title}</div>
           <div className="products__price">from ${pricePerPound}</div>

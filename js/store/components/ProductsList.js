@@ -12,7 +12,10 @@ export default class ProductsList extends Component {
     console.log("type", type);
     console.log("filter", filter);
     if (type === "category") {
-      return item => { if (item.categories.indexOf(filter) !== -1) return item };
+      return item => { 
+        console.log("filterlist item", item);
+        if (item.categories.indexOf(filter) !== -1) return item 
+      };
     } else {
       if (filter === "") {
         return item => { return item };
@@ -23,6 +26,7 @@ export default class ProductsList extends Component {
   }
   render() {
     let { category, setFilter, items, tag, tags } = this.props;
+    // console.log(items);
     return (
       <div>
         <CategoryList category={this.props.category} categories={this.props.categories} tags={this.props.tags} setFilter={setFilter} />

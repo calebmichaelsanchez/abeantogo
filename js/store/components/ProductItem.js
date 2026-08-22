@@ -89,7 +89,7 @@ export default class ProductItem extends Component {
           <div className="product__excerpt" dangerouslySetInnerHTML={{ __html: body }}/>
           <div className="product__price" dangerouslySetInnerHTML={{ __html: price}} />
           <div className="product__variants">
-            {this.isItAGiftCard(urlId, isSubscribable)}
+            {/*{this.isItAGiftCard(urlId, isSubscribable)}*/}
             {variantOptionOrdering.map((select, index) => {
               if (Object.keys(this.state.options).length === 0 && this.state.options.constructor === Object) {
                 return null

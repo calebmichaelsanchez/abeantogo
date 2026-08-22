@@ -62,13 +62,13 @@ class Home extends Component {
           </div>
         </div>
         <GetProducts title="Coffee of the month" starred={true} />
-        <div className="hero-divider hero-divider--two">
+        {/*<div className="hero-divider hero-divider--two">
           <div className="hero-divider__inner">
             <h2 className="h2-home h2-home--small">Order from our menu and pick up in store!</h2>
             <a className="btn">coming soon</a>
           </div>
-        </div>
-        <GetProducts title="Take Abeantogo with you" starred={false} category="Merchandise" />
+        </div>*/}
+        {/*<GetProducts title="Take Abeantogo with you" starred={false} category="Merchandise" />*/}
       </div>
     );
   }

@@ -134,7 +134,7 @@ $breakpoints: (
   background-color: $background-color;
   letter-spacing: .3rem;
   text-transform: uppercase;
-  margin-top: 30px;
+  margin: 30px 10px 0px;
   transition: 600ms ease;
   cursor: pointer;
   @include font-sans();
