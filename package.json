@@ -14,8 +14,10 @@
     "url": "https://caleb-sanchez-wbs9.squarespace.com"
   },
   "scripts": {
-    "build": "npm run js:prod && npm run css:prod && squarespace setup",
-    "watch": "npm run css:dev & npm run js:dev & squarespace assemble -wT -l -d \"./template\" -o \"./build\"",
+    "build": "npm run sqp-assemble && npm run js:prod && npm run css:prod",
+    "watch": "npm run css:dev & npm run js:dev & sqp-assemble-watch",
+    "sqp-assemble-watch": "squarespace assemble -wTl -d \"./template\" -o \"./build\"",
+    "sqp-assemble": "squarespace assemble -l -d \"./template\" -o \"./build\"",
     "server": "squarespace runserver -T --directory=\"./template\" --auth",
     "start": "squarespace setup && (npm run watch & npm run server)",
     "deploy": "squarespace setup && squarespace deploy",

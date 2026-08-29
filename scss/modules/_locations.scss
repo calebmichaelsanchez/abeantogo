@@ -1,0 +1,116 @@
+main#locations {
+  background: url("/assets/contact-background.jpg") no-repeat center center;
+  background-size: cover;
+  border: 3px solid $white;
+  .no-touch & { background-attachment: fixed; }
+  .touch & { background-attachment: none; }
+}
+.locations {
+  width: 100%;
+  @include center;
+  padding: 50px 0 0;
+  color: $white;
+  text-align: center;
+  @include respond-to(ipad-portrait) {
+    padding: 100px 0 0;
+  }
+  .hero {
+    position: relative;
+    width: 100%;
+    padding: 0 32px 50px;
+    &__inner {
+      display: inline-block;
+      width: 100%;
+      max-width: 80%;
+    }
+  }
+  &__container {
+    padding: 1rem;
+    background-color: white;
+    color: black;
+
+    p, ul {
+      @include font-sans();
+      font-size: .625rem;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+  }
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 768px;
+    margin: 0 auto;
+  }
+  &__item {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    justify-content: center;
+    @include respond-to('ipad-portrait') {
+      width: 50%;
+      flex-basis: 50%;
+    }
+    &-inner {
+      width: 100%;
+      max-width: 376px;
+      padding: 1rem;
+      background: white;
+      border-radius: 3px;
+      box-shadow: 1px 1px 6px #d3d3d3;
+    }
+  }
+  &__image {
+    position: relative;
+    height: 0;
+    padding-bottom: 80%;
+    margin-bottom: 10px;
+    image {display: none;}
+    &-inner {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+  &__title {
+    color: $red;
+    margin-bottom: 10px;
+  }
+  &__info {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    &-item {
+      &:after {
+        display: inline-block;
+        content: '|';
+        padding: 0 5px;
+        color: $red;
+      }
+      &:last-of-type:after {
+        display: none;
+      }
+    }
+  }
+  &__divider {
+    @include divider(30px, 10px auto);
+    &:after {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  &__btn {
+    font-weight: 700;
+    @include button($white, $red);
+  }
+
+}

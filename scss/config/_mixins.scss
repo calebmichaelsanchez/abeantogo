@@ -102,7 +102,7 @@ $breakpoints: (
   font-size: 2rem;
   text-transform: none;
   color: white;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.125rem;
   font-weight: 400;
   @include respond-to(ipad-portrait) {
     font-size: 3rem;
@@ -130,11 +130,11 @@ $breakpoints: (
   display: inline-block;
   font-size: $small-size;
   color: $color;
-  padding: 20px 35px;
+  padding: 16px 25px;
   background-color: $background-color;
-  letter-spacing: .3rem;
+  letter-spacing: .125rem;
   text-transform: uppercase;
-  margin: 30px 10px 0px;
+  margin: 25px 10px 0px;
   transition: 600ms ease;
   cursor: pointer;
   @include font-sans();

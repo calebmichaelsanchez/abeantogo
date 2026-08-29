@@ -1,1 +1,35 @@
-<div>Location</div>
+<div class="locations__inner">
+  {.repeated section items}
+    <div class="locations__item">
+      <div class="locations__item-inner">
+        {.main-image?}
+          <div class="locations__image">
+            <div class="locations__image-inner" style="background-image: url('{assetUrl}'"></div>
+          </div>
+        {.end}
+        <h3 class="locations__title">{title}</h3>
+        <ul class="locations__info">
+          <li class="locations__info-item">
+            {location.addressLine1}
+          </li>
+          <li class="locations__info-item">
+            {location.addressLine2}
+          </li>
+          <li class="locations__info-item">
+            {customContent.storePhone}
+          </li>
+        </ul>
+        <div class="locations__divider"></div>
+        <ul class="locations__info">
+          <li class="locations__info-item">{customContent.storeHours}</li>
+          <li class="locations__info-item">{customContent.storeHours2}</li>
+        </ul>
+        <!-- <p>
+          {customContent.storeHours}<span class="locations__span"> | </span>{customContent.storeHours2}
+        </p> -->
+        <a href="{customContent.directions}" class="locations__btn">Directions to {title}</a>
+      </div>
+    </div>
+  {.or}
+  {.end}
+</div>

@@ -108,6 +108,7 @@
   &--two {
     height: auto;
     padding: 4rem;
+    footer & { padding: 1rem; }
     &:after {
       background-color: inherit;
     }

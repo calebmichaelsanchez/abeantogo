@@ -1,10 +1,13 @@
-<main id="{collection.urlId" class="content-container" role="main" data-content-field="main-content">
+<main id="{collection.urlId}" class="content-container" role="main" data-content-field="main-content">
   <section class="locations">
     <div class="hero">
       <div class="hero__inner">
         <h1>Our Locations</h1>
-        <p>Find your nearest ABeanToGo and start your day the right way</p>
+        <p>Find your nearest ABeanToGo and start your&nbsp;day&nbsp;the&nbsp;right&nbsp;way</p>
       </div>
+    </div>
+    <div class="locations__container">
+      {squarespace.main-content}
     </div>
   </section>
 </main>

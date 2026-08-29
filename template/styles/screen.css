@@ -599,7 +599,7 @@ h2 {
   font-size: 2rem;
   text-transform: none;
   color: white;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.125rem;
   font-weight: 400;
 }
 @media (min-width: 768px) {
@@ -633,11 +633,11 @@ h6 {
   display: inline-block;
   font-size: 12.5px;
   color: #ed1c25;
-  padding: 20px 35px;
+  padding: 16px 25px;
   background-color: #fefefe;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.125rem;
   text-transform: uppercase;
-  margin: 30px 10px 0px;
+  margin: 25px 10px 0px;
   transition: 600ms ease;
   cursor: pointer;
   font-family: "Montserrat", "Helvetica Neue", "Helvetica", sans;
@@ -1070,6 +1070,9 @@ img {
   height: auto;
   padding: 4rem;
 }
+footer .hero-divider--two {
+  padding: 1rem;
+}
 .hero-divider--two:after {
   background-color: inherit;
 }
@@ -1466,7 +1469,7 @@ h1.blurb__title:after {
   font-size: 2rem;
   text-transform: none;
   color: white;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.125rem;
   font-weight: 400;
   color: #fefefe;
   letter-spacing: 0.25rem;
@@ -1535,11 +1538,11 @@ h1.blurb__title:after {
   display: inline-block;
   font-size: 12.5px;
   color: #ed1c25;
-  padding: 20px 35px;
+  padding: 16px 25px;
   background-color: #fefefe;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.125rem;
   text-transform: uppercase;
-  margin: 30px 10px 0px;
+  margin: 25px 10px 0px;
   transition: 600ms ease;
   cursor: pointer;
   font-family: "Montserrat", "Helvetica Neue", "Helvetica", sans;
@@ -1768,11 +1771,11 @@ h1.blurb__title:after {
   display: inline-block;
   font-size: 12.5px;
   color: #ed1c25;
-  padding: 20px 35px;
+  padding: 16px 25px;
   background-color: #fefefe;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.125rem;
   text-transform: uppercase;
-  margin: 30px 10px 0px;
+  margin: 25px 10px 0px;
   transition: 600ms ease;
   cursor: pointer;
   font-family: "Montserrat", "Helvetica Neue", "Helvetica", sans;
@@ -2488,6 +2491,153 @@ main#wholesale {
   }
 }
 
+main#locations {
+  background: url("/assets/contact-background.jpg") no-repeat center center;
+  background-size: cover;
+  border: 3px solid #fefefe;
+}
+.no-touch main#locations {
+  background-attachment: fixed;
+}
+.touch main#locations {
+  background-attachment: none;
+}
+
+.locations {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 0 0;
+  color: #fefefe;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .locations {
+    padding: 100px 0 0;
+  }
+}
+.locations .hero {
+  position: relative;
+  width: 100%;
+  padding: 0 32px 50px;
+}
+.locations .hero__inner {
+  display: inline-block;
+  width: 100%;
+  max-width: 80%;
+}
+.locations__container {
+  padding: 1rem;
+  background-color: white;
+  color: black;
+}
+.locations__container p, .locations__container ul {
+  font-family: "Montserrat", "Helvetica Neue", "Helvetica", sans;
+  font-stretch: normal;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.locations__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 768px;
+  margin: 0 auto;
+}
+.locations__item {
+  display: flex;
+  padding: 10px;
+  width: 100%;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .locations__item {
+    width: 50%;
+    flex-basis: 50%;
+  }
+}
+.locations__item-inner {
+  width: 100%;
+  max-width: 376px;
+  padding: 1rem;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 1px 1px 6px #d3d3d3;
+}
+.locations__image {
+  position: relative;
+  height: 0;
+  padding-bottom: 80%;
+  margin-bottom: 10px;
+}
+.locations__image image {
+  display: none;
+}
+.locations__image-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-position: center center;
+}
+.locations__title {
+  color: #ed1c25;
+  margin-bottom: 10px;
+}
+.locations__info {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.locations__info-item:after {
+  display: inline-block;
+  content: "|";
+  padding: 0 5px;
+  color: #ed1c25;
+}
+.locations__info-item:last-of-type:after {
+  display: none;
+}
+.locations__divider:after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #ed1c25;
+  margin: 10px auto;
+  z-index: 1;
+}
+.locations__divider:after {
+  margin-left: auto;
+  margin-right: auto;
+}
+.locations__btn {
+  font-weight: 700;
+  display: inline-block;
+  font-size: 12.5px;
+  color: #fefefe;
+  padding: 16px 25px;
+  background-color: #ed1c25;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  margin: 25px 10px 0px;
+  transition: 600ms ease;
+  cursor: pointer;
+  font-family: "Montserrat", "Helvetica Neue", "Helvetica", sans;
+  font-stretch: normal;
+}
+.no-touch .locations__btn:hover {
+  background-color: #fefefe;
+  color: #ed1c25;
+}
+
 #sqs-shopping-cart-wrapper {
   padding: 100px 32px;
 }
@@ -2634,11 +2784,11 @@ html body input[type=submit]:hover {
   display: inline-block;
   font-size: 12.5px;
   color: #ed1c25;
-  padding: 20px 35px;
+  padding: 16px 25px;
   background-color: #fefefe;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.125rem;
   text-transform: uppercase;
-  margin: 30px 10px 0px;
+  margin: 25px 10px 0px;
   transition: 600ms ease;
   cursor: pointer;
   font-family: "Montserrat", "Helvetica Neue", "Helvetica", sans;

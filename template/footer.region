@@ -4,7 +4,6 @@
           <div class="hero-divider__inner">
             <h2 class="h2-home h2-home--small">Order online and pick up&nbsp;in&nbsp;store!</h2>
             <br />
-            <br />
             <h3>Download the app</h3>
             <a class="btn" target="_new" href="https://apps.apple.com/us/app/abeantogo/id6747405442">app store</a><a class="btn" target="_new" href="https://play.google.com/store/apps/details?id=com.tryperdiem.wh.abeantogo&pcampaignid=web_share">google play</a>
           </div>
@@ -21,14 +20,14 @@
             <squarespace:block-field id="blockField1" columns="12"/>
           </div>
           <div class="footer__item">
-            <div class="footer__title">Lake Orion</div>
+            <div class="footer__title">Lake&nbsp;Orion</div>
             <squarespace:block-field id="blockField2" columns="12"/>
           </div>
         </div>
       </footer>
 
     </div>
-    <a href="#mobile-ordering" class="mobile-ordering-btn">Mobile Ordering</a>
+    <a href="#mobile-ordering" class="mobile-ordering-btn slide-link">Mobile Ordering</a>
     <!-- combo and minify scripts when not logged in -->
     <!-- React does not like being combo-ed!!!!!!!!! -->
     <squarespace:script src="app.js" />
