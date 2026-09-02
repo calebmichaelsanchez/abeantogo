@@ -1,0 +1,145 @@
+main#menu {
+  background: url("/assets/contact-background.jpg") no-repeat center center;
+  background-size: cover;
+  border: 3px solid $white;
+  .no-touch & { background-attachment: fixed; }
+  .touch & { background-attachment: none; }
+}
+.menu {
+  width: 100%;
+  @include center;
+  padding: 50px 0 0;
+  color: $white;
+  text-align: center;
+  @include respond-to(ipad-portrait) {
+    padding: 100px 0 0;
+  }
+  p, ul {
+    font-size: 16px;
+    letter-spacing: 0;
+    span {
+      font-style: italic;
+      font-size: 12px;
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: initial;
+    @include font-sans();
+  }
+  .hero {
+    position: relative;
+    width: 100%;
+    padding: 0 32px 50px;
+    &__inner {
+      display: inline-block;
+      width: 100%;
+      max-width: 80%;
+    }
+  }
+  // section container
+  &__container {
+    padding: 2rem 1rem 0;
+    background-color: white;
+    color: #2a2a2a;
+    @include font-sans();
+    // section inner container
+    &__inner { 
+      display: flex; 
+      flex-flow: row wrap;
+      max-width: 830px;
+      margin: 0 auto;
+      justify-content: center;
+      @include respond-to('menu') {
+        justify-content: initial;
+        align-items: flex-start;
+      }
+    }
+  }
+  // individual menu section
+  &__item {
+    width: 100%;
+    max-width: 420px;
+    padding: 1rem 1rem;
+    margin-bottom: 1.25rem;
+    border-left: 5px solid $red;
+    @include respond-to('menu') {
+      width: 50%;
+    }
+    &-inner {
+      display: flex;
+      flex-flow: row nowrap;
+    }
+  }
+  // left and right side of section
+  &__info {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    @include respond-to('ipad-portrait') {
+      width: 50%;
+      flex-basis: 50%;
+    }
+    &--left {
+      text-align: left;
+      @include respond-to('ipad-portrait') {
+        width: 60%;
+        flex-basis: 60%;
+      }
+      & > * {
+        width: 100%;
+      }
+    }
+    &--right {
+      text-align: right;
+      @include respond-to('ipad-portrait') {
+        width: 40%;
+        flex-basis: 40%;
+      }
+    }
+  }
+  // title of section
+  &__title {
+    color: $red;
+    letter-spacing: 0;
+    font-size: 16px;
+  }
+  // name of each item
+  &__item-name {
+
+  }
+  &__item-name-item, &__prices-item {
+    padding-bottom: .625rem;
+  }
+  &__title, & .menu__sizes {
+    padding-bottom: .625rem;
+  }
+  // sizes and prices  of section
+  &__sizes, &__prices {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly
+  }
+  &__sizes {
+    &-item {
+      @include h3();
+      color: $red;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 16px;
+    }
+  }
+  &__description {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    text-align: left;
+    font-size: 18px;
+    @include font-serif();
+    font-style: italic;
+  }
+}

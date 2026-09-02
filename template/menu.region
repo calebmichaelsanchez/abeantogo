@@ -1,0 +1,483 @@
+<main id="{collection.urlId}" class="content-container" role="main" data-content-field="main-content">
+  <section class="menu">
+    <div class="hero">
+      <div class="hero__inner">
+        <h1>Our Menu</h1>
+        <p>Take a look at our delicious offerings.</p>
+      </div>
+    </div>
+    <!-- section container -->
+    <div class="menu__container">
+      <!-- section inner container -->
+      <div class="menu__container__inner">
+        <!-- individual menu section -->
+        <div class="menu__item">
+          <div class="menu__item-inner">
+            <!-- left side of section -->
+            <div class="menu__info menu__info--left">
+              <!-- title of section -->
+              <h3 class="menu__title">Coffee</h3>
+              <!-- names of items in section -->
+              <ul class="menu__item-name">
+                <li class="menu__item-name-item">Fresh Brew</li>
+                <li class="menu__item-name-item">Pour Over</li>
+              </ul>
+            </div>
+            <!-- right side of section -->
+            <div class="menu__info menu__info--right">
+              <!-- sizes available in section -->
+              <ul class="menu__sizes">
+                <li class="menu__sizes-item">12oz</li>
+                <li class="menu__sizes-item">16oz</li>
+                <li class="menu__sizes-item">20oz</li>
+              </ul>
+              <!-- prices for item 1 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">3.50</li>
+                <li class="menu__prices-item">3.75</li>
+                <li class="menu__prices-item">4.00</li>
+              </ul>
+              <!-- prices for item 2 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">5.25</li>
+              </ul>
+            </div>
+          </div>
+          <!-- extra description space section -->
+          <div class="menu__description"></div>
+        </div>
+        <!-- individual menu section -->
+        <div class="menu__item">
+          <div class="menu__item-inner">
+            <!-- left side of section -->
+            <div class="menu__info menu__info--left">
+              <!-- title of section -->
+              <h3 class="menu__title">Craft Drinks</h3>
+              <!-- names of items in section -->
+              <ul class="menu__item-name">
+                <li class="menu__item-name-item">Hot/Iced Craft Drinks</li>
+              </ul>
+            </div>
+            <!-- right side of section -->
+            <div class="menu__info menu__info--right">
+              <!-- sizes available in section -->
+              <ul class="menu__sizes">
+                <li class="menu__sizes-item">12oz</li>
+                <li class="menu__sizes-item">16oz</li>
+                <li class="menu__sizes-item">20oz</li>
+              </ul>
+              <!-- prices for item 1 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">5.50</li>
+                <li class="menu__prices-item">6.00</li>
+                <li class="menu__prices-item">6.50</li>
+              </ul>
+              <!-- prices for item 2 -->
+              <!-- prices for item 3 -->
+            </div>
+          </div>
+          <!-- extra description space section -->
+          <div class="menu__description">Bees Knees, Cookie Caramel Delight, Caramel Cake, Honey Lavender</div>
+        </div>
+        <!-- individual menu section -->
+        <div class="menu__item">
+          <div class="menu__item-inner">
+            <!-- left side of section -->
+            <div class="menu__info menu__info--left">
+              <!-- title of section -->
+              <h3 class="menu__title">Cold Brew</h3>
+              <!-- names of items in section -->
+              <ul class="menu__item-name">
+                <li class="menu__item-name-item">Cold Brew</li>
+                <li class="menu__item-name-item">Add Sweet Foam</li>
+              </ul>
+            </div>
+            <!-- right side of section -->
+            <div class="menu__info menu__info--right">
+              <!-- sizes available in section -->
+              <ul class="menu__sizes">
+                <li class="menu__sizes-item">16oz</li>
+                <li class="menu__sizes-item">20oz</li>
+              </ul>
+              <!-- prices for item 1 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">5.00</li>
+                <li class="menu__prices-item">5.50</li>
+              </ul>
+              <!-- prices for item 2 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">+2.00</li>
+              </ul>
+              <!-- prices for item 3 -->
+            </div>
+          </div>
+          <!-- extra description space section -->
+          <div class="menu__description">Bees Knees, Caramel Caramel Delight, Caramel Cake, Cinnamon Hazelnut Crunch</div>
+        </div>
+        <!-- individual menu section -->
+        <div class="menu__item">
+          <div class="menu__item-inner">
+            <!-- left side of section -->
+            <div class="menu__info menu__info--left">
+              <!-- title of section -->
+              <h3 class="menu__title">Specialty</h3>
+              <!-- names of items in section -->
+              <ul class="menu__item-name">
+                <li class="menu__item-name-item">Flat White</li>
+                <li class="menu__item-name-item">Macchiato</li>
+                <li class="menu__item-name-item">Cortado</li>
+                <li class="menu__item-name-item">Americano</li>
+              </ul>
+            </div>
+            <!-- right side of section -->
+            <div class="menu__info menu__info--right">
+              <!-- sizes available in section -->
+              <ul class="menu__sizes">
+                <li class="menu__sizes-item">Price</li>
+              </ul>
+              <!-- prices for item 1 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">4.75</li>
+              </ul>
+              <!-- prices for item 2 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">3.50</li>
+              </ul>
+              <!-- prices for item 3 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">4.00</li>
+              </ul>
+              <!-- prices for item 4 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">3.75</li>
+              </ul>
+            </div>
+          </div>
+          <!-- extra description space section -->
+          <div class="menu__description"></div>
+        </div>
+        <!-- individual menu section -->
+        <div class="menu__item">
+          <div class="menu__item-inner">
+            <!-- left side of section -->
+            <div class="menu__info menu__info--left">
+              <!-- title of section -->
+              <h3 class="menu__title">Espresso</h3>
+              <!-- names of items in section -->
+              <ul class="menu__item-name">
+                <li class="menu__item-name-item">Latte</li>
+                <li class="menu__item-name-item">Cappuccino</li>
+                <li class="menu__item-name-item">Shaken Espresso</li>
+                <li class="menu__item-name-item">Typhoon</li>
+                <li class="menu__item-name-item">Espresso <span>(2x shot)</span> 3.25 for 2oz</li>
+              </ul>
+            </div>
+            <!-- right side of section -->
+            <div class="menu__info menu__info--right">
+              <!-- sizes available in section -->
+              <ul class="menu__sizes">
+                <li class="menu__sizes-item">12oz</li>
+                <li class="menu__sizes-item">16oz</li>
+                <li class="menu__sizes-item">20oz</li>
+              </ul>
+              <!-- prices for item 1 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">5.75</li>
+                <li class="menu__prices-item">5.75</li>
+                <li class="menu__prices-item">6.25</li>
+              </ul>
+              <!-- prices for item 2 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">5.00</li>
+                <li class="menu__prices-item">5.50</li>
+                <li class="menu__prices-item">6.00</li>
+              </ul>
+              <!-- prices for item 3 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li class="menu__prices-item">6.35</li>
+                <li class="menu__prices-item">6.65</li>
+              </ul>
+              <!-- prices for item 4 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li class="menu__prices-item">6.60</li>
+                <li class="menu__prices-item">6.85</li>
+              </ul>
+            </div>
+          </div>
+          <!-- extra description space section -->
+          <div class="menu__description"></div>
+        </div>
+        <!-- individual menu section -->
+        <div class="menu__item">
+          <div class="menu__item-inner">
+            <!-- left side of section -->
+            <div class="menu__info menu__info--left">
+              <!-- title of section -->
+              <h3 class="menu__title">Milk Options</h3>
+              <!-- names of items in section -->
+              <ul class="menu__item-name">
+                <li class="menu__item-name-item">Almond, Coconut, Oat</li>
+                <li class="menu__item-name-item">Half & Half</li>
+                <li class="menu__item-name-item">Heavy Cream</li>
+              </ul>
+            </div>
+            <!-- right side of section -->
+            <div class="menu__info menu__info--right">
+              <!-- sizes available in section -->
+              <ul class="menu__sizes">
+                <li class="menu__sizes-item">Price</li>
+              </ul>
+              <!-- prices for item 1 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">1.25</li>
+              </ul>
+              <!-- prices for item 2 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">2.25</li>
+              </ul>
+              <!-- prices for item 3 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">2.25</li>
+              </ul>
+            </div>
+          </div>
+          <!-- extra description space section -->
+          <div class="menu__description"></div>
+        </div>
+        <!-- individual menu section -->
+        <div class="menu__item">
+          <div class="menu__item-inner">
+            <!-- left side of section -->
+            <div class="menu__info menu__info--left">
+              <!-- title of section -->
+              <h3 class="menu__title">Tea Latte</h3>
+              <!-- names of items in section -->
+              <ul class="menu__item-name">
+                <li class="menu__item-name-item">London Fog</li>
+                <li class="menu__item-name-item">Orion Fog</li>
+                <li class="menu__item-name-item">Plaid Kilt</li>
+                <li class="menu__item-name-item">Chai Latte</li>
+                <li class="menu__item-name-item">Dirty Chai</li>
+                <li class="menu__item-name-item">Matcha Latte</li>
+                <li class="menu__item-name-item">Matcha Craft Latte</li>
+              </ul>
+            </div>
+            <!-- right side of section -->
+            <div class="menu__info menu__info--right">
+              <!-- sizes available in section -->
+              <ul class="menu__sizes">
+                <li class="menu__sizes-item">12oz</li>
+                <li class="menu__sizes-item">16oz</li>
+                <li class="menu__sizes-item">20oz</li>
+              </ul>
+              <!-- prices for item 1 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">5.00</li>
+                <li class="menu__prices-item">5.50</li>
+                <li class="menu__prices-item">6.00</li>
+              </ul>
+              <!-- prices for item 2 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">5.00</li>
+                <li class="menu__prices-item">5.50</li>
+                <li class="menu__prices-item">6.00</li>
+              </ul>
+              <!-- prices for item 3 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">5.00</li>
+                <li class="menu__prices-item">5.50</li>
+                <li class="menu__prices-item">6.00</li>
+              </ul>
+              <!-- prices for item 4 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">5.00</li>
+                <li class="menu__prices-item">5.50</li>
+                <li class="menu__prices-item">6.00</li>
+              </ul>
+              <!-- prices for item 5 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">5.75</li>
+                <li class="menu__prices-item">6.25</li>
+                <li class="menu__prices-item">6.75</li>
+              </ul>
+              <!-- prices for item 6 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item"></li>
+                <li class="menu__prices-item">5.75</li>
+                <li class="menu__prices-item"></li>
+              </ul>
+              <!-- prices for item 7 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item"></li>
+                <li class="menu__prices-item">6.00</li>
+                <li class="menu__prices-item"></li>
+              </ul>
+            </div>
+          </div>
+          <!-- extra description space section -->
+          <div class="menu__description">Plaid kilt (pistachio shortbread)</div>
+        </div>
+        <!-- individual menu section -->
+        <div class="menu__item">
+          <div class="menu__item-inner">
+            <!-- left side of section -->
+            <div class="menu__info menu__info--left">
+              <!-- title of section -->
+              <h3 class="menu__title">Baked Goods</h3>
+              <!-- names of items in section -->
+              <ul class="menu__item-name">
+                <li class="menu__item-name-item">Muffins</li>
+                <li class="menu__item-name-item">Cookies</li>
+                <li class="menu__item-name-item">Scones</li>
+                <li class="menu__item-name-item">Savory Scones</li>
+                <li class="menu__item-name-item">PB Protein bar</li>
+                <li class="menu__item-name-item">Trek Bar <span>(dairy free)</span></li>
+              </ul>
+            </div>
+            <!-- right side of section -->
+            <div class="menu__info menu__info--right">
+              <!-- sizes available in section -->
+              <ul class="menu__sizes">
+                <li class="menu__sizes-item">(In house)</li>
+              </ul>
+              <!-- prices for item 1 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">4.00</li>
+              </ul>
+              <!-- prices for item 2 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">4.00</li>
+              </ul>
+              <!-- prices for item 3 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">4.50</li>
+              </ul>
+              <!-- prices for item 4 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">5.25</li>
+              </ul>
+              <!-- prices for item 5 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">4.50</li>
+              </ul>
+              <!-- prices for item 6 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">4.50</li>
+              </ul>
+            </div>
+          </div>
+          <!-- extra description space section -->
+          <div class="menu__description"></div>
+        </div>
+        <!-- individual menu section -->
+        <div class="menu__item">
+          <div class="menu__item-inner">
+            <!-- left side of section -->
+            <div class="menu__info menu__info--left">
+              <!-- title of section -->
+              <h3 class="menu__title">Tea & Classics</h3>
+              <!-- names of items in section -->
+              <ul class="menu__item-name">
+                <li class="menu__item-name-item">Hot Tea</li>
+                <li class="menu__item-name-item">Iced Tea</li>
+                <li class="menu__item-name-item">Hot Chocolate</li>
+                <li class="menu__item-name-item">Lemonade</li>
+                <li class="menu__item-name-item">Arnold Palmer</li>
+                <li class="menu__item-name-item">Steamer</li>
+                <li class="menu__item-name-item">Smoothies</li>
+              </ul>
+            </div>
+            <!-- right side of section -->
+            <div class="menu__info menu__info--right">
+              <!-- sizes available in section -->
+              <ul class="menu__sizes">
+                <li class="menu__sizes-item">12oz</li>
+                <li class="menu__sizes-item">16oz</li>
+                <li class="menu__sizes-item">20oz</li>
+              </ul>
+              <!-- prices for item 1 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">3.50</li>
+                <li class="menu__prices-item">4.00</li>
+                <li class="menu__prices-item">4.25</li>
+              </ul>
+              <!-- prices for item 2 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li class="menu__prices-item">3.75</li>
+                <li class="menu__prices-item">4.00</li>
+              </ul>
+              <!-- prices for item 3 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">4.00</li>
+                <li class="menu__prices-item">4.50</li>
+                <li class="menu__prices-item">5.00</li>
+              </ul>
+              <!-- prices for item 4 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li class="menu__prices-item">4.00</li>
+                <li class="menu__prices-item">4.50</li>
+              </ul>
+              <!-- prices for item 5 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li class="menu__prices-item">4.50</li>
+                <li class="menu__prices-item">4.75</li>
+              </ul>
+              <!-- prices for item 6 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">4.00</li>
+                <li class="menu__prices-item">4.50</li>
+                <li class="menu__prices-item">4.75</li>
+              </ul>
+              <!-- prices for item 7 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li class="menu__prices-item">5.50</li>
+                <li class="menu__prices-item">6.00</li>
+              </ul>
+            </div>
+          </div>
+          <!-- extra description space section -->
+          <div class="menu__description">Smoothie flavors (strawberry banana, peach)</div>
+        </div>
+        <!-- individual menu section -->
+        <div class="menu__item">
+          <div class="menu__item-inner">
+            <!-- left side of section -->
+            <div class="menu__info menu__info--left">
+              <!-- title of section -->
+              <h3 class="menu__title">Juice & Water</h3>
+              <!-- names of items in section -->
+              <ul class="menu__item-name">
+                <li class="menu__item-name-item">Juice Box</li>
+                <li class="menu__item-name-item">Bottled Water</li>
+              </ul>
+            </div>
+            <!-- right side of section -->
+            <div class="menu__info menu__info--right">
+              <!-- sizes available in section -->
+              <ul class="menu__sizes">
+                <li class="menu__sizes-item">Price</li>
+              </ul>
+              <!-- prices for item 1 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">2.00</li>
+              </ul>
+              <!-- prices for item 2 -->
+              <ul class="menu__prices">
+                <li class="menu__prices-item">2.00</li>
+              </ul>
+            </div>
+          </div>
+          <!-- extra description space section -->
+          <div class="menu__description"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+</main>
