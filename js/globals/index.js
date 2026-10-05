@@ -43,25 +43,3 @@ Date.prototype.customFormat = function(formatString){
   ss=(s=this.getSeconds())<10?('0'+s):s;
   return formatString.replace("#hhhh#",hhhh).replace("#hhh#",hhh).replace("#hh#",hh).replace("#h#",h).replace("#mm#",mm).replace("#m#",m).replace("#ss#",ss).replace("#s#",s).replace("#ampm#",ampm).replace("#AMPM#",AMPM);
 };
-// 1. Select all the anchor links you want to animate
-const links = document.querySelectorAll('.slide-link');
-
-// 2. Loop through each link and add a click event listener
-links.forEach(link => {
-    link.addEventListener('click', function(event) {
-        // 3. Stop the default instant "jump" behavior
-        event.preventDefault();
-
-        // 4. Get the target section ID from the href attribute (e.g., "#section1")
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-
-        // 5. Slide smoothly to the target element
-        if (targetSection) {
-            targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start' // Aligns the top of the section to the top of the viewport
-            });
-        }
-    });
-});

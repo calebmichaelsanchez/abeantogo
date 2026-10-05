@@ -1,4 +1,17 @@
 <!-- cms content injection point -->
 <main id="{collection.urlId}" class="content-container" role="main" data-content-field="main-content">
- <div class="{collection.urlId}">{squarespace.main-content}</div>
+  <section class="{collection.urlId}">
+    <div class="hero-divider hero-divider--no-border">
+      <div class="hero-divider__inner">
+        
+        <h1>{collection.title}</h1>
+        <p>{collection.description}</p>
+      </div>
+    </div>
+    <div class="{collection.urlId}__container">
+      <div class="{collection.urlId}__inner">
+        {squarespace.main-content}
+      </div>
+    </div>
+  </section>
 </main>

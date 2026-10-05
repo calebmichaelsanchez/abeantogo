@@ -1,9 +1,9 @@
 <main id="{collection.urlId}" class="content-container" role="main" data-content-field="main-content">
   <section class="locations">
-    <div class="hero">
-      <div class="hero__inner">
+    <div class="hero-divider hero-divider--no-border">
+      <div class="hero-divider__inner">
         <h1>Our Locations</h1>
-        <p>Find your nearest ABeanToGo and start your&nbsp;day&nbsp;the&nbsp;right&nbsp;way</p>
+        <p>Find your nearest ABeanToGo and start your day the&nbsp;right&nbsp;way</p>
       </div>
     </div>
     <div class="locations__container">

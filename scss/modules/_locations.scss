@@ -1,35 +1,18 @@
 main#locations {
-  background: url("/assets/contact-background.jpg") no-repeat center center;
-  background-size: cover;
   border: 3px solid $white;
-  .no-touch & { background-attachment: fixed; }
-  .touch & { background-attachment: none; }
 }
 .locations {
   width: 100%;
   @include center;
-  padding: 50px 0 0;
   color: $white;
   text-align: center;
-  @include respond-to(ipad-portrait) {
-    padding: 100px 0 0;
-  }
-  .hero {
-    position: relative;
-    width: 100%;
-    padding: 0 32px 50px;
-    &__inner {
-      display: inline-block;
-      width: 100%;
-      max-width: 80%;
-    }
-  }
+  .hero-divider:first-child { background-image: url("/assets/contact-background.jpg"); }
   &__container {
     padding: 1rem;
     background-color: white;
     color: black;
 
-    p, ul {
+    p, ul, a {
       @include font-sans();
       font-size: .625rem;
       font-weight: 700;
@@ -37,10 +20,7 @@ main#locations {
     }
   }
   &__inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 768px;
+    max-width: 768px !important;
     margin: 0 auto;
   }
   &__item {
@@ -89,6 +69,10 @@ main#locations {
     text-align: center;
     justify-content: center;
     flex-wrap: wrap;
+    a {
+      transition: color ease .4s;
+      &:hover { color: $red; }
+    }
     &-item {
       &:after {
         display: inline-block;

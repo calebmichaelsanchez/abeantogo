@@ -1,0 +1,25 @@
+<!-- section inner container -->
+<div class="menu__inner">
+  {.repeated section items}
+  <!-- menu item -->
+  <div class="menu__item">
+    <!-- menu image -->
+    {.main-image?}
+      <div class="menu__image">
+        <div class="menu__image-inner" style="background-image: url('{assetUrl}');"></div>
+      </div>
+    {.end}
+    <div class="menu__item-inner">
+      <!-- left side of section -->
+      <div class="menu__info">
+        <!-- title of section -->
+        <h3 class="menu__title">{title}</h3>
+        <!-- names of items in section -->
+        <div class="menu__item-name">{body}</div>
+        <!-- extra description space section -->
+        <div class="menu__description">{excerpt}</div>
+      </div>
+    </div>
+  </div>
+  {.end}
+</div>

@@ -23,7 +23,10 @@
   position: relative;
   z-index: 20;
   padding: 2rem 0;
-  border: 3px solid $white;
+  // border: 3px solid $white;
+  &__container { background-color: unset !important; }
+  &__inner { max-width: 1024px !important; }
+  .hero-divider { display: none; }
 }
 .categories {
   width: 100%;

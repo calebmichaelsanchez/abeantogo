@@ -1,4 +1,10 @@
-
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
 .nav {
   position: relative;
   display: block;
@@ -21,17 +27,17 @@
     left: 0;
     background-color: $gray;
     z-index: 5;
-    @include respond-to(mobile-plus) {
-      display: none;
-    }
+    // @include respond-to(mobile-plus) {
+    //   display: none;
+    // }
   }
-  @include respond-to(mobile-plus) {
-    position: relative;
-    margin-bottom: 0;
-    // margin-top: 10vh;
-    padding: .5rem 0;
-    background-color: transparent;
-  }
+  // @include respond-to(mobile-plus) {
+  //   position: relative;
+  //   margin-bottom: 0;
+  //   // margin-top: 10vh;
+  //   padding: .5rem 0;
+  //   background-color: transparent;
+  // }
   .nav-scrolled & {
     margin-top: 0;
     // padding-top: 30px;
@@ -55,9 +61,9 @@
     path, polygon {
       fill: $white;
     }
-    @include respond-to(mobile-plus) {
-      opacity: 0;
-    }
+    // @include respond-to(mobile-plus) {
+    //   opacity: 0;
+    // }
     .nav-scrolled & {
       opacity: 1;
     }
@@ -69,9 +75,9 @@
     width: 60px;
     height: 100%;
     z-index: 10;
-    @include respond-to(mobile-plus) {
-      display: none;
-    }
+    // @include respond-to(mobile-plus) {
+    //   display: none;
+    // }
   }
   &__burger {
     position: absolute;
@@ -108,83 +114,96 @@
     }
   }
   &__list {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: absolute;
-    top: 100%;
+    top: 0;
     left: 0;
     width: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
     list-style: none;
     text-align: center;
     font-size: 0;
-    z-index: 1;
-    background-color: $gray;
-    transform: translateY(-160%);
-    border-top: 1px solid $white;
-    transition: transform 600ms ease;
+    z-index: -1;
+    opacity: 0;
+    background-color: rgba(17, 17, 18, .9);
+    transform: translateY(-200%);
+    // border-top: 1px solid $white;
+    transition: opacity 600ms ease, transform 0ms ease 600ms, z-index 0ms ease 600ms;
     .nav-active & {
       transform: translateY(0);
+      z-index: 6;
+      opacity: 1;
+      transition: z-index 0ms ease, transform 0ms ease, opacity 600ms ease;
     }
-    @include respond-to(mobile-plus) {
-      position: relative;
-      top: 0;
-      left: 0;
-      transform: none;
-      border: none;
-      background-color: transparent;
-      text-align: right;
-      padding-right: 20px;
-    }
+    // @include respond-to(mobile-plus) {
+    //   position: relative;
+    //   top: 0;
+    //   left: 0;
+    //   transform: none;
+    //   border: none;
+    //   background-color: transparent;
+    //   text-align: right;
+    //   padding-right: 20px;
+    // }
   }
   &__item {
     display: block;
-    @include respond-to(mobile-plus) {
-      display: inline-block;
-    }
+    // @include respond-to(mobile-plus) {
+    //   display: inline-block;
+    // }
+    // &:hover > div:first-child:after {
+    //   opacity: 1;
+    // }
   }
   &__link {
     position: relative;
     display: block;
-    font-size: 16px;
+    font-size: 1rem;
     color: $white;
     letter-spacing: 0;
     font-weight:400;
-    //text-transform: uppercase;
-    padding: 15px 7px;
+    // text-transform: uppercase;
+    padding: .75rem;
     width: 100%;
-    border-bottom: 1px solid $white;
     @include font-sans;
     @include respond-to(mobile-plus) {
-      border: none;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
     }
+
     &:after {
       content: '';
       display: block;
       position: absolute;
-      top: 75%;
+      top: 80%;
       left: 50%;
-      transform: translateX(-53%);
-      width: 50%;
+      transform: translateX(-50%);
+      width: 8%;
       height: 1px;
-      background-color: $red-accent;
+      background-color: $white;
       opacity: 0;
-      transition: opacity 400ms ease;
-      .nav-scrolled & {
-        background-color: $white;
-      }
+      border-radius :1px;
+      transition: opacity 600ms ease;
+      // .nav-scrolled & {
+      //   background-color: $white;
+      // }
     }
-    .no-touch &:hover:after {
-      opacity: 0;
-      @include respond-to(mobile-plus) {
-        opacity: 1;
-      }
+    &:hover:after {
+      opacity: 1;
+      transition: opacity 1600ms ease;
+      // @include respond-to(mobile-plus) {
+      //   opacity: 1;
+      // }
     }
     .nav__item--active &:after {
-      opacity: 0;
-      @include respond-to(mobile-plus) {
-        opacity: 1;
-      }
+      opacity: 1;
+      // @include respond-to(mobile-plus) {
+      //   opacity: 1;
+      // }
     }
   }
 }

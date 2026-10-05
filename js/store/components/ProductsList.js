@@ -9,11 +9,11 @@ export default class ProductsList extends Component {
     this.filterList = this.filterList.bind(this);
   }
   filterList(type, filter) {
-    console.log("type", type);
-    console.log("filter", filter);
+    // console.log("type", type);
+    // console.log("filter", filter);
     if (type === "category") {
       return item => { 
-        console.log("filterlist item", item);
+        //console.log("filterlist item", item);
         if (item.categories.indexOf(filter) !== -1) return item 
       };
     } else {

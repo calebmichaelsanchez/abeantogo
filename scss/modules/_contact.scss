@@ -1,23 +1,30 @@
 main#contact {
-  background: url("/assets/contact-background.jpg") no-repeat center center;
-  background-size: cover;
-  border: 3px solid $white;
-  .no-touch & { background-attachment: fixed; }
-  .touch & { background-attachment: none; }
+  background-image: url("/assets/contact-background.jpg");
+  // background-size: cover;
+  // border: 3px solid $white;
+  // .no-touch & { background-attachment: fixed; }
+  // .touch & { background-attachment: none; }
 }
-.contact {
-  width: 100%;
-  max-width: 600px;
-  @include center;
-  padding: 50px 16px;
-  color: $white;
-  @include respond-to(ipad-portrait) {
-    padding: 100px 0;
-  }
-  &__title {
-    @include divider(75%, 30px auto 15px);
-  }
-}
+// .contact {
+//   //padding: 50px 16px;
+//   width: 100%;
+//   @include center;
+//   color: $white;
+//   text-align: left;
+//   .hero-divider:first-child { background-image: url("/assets/contact-background.jpg"); }
+//   &__container {
+//     padding: 2rem 1rem;
+//     background-color: white;
+//     color: #2a2a2a;
+//     @include font-sans();
+//   }
+//   &__inner {
+//     width: 100%;
+//     display: block;
+//     max-width: 640px;
+//     margin: 0 auto;
+//   }
+// }
 .form-wrapper .field-list .field .field-element {
   color: $black;
 }

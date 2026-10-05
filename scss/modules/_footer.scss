@@ -33,15 +33,21 @@
   &__item {
     display: inline-block;
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 1rem;
     font-size: $h4-size;
     @include respond-to(ipad-landscape) {
       width: 50%
     }
     p, a {
       font-size: $h4-size;
+      color: $white;
     }
+    a {
+      text-decoration: underline;
+      text-decoration-thickness: .1px;
+      transition: color ease 0.4s;
+    }
+    a:hover { color: $red; }
   }
   &__title {
     @include font-sans();

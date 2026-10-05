@@ -14,6 +14,8 @@ class Home extends Component {
       popup: false
     }
     this.renderPopup = this.renderPopup.bind(this);
+    this.getLinks = this.getLinks.bind(this);
+    this.addSlide = this.addSlide.bind(this);
   }
   componentDidMount() {
     axios("/?format=json")
@@ -23,6 +25,31 @@ class Home extends Component {
       .catch((response) => {
         console.log(response);
     });
+    this.addSlide(this.getLinks());
+  }
+  getLinks() {
+    let links = document.querySelectorAll('.slide-link');
+    return links;
+  }
+  addSlide(linkList) {
+    linkList.forEach(link => {
+      link.addEventListener('click', function(event) {
+        // 3. Stop the default instant "jump" behavior
+        event.preventDefault();
+
+        // 4. Get the target section ID from the href attribute (e.g., "#section1")
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        // 5. Slide smoothly to the target element
+        if (targetSection) {
+          targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start' // Aligns the top of the section to the top of the viewport
+          });
+        }
+      });
+    });
   }
   renderPopup() {
     if (!this.state.popup) {
@@ -31,7 +58,7 @@ class Home extends Component {
     return <Popup wait={1000} />
   }
   render() {
-    let { image } = this.state;
+    let image = this.state.image ? this.state.image : "/assets/contact-background.jpg";
     return (
       <div className="welcome">
         <div className="video-header">
@@ -40,35 +67,35 @@ class Home extends Component {
               <img src="/assets/contact-background.jpg" alt="" />
             </video>
           </div>
-          <img className="video-header__logo" src="/assets/header-new.svg" />
+          <div className="video-header__logo">
+            <img src="/assets/header-new.svg" />
+            <a href="/store" className="btn">Online Store</a>
+            <a href="#mobile-ordering" className="btn slide-link">Mobile Ordering</a>
+          </div>
           <div className="video-header__arrow">^</div>
         </div>
-        <div className="big-quote">
-          <div className="big-quote__inner">
+        <div className="hero-divider hero-divider--no-height hero-divider--no-border">
+          <div className="hero-divider__inner">
             <h1>Master Roasted.<br />Never Burnt.</h1>
+            <p>At ABeanToGo, roasting is our craft, and good coffee is our passion. <a className="slide-link" href="#mobile-ordering">Order ahead</a> at our stores in <a href="/locations">Goodrich or Lake Orion</a>, or buy fresh roasted beans in our <a href="/store">online store</a> to find out&nbsp;for&nbsp;yourself.</p>
           </div>
         </div>
         <div className="hero-divider hero-divider--one">
           <div className="hero-divider__inner">
-            <h2 className="h2-home h2-home--small">Get fresh roasted coffee delivered straight to your door.</h2>
+            <h2>Get fresh roasted coffee delivered straight to your&nbsp;door.</h2>
+            <p>For more than 20 years all of our coffee has been roasted on site in small batches at our headquarters in Goodrich,&nbsp;Michigan.</p>
             <a href="/store" className="btn">Shop Now</a>
           </div>
         </div>
-        <div className="hero-divider hero-divider--two">
+        <div className="hero-divider hero-divider--no-height hero-divider--no-border">
           <div className="hero-divider__inner">
-            <h2 className="h2-home h2-home--small">Fresh Coffee. Forever.</h2>
-            <p>Join the coffee club and get your favorite coffee delivered, automagically.</p>
-            <a href="/coffee-club" className="btn">Coffee Club</a>
+            <h2>Fresh Coffee. Forever.</h2>
+            <p>Join our Coffee Club and get your favorite coffee, and espresso delivered weekly, bi-weekly, or monthly.</p>
+            <a href="/coffee-club" className="btn">Join Now</a>
           </div>
         </div>
-        <GetProducts title="Coffee of the month" starred={true} />
-        {/*<div className="hero-divider hero-divider--two">
-          <div className="hero-divider__inner">
-            <h2 className="h2-home h2-home--small">Order from our menu and pick up in store!</h2>
-            <a className="btn">coming soon</a>
-          </div>
-        </div>*/}
-        {/*<GetProducts title="Take Abeantogo with you" starred={false} category="Merchandise" />*/}
+        {/*<GetProducts title="Coffee of the month" starred={true} />*/}
+        <GetProducts title="ABeanToGo Merch" starred={false} category="Merchandise" />
       </div>
     );
   }

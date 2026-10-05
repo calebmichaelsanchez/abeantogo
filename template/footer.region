@@ -1,8 +1,9 @@
       <!--Footer with open block field -->
       <footer class="footer">
-        <div id="mobile-ordering" class="hero-divider hero-divider--two">
+        <div id="mobile-ordering" class="hero-divider hero-divider--no-height hero-divider--no-border">
           <div class="hero-divider__inner">
-            <h2 class="h2-home h2-home--small">Order online and pick up&nbsp;in&nbsp;store!</h2>
+            <h2>Order online and pick up in&nbsp;store!</h2>
+            <p>Use your app to order ahead and pick up at your convenience in store or in our drive-thru.</p>
             <br />
             <h3>Download the app</h3>
             <a class="btn" target="_new" href="https://apps.apple.com/us/app/abeantogo/id6747405442">app store</a><a class="btn" target="_new" href="https://play.google.com/store/apps/details?id=com.tryperdiem.wh.abeantogo&pcampaignid=web_share">google play</a>

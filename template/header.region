@@ -7,6 +7,15 @@
     <!-- include system scripts, page meta, and header code injection -->
     {squarespace-headers}
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYLT2KGQBB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RYLT2KGQBB');
+  </script>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
     <header class="header">
       <!-- site navigation -->
@@ -14,9 +23,9 @@
 
       <!-- site title or logo -->
       {.section website}
-        <h1 class="site-title-heading" data-content-field="site-title">
+        <!-- <h1 class="site-title-heading" data-content-field="site-title">
           <a href="/" class="site-title-link">{siteTitle}</a>
-        </h1>
+        </h1> -->
       {.end}
     </header>
     <div class="site-container">

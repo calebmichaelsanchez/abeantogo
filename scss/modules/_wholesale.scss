@@ -1,29 +1,39 @@
 main#wholesale {
-  background: url("/assets/contact-background.jpg") no-repeat center center;
-  background-size: cover;
   border: 3px solid $white;
-  .no-touch & { background-attachment: fixed; }
-  .touch & { background-attachment: none; }
+  // background: url("/assets/contact-background.jpg") no-repeat center center;
+  // background-size: cover;
+  // border: 3px solid $white;
+  // .no-touch & { background-attachment: fixed; }
+  // .touch & { background-attachment: none; }
 }
 .wholesale {
+  //padding: 50px 16px;
   width: 100%;
-  max-width: 800px;
   @include center;
-  padding: 50px 16px;
-  color: $white;
+  text-align: left;
+  .hero-divider:first-child { background-image: url("/assets/contact-background.jpg"); }
+  &__container {
+    padding: 2rem 1rem;
+    // background-color: white;
+    color: $white;
+    @include font-sans();
+  }
+  &__inner {
+    width: 100%;
+    display: block;
+    max-width: 640px;
+    margin: 0 auto;
+  }
   a {
     text-decoration: underline;
     color: $white;
     &:hover { color: $red; }
   }
-  .touch & { color: $black; }
-  &__title { @include divider(75%, 30px auto 15px); }
-  @include respond-to(ipad-portrait) {
-    padding: 100px 0;
-  }
-  @include respond-to(ipad-landscape) {
-    p, a { font-size: rem-calc(22); }
-  }
+  // .touch & { color: $black; }
+  // &__title { @include divider(75%, 30px auto 15px); }
+  // @include respond-to(ipad-landscape) {
+  //   p, a { font-size: rem-calc(22); }
+  // }
   .form-wrapper .field-list .field select,
   .form-wrapper .field-list .field .field-element {
     color: $black;

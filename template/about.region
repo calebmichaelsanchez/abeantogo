@@ -1,7 +1,7 @@
 <main id="{collection.urlId}" class="content-container" role="main" data-content-field="main-content">
   <section class="about">
-    <div class="hero">
-      <div class="hero__inner">
+    <div class="hero-divider hero-divider--no-border">
+      <div class="hero-divider__inner">
         <h1>Master Roasted.<br />Never Burnt.</h1>
       </div>
     </div>
